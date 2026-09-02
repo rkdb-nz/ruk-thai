@@ -3,15 +3,18 @@ portraitCss.rel='stylesheet';
 portraitCss.href='mobile-portrait.css';
 document.head.appendChild(portraitCss);
 
+const params=new URLSearchParams(window.location.search);
+const mobileView=params.get('view');
+if(!mobileView){document.body.classList.add('portrait-gateway');}
+
 const hero=document.querySelector('.hero');
 const heroCopy=hero?.querySelector('.hero-copy');
 const heroActions=hero?.querySelector('.hero-actions');
-const siteHeader=document.querySelector('.site-header');
 
 if(heroCopy&&!heroCopy.querySelector('.mobile-hero-logo')){
   const logo=document.createElement('a');
   logo.className='mobile-hero-logo';
-  logo.href='#top';
+  logo.href='./';
   logo.setAttribute('aria-label','Ruk Thai home');
   logo.innerHTML='<img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">';
   const img=logo.querySelector('img');
@@ -31,49 +34,17 @@ if(heroActions){
   }
 
   if(menu){
+    menu.href='?view=menu#menu';
     menu.innerHTML='<span class="cta-secondary-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3.5h6a2 2 0 0 1 2 2V21a2.5 2.5 0 0 0-2.5-2.5H4z"/><path d="M20 3.5h-6a2 2 0 0 0-2 2V21a2.5 2.5 0 0 1 2.5-2.5H20z"/><path d="M6.5 7h3M6.5 10h3M14.5 7h3M14.5 10h3"/></svg></span><span>View Menu</span>';
   }
 
   if(directions){
+    directions.href='?view=directions#visit';
+    directions.removeAttribute('target');
+    directions.removeAttribute('rel');
     directions.innerHTML='<span class="cta-secondary-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.4A2.4 2.4 0 1 1 12 6.6a2.4 2.4 0 0 1 0 4.8z"/></svg></span><span>Directions</span>';
-    directions.setAttribute('aria-label','Directions to Ruk Thai, 123 Chadwick Road, Greerton, Tauranga');
+    directions.setAttribute('aria-label','Directions and location for Ruk Thai, 123 Chadwick Road, Greerton, Tauranga');
   }
-}
-
-if(siteHeader&&!siteHeader.querySelector('.mobile-menu-toggle')){
-  const toggle=document.createElement('button');
-  toggle.type='button';
-  toggle.className='mobile-menu-toggle';
-  toggle.setAttribute('aria-expanded','false');
-  toggle.setAttribute('aria-controls','mobile-menu-drawer');
-  toggle.setAttribute('aria-label','Open navigation menu');
-  toggle.innerHTML='<span class="mobile-menu-toggle-lines" aria-hidden="true"></span>';
-
-  const drawer=document.createElement('nav');
-  drawer.id='mobile-menu-drawer';
-  drawer.className='mobile-menu-drawer';
-  drawer.setAttribute('aria-label','Mobile navigation');
-  drawer.innerHTML='<a href="#menu">Menu</a><a href="#visit">Visit</a><a href="https://www.facebook.com/taurangarukthai/" target="_blank" rel="noopener">Facebook</a><a href="tel:+6475796180">Call to Order · 07 579 6180</a>';
-
-  siteHeader.append(toggle,drawer);
-
-  const closeMenu=()=>{
-    toggle.setAttribute('aria-expanded','false');
-    toggle.setAttribute('aria-label','Open navigation menu');
-    drawer.classList.remove('is-open');
-    document.body.classList.remove('mobile-nav-open');
-  };
-
-  toggle.addEventListener('click',()=>{
-    const opening=toggle.getAttribute('aria-expanded')!=='true';
-    toggle.setAttribute('aria-expanded',String(opening));
-    toggle.setAttribute('aria-label',opening?'Close navigation menu':'Open navigation menu');
-    drawer.classList.toggle('is-open',opening);
-    document.body.classList.toggle('mobile-nav-open',opening);
-  });
-
-  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
 }
 
 const els=[...document.querySelectorAll('.menu-section,.editorial-food,.lunch,.food-break,.visit')];
