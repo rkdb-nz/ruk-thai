@@ -1,0 +1,232 @@
+/* Ruk Thai — approved mobile portrait landing target.
+   Intentionally scoped to portrait mobile only so desktop/landscape remain untouched. */
+
+@media (max-width: 600px) and (orientation: portrait) {
+  html,
+  body {
+    min-width: 0;
+  }
+
+  body {
+    padding-bottom: 0;
+    background: #f5e6c7;
+  }
+
+  body.portrait-gateway {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .hero {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f4dfba;
+    background-image: url("assets/hero/hero-portrait.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .hero-copy {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-copy > .eyebrow,
+  .hero-copy > .hero-lead,
+  .hero-art {
+    display: none !important;
+  }
+
+  /* Position and scale intentionally unchanged from the approved pass. */
+  .mobile-hero-logo {
+    position: absolute;
+    top: 24.7%;
+    left: 20.8%;
+    width: 78%;
+    margin: 0;
+    isolation: isolate;
+    text-decoration: none;
+  }
+
+  /* Visible but fully feathered parchment separation behind the logo.
+     Extends farther left to protect the gold ornament over the dark artwork. */
+  .mobile-hero-logo::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -25% -8% -25% -22%;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at 45% 50%,
+      rgba(255, 249, 234, .94) 0%,
+      rgba(255, 247, 229, .82) 30%,
+      rgba(255, 244, 221, .58) 48%,
+      rgba(255, 242, 216, .28) 64%,
+      rgba(255, 242, 216, .10) 73%,
+      rgba(255, 242, 216, 0) 86%
+    );
+    filter: blur(8px);
+  }
+
+  .mobile-hero-logo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: contrast(1.14) saturate(1.08) drop-shadow(0 1px 0 rgba(82, 11, 23, .18));
+  }
+
+  .hero h1 {
+    position: absolute;
+    top: 40.5%;
+    left: 39%;
+    width: 49%;
+    max-width: none;
+    margin: 0;
+    color: #65151f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.72rem, 7.1vw, 2.3rem);
+    font-weight: 400;
+    line-height: .97;
+    letter-spacing: -.035em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .hero-actions {
+    position: absolute;
+    top: 55.2%;
+    left: 41.5%;
+    width: 52%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .62rem .48rem;
+    margin: 0;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .text-link {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  .hero-actions .btn-primary {
+    grid-column: 1 / -1;
+    min-height: 4rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: .7rem;
+    padding: .62rem .72rem;
+    border: 1px solid #d8a13a;
+    border-radius: .62rem;
+    background: linear-gradient(180deg, #741724 0%, #65131e 100%);
+    color: #f4d98f;
+    box-shadow: 0 .28rem .65rem rgba(73, 29, 10, .14);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .hero-actions .btn-primary .cta-icon {
+    grid-row: 1 / 3;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    align-self: end;
+    font-size: clamp(.86rem, 3.8vw, 1.03rem);
+    line-height: 1;
+    letter-spacing: .05em;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    align-self: start;
+    margin-top: .24rem;
+    color: #fff0d7;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(.78rem, 3.35vw, .94rem);
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 4.35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .32rem;
+    padding: .48rem .28rem;
+    border: 1px solid #c89331;
+    border-radius: 0;
+    background: rgba(255, 244, 221, .46);
+    color: #65151f;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-size: clamp(.66rem, 2.8vw, .78rem);
+    font-weight: 700;
+    line-height: 1.08;
+    text-align: center;
+  }
+
+  .hero-actions .text-link {
+    width: auto;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+    color: #d3982c;
+  }
+
+  .hero-actions svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-bar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) and (orientation: portrait) {
+  .mobile-hero-logo {
+    left: 20%;
+    width: 79%;
+  }
+
+  .hero h1 {
+    left: 38%;
+    width: 51%;
+    font-size: clamp(1.58rem, 7vw, 1.9rem);
+  }
+
+  .hero-actions {
+    left: 40.5%;
+    width: 53.5%;
+  }
+}

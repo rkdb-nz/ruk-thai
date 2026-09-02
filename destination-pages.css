@@ -1,0 +1,50 @@
+/* Dedicated Ruk Thai destination pages, preserving the existing cream site styling. */
+body.destination-page .hero,
+body.destination-page .intro-strip,
+body.destination-page .editorial-food,
+body.destination-page .food-break {
+  display: none !important;
+}
+
+body.menu-page .visit {
+  display: none !important;
+}
+
+body.directions-page .lunch,
+body.directions-page .menu-wrap {
+  display: none !important;
+}
+
+body.destination-page .site-header .brand {
+  text-decoration: none;
+}
+
+body.destination-page .menu-wrap,
+body.destination-page .visit {
+  min-height: calc(100vh - 76px);
+}
+
+body.menu-page .menu-wrap {
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+
+body.directions-page .visit {
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+
+@media (max-width: 900px) {
+  body.destination-page {
+    padding-bottom: 64px;
+  }
+
+  body.destination-page .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  body.menu-page .menu-wrap,
+  body.directions-page .visit {
+    min-height: calc(100dvh - 63px);
+    padding-top: 2.5rem;
+  }
+}
