@@ -12,26 +12,14 @@
     background: #f5e6c7;
   }
 
-  /* The portrait landing gateway is a true single-screen experience. */
   body.portrait-gateway {
     width: 100%;
     height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
     overflow: hidden;
   }
 
-  body.portrait-gateway .site-header,
-  body.portrait-gateway .intro-strip,
-  body.portrait-gateway .editorial-food,
-  body.portrait-gateway .lunch,
-  body.portrait-gateway .menu-wrap,
-  body.portrait-gateway .food-break,
-  body.portrait-gateway .visit,
-  body.portrait-gateway footer,
-  body.portrait-gateway .mobile-bar {
-    display: none !important;
-  }
-
-  /* Hero: real HTML layered over the prepared portrait artwork. */
   .hero {
     position: relative;
     isolation: isolate;
@@ -39,6 +27,7 @@
     width: 100%;
     height: 100dvh;
     min-height: 100dvh;
+    max-height: 100dvh;
     padding: 0;
     overflow: hidden;
     background-color: #f4dfba;
@@ -62,7 +51,7 @@
     display: none !important;
   }
 
-  /* Transparent supplied logo, made slightly more dominant without redesigning it. */
+  /* Position and scale intentionally unchanged from the approved pass. */
   .mobile-hero-logo {
     position: absolute;
     top: 24.7%;
@@ -70,23 +59,27 @@
     width: 78%;
     margin: 0;
     isolation: isolate;
+    text-decoration: none;
   }
 
-  /* Feathered parchment lift only: no panel, edge or plaque. */
+  /* Visible but fully feathered parchment separation behind the logo.
+     Extends farther left to protect the gold ornament over the dark artwork. */
   .mobile-hero-logo::before {
     content: "";
     position: absolute;
     z-index: -1;
-    inset: -18% -6% -18% -8%;
+    inset: -25% -8% -25% -22%;
     pointer-events: none;
     background: radial-gradient(
-      ellipse at 52% 50%,
-      rgba(255, 246, 225, .70) 0%,
-      rgba(255, 244, 219, .50) 38%,
-      rgba(255, 242, 214, .22) 60%,
-      rgba(255, 242, 214, 0) 79%
+      ellipse at 45% 50%,
+      rgba(255, 249, 234, .94) 0%,
+      rgba(255, 247, 229, .82) 30%,
+      rgba(255, 244, 221, .58) 48%,
+      rgba(255, 242, 216, .28) 64%,
+      rgba(255, 242, 216, .10) 73%,
+      rgba(255, 242, 216, 0) 86%
     );
-    filter: blur(7px);
+    filter: blur(8px);
   }
 
   .mobile-hero-logo img {
@@ -215,7 +208,6 @@
     height: 100%;
   }
 
-  /* No sticky bottom bar on the approved portrait landing screen. */
   .mobile-bar {
     display: none !important;
   }
