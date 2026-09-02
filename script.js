@@ -1,52 +1,59 @@
-const portraitCss=document.createElement('link');
-portraitCss.rel='stylesheet';
-portraitCss.href='mobile-portrait.css';
-document.head.appendChild(portraitCss);
+const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+const isMenu=page==='menu.html';
+const isDirections=page==='directions.html';
 
-const params=new URLSearchParams(window.location.search);
-const mobileView=params.get('view');
-if(!mobileView){document.body.classList.add('portrait-gateway');}
+if(isMenu||isDirections){
+  const destinationCss=document.createElement('link');
+  destinationCss.rel='stylesheet';
+  destinationCss.href='destination-pages.css';
+  document.head.appendChild(destinationCss);
+  document.body.classList.add('destination-page',isMenu?'menu-page':'directions-page');
 
-const hero=document.querySelector('.hero');
-const heroCopy=hero?.querySelector('.hero-copy');
-const heroActions=hero?.querySelector('.hero-actions');
+  const brand=document.querySelector('.site-header .brand');
+  if(brand) brand.href='index.html';
 
-if(heroCopy&&!heroCopy.querySelector('.mobile-hero-logo')){
-  const logo=document.createElement('a');
-  logo.className='mobile-hero-logo';
-  logo.href='./';
-  logo.setAttribute('aria-label','Ruk Thai home');
-  logo.innerHTML='<img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">';
-  const img=logo.querySelector('img');
-  img.addEventListener('error',()=>{if(!img.dataset.fallback){img.dataset.fallback='1';img.src='01_Ruk_Thai_Logo_Banner.png';}});
-  heroCopy.prepend(logo);
-}
-
-if(heroActions){
-  const call=heroActions.querySelector('a[href^="tel:"]');
-  const menu=heroActions.querySelector('a[href="#menu"]');
-  const directions=[...heroActions.querySelectorAll('a')].find(a=>a.href.includes('google.com/maps'));
-
-  if(call){
-    call.href='tel:+6475796180';
-    call.setAttribute('aria-label','Call Ruk Thai on 07 579 6180');
-    call.innerHTML='<span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></span><span class="cta-title">CALL TO ORDER</span><span class="cta-phone">07 579 6180</span>';
+  const nav=document.querySelector('.desktop-nav');
+  if(nav){
+    nav.innerHTML='<a href="index.html">Home</a><a href="menu.html">Menu</a><a href="directions.html">Directions</a><a href="https://www.facebook.com/taurangarukthai/" target="_blank" rel="noopener">Facebook</a>';
   }
 
-  if(menu){
-    menu.href='?view=menu#menu';
-    menu.innerHTML='<span class="cta-secondary-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3.5h6a2 2 0 0 1 2 2V21a2.5 2.5 0 0 0-2.5-2.5H4z"/><path d="M20 3.5h-6a2 2 0 0 0-2 2V21a2.5 2.5 0 0 1 2.5-2.5H20z"/><path d="M6.5 7h3M6.5 10h3M14.5 7h3M14.5 10h3"/></svg></span><span>View Menu</span>';
+  const headerCall=document.querySelector('.header-call');
+  if(headerCall) headerCall.href='tel:+6475796180';
+
+  const mobileBar=document.querySelector('.mobile-bar');
+  if(mobileBar){
+    mobileBar.innerHTML='<a href="index.html">Home</a><a href="menu.html">Menu</a><a href="directions.html">Directions</a>';
   }
 
-  if(directions){
-    directions.href='?view=directions#visit';
-    directions.removeAttribute('target');
-    directions.removeAttribute('rel');
-    directions.innerHTML='<span class="cta-secondary-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.4A2.4 2.4 0 1 1 12 6.6a2.4 2.4 0 0 1 0 4.8z"/></svg></span><span>Directions</span>';
-    directions.setAttribute('aria-label','Directions and location for Ruk Thai, 123 Chadwick Road, Greerton, Tauranga');
+  if(isMenu){
+    document.title='Ruk Thai Menu | Greerton, Tauranga';
+    const menu=document.querySelector('#menu');
+    if(menu) menu.setAttribute('aria-label','Ruk Thai menu');
+  }
+
+  if(isDirections){
+    document.title='Ruk Thai Directions | Greerton, Tauranga';
+    const visit=document.querySelector('#visit');
+    if(visit) visit.setAttribute('aria-label','Ruk Thai location and directions');
   }
 }
 
-const els=[...document.querySelectorAll('.menu-section,.editorial-food,.lunch,.food-break,.visit')];
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(el=>el.classList.add('reveal'));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});els.forEach(el=>io.observe(el));}
-const links=[...document.querySelectorAll('.menu-nav a[href^="#"]')];const sections=[...document.querySelectorAll('.menu-section')];if('IntersectionObserver'in window){const io2=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>io2.observe(s));}
+const els=[...document.querySelectorAll('.menu-section,.lunch,.visit')].filter(el=>getComputedStyle(el).display!=='none');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver'in window){
+  els.forEach(el=>el.classList.add('reveal'));
+  const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('in');io.unobserve(entry.target);}
+  }),{threshold:.08});
+  els.forEach(el=>io.observe(el));
+}
+
+const links=[...document.querySelectorAll('.menu-nav a[href^="#"]')];
+const sections=[...document.querySelectorAll('.menu-section')];
+if('IntersectionObserver'in window&&links.length&&sections.length){
+  const io2=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+    }
+  }),{rootMargin:'-30% 0px -60% 0px'});
+  sections.forEach(section=>io2.observe(section));
+}
