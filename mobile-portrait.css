@@ -12,129 +12,23 @@
     background: #f5e6c7;
   }
 
-  /* Header becomes the target's floating hamburger only. */
-  .site-header {
-    position: absolute;
-    inset: 0 0 auto 0;
-    z-index: 90;
-    display: block;
-    padding: 0;
-    height: 0;
-    min-height: 0;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-  }
-
-  .site-header > .brand,
-  .site-header > .desktop-nav,
-  .site-header > .header-call {
-    display: none !important;
-  }
-
-  .mobile-menu-toggle {
-    position: fixed;
-    top: max(1.55rem, env(safe-area-inset-top));
-    right: 1.35rem;
-    z-index: 101;
-    width: 2.75rem;
-    height: 2.75rem;
-    display: grid;
-    place-items: center;
-    padding: 0;
-    border: 1px solid rgba(185, 132, 39, .38);
-    border-radius: 50%;
-    background: rgba(255, 244, 221, .20);
-    color: #a96f19;
-    box-shadow: none;
-    backdrop-filter: blur(2px);
-    cursor: pointer;
-  }
-
-  .mobile-menu-toggle-lines,
-  .mobile-menu-toggle-lines::before,
-  .mobile-menu-toggle-lines::after {
-    display: block;
-    width: 1.18rem;
-    height: 1.5px;
-    background: currentColor;
-    content: "";
-    transition: transform .2s ease, opacity .2s ease;
-  }
-
-  .mobile-menu-toggle-lines {
-    position: relative;
-  }
-
-  .mobile-menu-toggle-lines::before {
-    position: absolute;
-    left: 0;
-    top: -.38rem;
-  }
-
-  .mobile-menu-toggle-lines::after {
-    position: absolute;
-    left: 0;
-    top: .38rem;
-  }
-
-  .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-toggle-lines {
-    background: transparent;
-  }
-
-  .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-toggle-lines::before {
-    transform: translateY(.38rem) rotate(45deg);
-  }
-
-  .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-toggle-lines::after {
-    transform: translateY(-.38rem) rotate(-45deg);
-  }
-
-  .mobile-menu-drawer {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: grid;
-    align-content: center;
-    gap: .85rem;
-    padding: 5rem 2rem 2rem;
-    background: rgba(80, 18, 26, .98);
-    color: #fff7e8;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-.75rem);
-    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
-  }
-
-  .mobile-menu-drawer.is-open {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .mobile-menu-drawer a {
-    display: block;
-    padding: .9rem 0;
-    border-bottom: 1px solid rgba(255, 247, 232, .22);
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    font-size: .85rem;
-    font-weight: 800;
-  }
-
-  .mobile-menu-drawer a:last-child {
-    margin-top: .5rem;
-    border: 1px solid #d9a03a;
-    padding: 1rem;
-    text-align: center;
-    color: #f5d996;
-  }
-
-  body.mobile-nav-open {
+  /* The portrait landing gateway is a true single-screen experience. */
+  body.portrait-gateway {
+    width: 100%;
+    height: 100dvh;
     overflow: hidden;
+  }
+
+  body.portrait-gateway .site-header,
+  body.portrait-gateway .intro-strip,
+  body.portrait-gateway .editorial-food,
+  body.portrait-gateway .lunch,
+  body.portrait-gateway .menu-wrap,
+  body.portrait-gateway .food-break,
+  body.portrait-gateway .visit,
+  body.portrait-gateway footer,
+  body.portrait-gateway .mobile-bar {
+    display: none !important;
   }
 
   /* Hero: real HTML layered over the prepared portrait artwork. */
@@ -143,7 +37,8 @@
     isolation: isolate;
     display: block;
     width: 100%;
-    min-height: 100svh;
+    height: 100dvh;
+    min-height: 100dvh;
     padding: 0;
     overflow: hidden;
     background-color: #f4dfba;
@@ -167,11 +62,12 @@
     display: none !important;
   }
 
+  /* Transparent supplied logo, made slightly more dominant without redesigning it. */
   .mobile-hero-logo {
     position: absolute;
-    top: 26.6%;
-    left: 22.5%;
-    width: 74.5%;
+    top: 24.7%;
+    left: 20.8%;
+    width: 78%;
     margin: 0;
   }
 
@@ -179,12 +75,12 @@
     width: 100%;
     height: auto;
     object-fit: contain;
-    filter: contrast(1.1) saturate(1.08) drop-shadow(0 1px 0 rgba(82, 11, 23, .16));
+    filter: contrast(1.14) saturate(1.08) drop-shadow(0 1px 0 rgba(82, 11, 23, .18));
   }
 
   .hero h1 {
     position: absolute;
-    top: 43.2%;
+    top: 40.5%;
     left: 39%;
     width: 49%;
     max-width: none;
@@ -201,7 +97,7 @@
 
   .hero-actions {
     position: absolute;
-    top: 59.1%;
+    top: 55.2%;
     left: 41.5%;
     width: 52%;
     display: grid;
@@ -215,7 +111,6 @@
     width: auto;
     min-width: 0;
     margin: 0;
-    border-radius: 0;
     box-shadow: none;
     text-decoration: none;
   }
@@ -230,6 +125,7 @@
     column-gap: .7rem;
     padding: .62rem .72rem;
     border: 1px solid #d8a13a;
+    border-radius: .62rem;
     background: linear-gradient(180deg, #741724 0%, #65131e 100%);
     color: #f4d98f;
     box-shadow: 0 .28rem .65rem rgba(73, 29, 10, .14);
@@ -272,6 +168,7 @@
     gap: .32rem;
     padding: .48rem .28rem;
     border: 1px solid #c89331;
+    border-radius: 0;
     background: rgba(255, 244, 221, .46);
     color: #65151f;
     text-transform: uppercase;
@@ -298,22 +195,16 @@
     height: 100%;
   }
 
-  /* The approved hero has no sticky bottom bar. Navigation remains in hamburger. */
+  /* No sticky bottom bar on the approved portrait landing screen. */
   .mobile-bar {
     display: none !important;
-  }
-
-  /* Keep the existing site below the hero untouched and reachable. */
-  .intro-strip {
-    margin-top: 0;
   }
 }
 
 @media (max-width: 380px) and (orientation: portrait) {
-  .mobile-menu-toggle {
-    right: .9rem;
-    width: 2.6rem;
-    height: 2.6rem;
+  .mobile-hero-logo {
+    left: 20%;
+    width: 79%;
   }
 
   .hero h1 {
@@ -325,14 +216,5 @@
   .hero-actions {
     left: 40.5%;
     width: 53.5%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mobile-menu-drawer,
-  .mobile-menu-toggle-lines,
-  .mobile-menu-toggle-lines::before,
-  .mobile-menu-toggle-lines::after {
-    transition: none;
   }
 }
