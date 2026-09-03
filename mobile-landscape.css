@@ -1,0 +1,223 @@
+/* Ruk Thai — dedicated mobile landscape landing composition.
+   Intentionally separate from the approved portrait rules. */
+
+@media (orientation: landscape) and (max-height: 600px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background: #f4dfba;
+  }
+
+  body.portrait-gateway {
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f4dfba;
+    background-image: url("assets/hero/hero-landscape.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+  }
+
+  .hero-copy {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Landscape has its own logo proportions and placement. */
+  .mobile-hero-logo {
+    position: absolute;
+    top: 6.5%;
+    left: 56%;
+    width: 36%;
+    max-width: none;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  .mobile-hero-logo::before {
+    display: none;
+  }
+
+  .mobile-hero-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 27dvh;
+    object-fit: contain;
+    filter: contrast(1.12) saturate(1.07) drop-shadow(0 1px 0 rgba(82, 11, 23, .14));
+  }
+
+  .hero h1 {
+    position: absolute;
+    top: 36.5%;
+    left: 52.5%;
+    width: 44%;
+    max-width: none;
+    margin: 0;
+    color: #65151f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.22rem, 4.8dvh, 2rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.025em;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .hero-actions {
+    position: absolute;
+    top: 49.5%;
+    left: 59.5%;
+    width: 32.5%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .42rem .38rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .text-link {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  .hero-actions .btn-primary {
+    grid-column: 1 / -1;
+    min-height: 3.05rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: .58rem;
+    padding: .44rem .66rem;
+    border: 1px solid #d8a13a;
+    border-radius: .55rem;
+    background: linear-gradient(180deg, #741724 0%, #65131e 100%);
+    color: #f4d98f;
+    box-shadow: 0 .2rem .45rem rgba(73, 29, 10, .13);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .hero-actions .btn-primary .cta-icon {
+    grid-row: 1 / 3;
+    width: 1.22rem;
+    height: 1.22rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    align-self: end;
+    font-size: clamp(.68rem, 2.7dvh, .88rem);
+    line-height: 1;
+    letter-spacing: .05em;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    align-self: start;
+    margin-top: .17rem;
+    color: #fff0d7;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(.68rem, 2.45dvh, .82rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: .035em;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    padding: .32rem .22rem;
+    border: 1px solid #c89331;
+    border-radius: 0;
+    background: rgba(255, 244, 221, .46);
+    color: #65151f;
+    text-transform: uppercase;
+    letter-spacing: .045em;
+    font-size: clamp(.58rem, 2.15dvh, .72rem);
+    font-weight: 700;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.18rem;
+    height: 1.18rem;
+    color: #d3982c;
+  }
+
+  .hero-actions svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Short landscape phones: keep the same composition, simply tighten vertically. */
+@media (orientation: landscape) and (max-height: 430px) {
+  .mobile-hero-logo {
+    top: 4.5%;
+    left: 57%;
+    width: 34.5%;
+  }
+
+  .hero h1 {
+    top: 34%;
+    left: 52.5%;
+    width: 44%;
+    font-size: clamp(1.05rem, 4.8dvh, 1.45rem);
+  }
+
+  .hero-actions {
+    top: 47%;
+    left: 60%;
+    width: 31.5%;
+    gap: .34rem .32rem;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 2.75rem;
+    padding: .35rem .58rem;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 2.8rem;
+  }
+}
