@@ -206,34 +206,35 @@
 }
 
 @media (orientation: landscape) and (max-height: 430px) {
+  /* Active compact-landscape refinement only. */
   .mobile-hero-logo {
     top: 11.5% !important;
-    left: 50.5% !important;
-    width: 40.12% !important;
+    left: 48.5% !important;
+    width: 44.132% !important;
   }
 
   .hero h1 {
     top: 40% !important;
-    left: 44.5% !important;
+    left: 42.5% !important;
     width: 46% !important;
-    font-size: clamp(1.3176rem, 6.1dvh, 1.83rem) !important;
+    font-size: clamp(1.4757rem, 6.832dvh, 2.0496rem) !important;
   }
 
   .hero-actions {
     top: 54% !important;
-    left: 52.5% !important;
+    left: 50.5% !important;
     width: 39.1% !important;
     gap: .46rem .414rem !important;
   }
 
   .hero-actions .btn-primary {
     width: 97.391304% !important;
-    min-height: 3.304rem !important;
-    padding: .448rem .6944rem !important;
+    min-height: 3.5683rem !important;
+    padding: .484rem .6944rem !important;
   }
 
   .hero-actions .btn-outline,
   .hero-actions .text-link {
-    min-height: 3.5075rem !important;
+    min-height: 3.7881rem !important;
   }
 }
