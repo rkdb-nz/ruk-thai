@@ -1,0 +1,119 @@
+
+/* =========================================================
+   RUK THAI — DESKTOP CONTENT CENTRING
+   Centre the live content within the cream field only.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .mobile-hero-logo,
+  .hero h1,
+  .hero-actions {
+    left: 72% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .mobile-hero-logo {
+    width: 31% !important;
+  }
+
+  .hero h1 {
+    width: 38% !important;
+    text-align: center !important;
+  }
+
+  .hero-actions {
+    width: 32% !important;
+  }
+
+}
+
+
+/* =========================================================
+   RUK THAI — DESKTOP BRAND + CTA POLISH
+   Larger brand presence, centred premium action cluster.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  /* Stronger Ruk Thai brand presence */
+  .mobile-hero-logo {
+    left: 72% !important;
+    width: 37% !important;
+    max-width: none !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .mobile-hero-logo img {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  /* Keep headline centred on the same axis */
+  .hero h1 {
+    left: 72% !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+  }
+
+  /* Centre the complete CTA group */
+  .hero-actions {
+    left: 72% !important;
+    width: 29% !important;
+    transform: translateX(-50%) !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: .7rem !important;
+  }
+
+  /* Primary action */
+  .hero-actions .btn-primary {
+    grid-column: 1 / -1 !important;
+    min-height: 4.4rem !important;
+    border: 1px solid #c99535 !important;
+    border-radius: .75rem !important;
+    background: linear-gradient(180deg, #7b1928 0%, #65131f 100%) !important;
+    box-shadow:
+      0 .35rem .8rem rgba(71, 25, 18, .13),
+      inset 0 1px 0 rgba(255,255,255,.08) !important;
+    padding: .75rem 1.25rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    font-size: 1rem !important;
+    letter-spacing: .075em !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    font-size: .9rem !important;
+  }
+
+  /* Secondary actions */
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 4.15rem !important;
+    border: 1px solid rgba(190, 137, 42, .72) !important;
+    border-radius: .55rem !important;
+    background: rgba(255, 246, 225, .32) !important;
+    box-shadow:
+      0 .15rem .45rem rgba(91, 55, 21, .05),
+      inset 0 1px 0 rgba(255,255,255,.42) !important;
+    font-size: .79rem !important;
+    letter-spacing: .065em !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.45rem !important;
+    height: 1.45rem !important;
+  }
+
+  /* Keep every action visually centred */
+  .hero-actions .btn,
+  .hero-actions .text-link {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+

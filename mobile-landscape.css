@@ -238,3 +238,184 @@
     min-height: 3.7881rem !important;
   }
 }
+
+/* =========================================================
+   RUK THAI — MOBILE LANDSCAPE FINAL SCALE PASS
+   Approved landscape composition.
+   Overrides compact-height rules above.
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    top: 8% !important;
+    left: 54% !important;
+    width: 38% !important;
+  }
+
+  .hero h1 {
+    top: 39% !important;
+    left: 49% !important;
+    width: 49% !important;
+    font-size: clamp(1.22rem, 5.8dvh, 1.72rem) !important;
+    line-height: 1 !important;
+  }
+
+  .hero-actions {
+    top: 52% !important;
+    left: 55% !important;
+    width: 38% !important;
+    gap: .46rem .42rem !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 3.4rem !important;
+    padding: .48rem .72rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-icon {
+    width: 1.42rem !important;
+    height: 1.42rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    font-size: .88rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    font-size: .78rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.45rem !important;
+    padding: .42rem .3rem !important;
+    font-size: .7rem !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.42rem !important;
+    height: 1.42rem !important;
+  }
+}
+
+
+/* =========================================================
+   RUK THAI — LANDSCAPE FINAL OVERRIDE
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    top: 7.5% !important;
+    left: 52.5% !important;
+    width: 41.5% !important;
+  }
+
+  .hero h1 {
+    top: 39% !important;
+    left: 47.5% !important;
+    width: 50.5% !important;
+    font-size: 1.55rem !important;
+  }
+
+  .hero-actions {
+    top: 52% !important;
+    left: 53.5% !important;
+    width: 40.5% !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 3.7rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.7rem !important;
+  }
+
+}
+
+
+/* =========================================================
+   RUK THAI — LANDSCAPE VISUAL WEIGHT FIX
+   Removes the hidden logo height cap.
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    top: 6.5% !important;
+    left: 52% !important;
+    width: 42% !important;
+  }
+
+  .mobile-hero-logo img {
+    max-height: 35dvh !important;
+  }
+
+  .hero h1 {
+    top: 39.5% !important;
+    left: 47% !important;
+    width: 51% !important;
+    font-size: 1.65rem !important;
+  }
+
+  .hero-actions {
+    top: 53% !important;
+    left: 53% !important;
+    width: 41% !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 3.85rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.8rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    font-size: .94rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    font-size: .84rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    font-size: .74rem !important;
+  }
+}
+
+
+/* =========================================================
+   RUK THAI — LANDSCAPE CENTRING PASS
+   Keep current scale, just centre the right-hand content block.
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    left: 68.5% !important;
+    width: 40% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .hero h1 {
+    left: 68.5% !important;
+    width: 42% !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+  }
+
+  .hero-actions {
+    left: 68.5% !important;
+    width: 40% !important;
+    transform: translateX(-50%) !important;
+  }
+
+}
+
