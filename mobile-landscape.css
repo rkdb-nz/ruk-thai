@@ -53,12 +53,12 @@
     padding: 0 !important;
   }
 
-  /* Explicit landscape logo geometry — no inherited portrait sizing. */
+  /* Landscape content refinement: slightly stronger and shifted left/lower. */
   .mobile-hero-logo {
     position: absolute !important;
-    top: 7% !important;
-    left: 57% !important;
-    width: 33% !important;
+    top: 8.5% !important;
+    left: 55.5% !important;
+    width: 35.5% !important;
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -76,22 +76,22 @@
     width: 100% !important;
     height: auto !important;
     max-width: 100% !important;
-    max-height: 25dvh !important;
+    max-height: 27dvh !important;
     object-fit: contain;
     filter: contrast(1.12) saturate(1.07) drop-shadow(0 1px 0 rgba(82, 11, 23, .14));
   }
 
   .hero h1 {
     position: absolute !important;
-    top: 34.5% !important;
-    left: 51.5% !important;
-    width: 45% !important;
+    top: 37.5% !important;
+    left: 50.5% !important;
+    width: 46% !important;
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     color: #65151f;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.1rem, 4.8dvh, 1.85rem) !important;
+    font-size: clamp(1.24rem, 5.25dvh, 2.02rem) !important;
     font-weight: 400;
     line-height: 1;
     letter-spacing: -.025em;
@@ -101,12 +101,12 @@
 
   .hero-actions {
     position: absolute !important;
-    top: 48% !important;
-    left: 59% !important;
-    width: 33% !important;
+    top: 51.5% !important;
+    left: 57.5% !important;
+    width: 35.5% !important;
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: .42rem .38rem !important;
+    gap: .48rem .42rem !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -122,13 +122,13 @@
 
   .hero-actions .btn-primary {
     grid-column: 1 / -1;
-    min-height: 3.05rem !important;
+    min-height: 3.38rem !important;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     align-items: center;
-    column-gap: .58rem;
-    padding: .44rem .66rem !important;
+    column-gap: .64rem;
+    padding: .5rem .74rem !important;
     border: 1px solid #d8a13a;
     border-radius: .55rem;
     background: linear-gradient(180deg, #741724 0%, #65131e 100%);
@@ -140,25 +140,25 @@
 
   .hero-actions .btn-primary .cta-icon {
     grid-row: 1 / 3;
-    width: 1.22rem;
-    height: 1.22rem;
+    width: 1.32rem;
+    height: 1.32rem;
     display: grid;
     place-items: center;
   }
 
   .hero-actions .btn-primary .cta-title {
     align-self: end;
-    font-size: clamp(.68rem, 2.7dvh, .88rem);
+    font-size: clamp(.74rem, 2.9dvh, .94rem);
     line-height: 1;
     letter-spacing: .05em;
   }
 
   .hero-actions .btn-primary .cta-phone {
     align-self: start;
-    margin-top: .17rem;
+    margin-top: .18rem;
     color: #fff0d7;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(.68rem, 2.45dvh, .82rem);
+    font-size: clamp(.72rem, 2.6dvh, .88rem);
     font-weight: 400;
     line-height: 1;
     letter-spacing: .035em;
@@ -166,28 +166,28 @@
 
   .hero-actions .btn-outline,
   .hero-actions .text-link {
-    min-height: 3.15rem !important;
+    min-height: 3.62rem !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: .2rem;
-    padding: .32rem .22rem !important;
+    gap: .24rem;
+    padding: .4rem .28rem !important;
     border: 1px solid #c89331;
     border-radius: 0;
     background: rgba(255, 244, 221, .46);
     color: #65151f;
     text-transform: uppercase;
     letter-spacing: .045em;
-    font-size: clamp(.58rem, 2.15dvh, .72rem);
+    font-size: clamp(.62rem, 2.3dvh, .76rem);
     font-weight: 700;
     line-height: 1.05;
     text-align: center;
   }
 
   .hero-actions .cta-secondary-icon {
-    width: 1.18rem;
-    height: 1.18rem;
+    width: 1.3rem;
+    height: 1.3rem;
     color: #d3982c;
   }
 
@@ -200,32 +200,32 @@
 
 @media (orientation: landscape) and (max-height: 430px) {
   .mobile-hero-logo {
-    top: 4.5% !important;
-    left: 58% !important;
-    width: 31.5% !important;
+    top: 6.5% !important;
+    left: 56.5% !important;
+    width: 34% !important;
   }
 
   .hero h1 {
-    top: 32.5% !important;
-    left: 51.5% !important;
-    width: 45% !important;
-    font-size: clamp(1rem, 4.7dvh, 1.4rem) !important;
+    top: 35% !important;
+    left: 50.5% !important;
+    width: 46% !important;
+    font-size: clamp(1.08rem, 5dvh, 1.5rem) !important;
   }
 
   .hero-actions {
-    top: 45.5% !important;
-    left: 60% !important;
-    width: 31.5% !important;
-    gap: .34rem .32rem !important;
+    top: 49% !important;
+    left: 58.5% !important;
+    width: 34% !important;
+    gap: .4rem .36rem !important;
   }
 
   .hero-actions .btn-primary {
-    min-height: 2.7rem !important;
-    padding: .34rem .56rem !important;
+    min-height: 2.95rem !important;
+    padding: .4rem .62rem !important;
   }
 
   .hero-actions .btn-outline,
   .hero-actions .text-link {
-    min-height: 2.75rem !important;
+    min-height: 3.05rem !important;
   }
 }
