@@ -53,12 +53,13 @@
     padding: 0 !important;
   }
 
-  /* Landscape content refinement: slightly stronger and shifted left/lower. */
+  /* Exact requested landscape-only changes from the previous pass:
+     logo +18%; content 6 percentage points left / 5 points down. */
   .mobile-hero-logo {
     position: absolute !important;
-    top: 8.5% !important;
-    left: 55.5% !important;
-    width: 35.5% !important;
+    top: 13.5% !important;
+    left: 49.5% !important;
+    width: 41.89% !important;
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -76,22 +77,22 @@
     width: 100% !important;
     height: auto !important;
     max-width: 100% !important;
-    max-height: 27dvh !important;
+    max-height: 31.86dvh !important;
     object-fit: contain;
     filter: contrast(1.12) saturate(1.07) drop-shadow(0 1px 0 rgba(82, 11, 23, .14));
   }
 
   .hero h1 {
     position: absolute !important;
-    top: 37.5% !important;
-    left: 50.5% !important;
+    top: 42.5% !important;
+    left: 44.5% !important;
     width: 46% !important;
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     color: #65151f;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.24rem, 5.25dvh, 2.02rem) !important;
+    font-size: clamp(1.5128rem, 6.405dvh, 2.4644rem) !important;
     font-weight: 400;
     line-height: 1;
     letter-spacing: -.025em;
@@ -99,36 +100,41 @@
     white-space: nowrap;
   }
 
+  /* Width 35.5% -> 40.825% is exactly +15%, which makes each
+     secondary grid cell 15% wider when the gaps are also scaled 15%. */
   .hero-actions {
     position: absolute !important;
-    top: 51.5% !important;
-    left: 57.5% !important;
-    width: 35.5% !important;
+    top: 56.5% !important;
+    left: 51.5% !important;
+    width: 40.825% !important;
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: .48rem .42rem !important;
+    gap: .552rem .483rem !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .hero-actions .btn,
   .hero-actions .text-link {
-    width: auto !important;
     min-width: 0 !important;
     margin: 0 !important;
     box-shadow: none;
     text-decoration: none;
   }
 
+  /* Container grew 15%; 97.391304% of it yields exactly +12%
+     versus the previous full-width primary action. */
   .hero-actions .btn-primary {
     grid-column: 1 / -1;
-    min-height: 3.38rem !important;
+    width: 97.391304% !important;
+    justify-self: center;
+    min-height: 3.7856rem !important;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     align-items: center;
-    column-gap: .64rem;
-    padding: .5rem .74rem !important;
+    column-gap: .7296rem;
+    padding: .56rem .8288rem !important;
     border: 1px solid #d8a13a;
     border-radius: .55rem;
     background: linear-gradient(180deg, #741724 0%, #65131e 100%);
@@ -140,25 +146,25 @@
 
   .hero-actions .btn-primary .cta-icon {
     grid-row: 1 / 3;
-    width: 1.32rem;
-    height: 1.32rem;
+    width: 1.5048rem;
+    height: 1.5048rem;
     display: grid;
     place-items: center;
   }
 
   .hero-actions .btn-primary .cta-title {
     align-self: end;
-    font-size: clamp(.74rem, 2.9dvh, .94rem);
+    font-size: clamp(.8436rem, 3.306dvh, 1.0716rem);
     line-height: 1;
     letter-spacing: .05em;
   }
 
   .hero-actions .btn-primary .cta-phone {
     align-self: start;
-    margin-top: .18rem;
+    margin-top: .2052rem;
     color: #fff0d7;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(.72rem, 2.6dvh, .88rem);
+    font-size: clamp(.8208rem, 2.964dvh, 1.0032rem);
     font-weight: 400;
     line-height: 1;
     letter-spacing: .035em;
@@ -166,28 +172,29 @@
 
   .hero-actions .btn-outline,
   .hero-actions .text-link {
-    min-height: 3.62rem !important;
+    width: 100% !important;
+    min-height: 4.163rem !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: .24rem;
-    padding: .4rem .28rem !important;
+    gap: .2736rem;
+    padding: .46rem .322rem !important;
     border: 1px solid #c89331;
     border-radius: 0;
     background: rgba(255, 244, 221, .46);
     color: #65151f;
     text-transform: uppercase;
     letter-spacing: .045em;
-    font-size: clamp(.62rem, 2.3dvh, .76rem);
+    font-size: clamp(.7068rem, 2.622dvh, .8664rem);
     font-weight: 700;
     line-height: 1.05;
     text-align: center;
   }
 
   .hero-actions .cta-secondary-icon {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.482rem;
+    height: 1.482rem;
     color: #d3982c;
   }
 
@@ -200,32 +207,33 @@
 
 @media (orientation: landscape) and (max-height: 430px) {
   .mobile-hero-logo {
-    top: 6.5% !important;
-    left: 56.5% !important;
-    width: 34% !important;
+    top: 11.5% !important;
+    left: 50.5% !important;
+    width: 40.12% !important;
   }
 
   .hero h1 {
-    top: 35% !important;
-    left: 50.5% !important;
+    top: 40% !important;
+    left: 44.5% !important;
     width: 46% !important;
-    font-size: clamp(1.08rem, 5dvh, 1.5rem) !important;
+    font-size: clamp(1.3176rem, 6.1dvh, 1.83rem) !important;
   }
 
   .hero-actions {
-    top: 49% !important;
-    left: 58.5% !important;
-    width: 34% !important;
-    gap: .4rem .36rem !important;
+    top: 54% !important;
+    left: 52.5% !important;
+    width: 39.1% !important;
+    gap: .46rem .414rem !important;
   }
 
   .hero-actions .btn-primary {
-    min-height: 2.95rem !important;
-    padding: .4rem .62rem !important;
+    width: 97.391304% !important;
+    min-height: 3.304rem !important;
+    padding: .448rem .6944rem !important;
   }
 
   .hero-actions .btn-outline,
   .hero-actions .text-link {
-    min-height: 3.05rem !important;
+    min-height: 3.5075rem !important;
   }
 }
