@@ -1,0 +1,726 @@
+
+/* =========================================================
+   RUK THAI — DESKTOP TARGET
+   Desktop only.
+   Portrait + landscape remain untouched.
+   ========================================================= */
+
+.desktop-eyebrow,
+.desktop-ornament,
+.desktop-actions,
+.desktop-info,
+.desktop-footerline {
+  display: none;
+}
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  html,
+  body,
+  body.portrait-gateway,
+  #main {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #f3ddb5;
+  }
+
+  /* =========================
+     BACKGROUND — PRESERVE
+     ========================= */
+
+  .hero {
+    position: relative;
+    width: 100dvw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+
+    background:
+      #f3ddb5
+      url("assets/hero/hero-desktop.png")
+      left center / cover
+      no-repeat !important;
+  }
+
+  .hero-copy {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Shared content axis */
+  .mobile-hero-logo,
+  .desktop-eyebrow,
+  .hero h1,
+  .desktop-ornament,
+  .desktop-actions,
+  .desktop-info,
+  .desktop-footerline {
+    left: 68.2% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* =========================
+     LOGO
+     ========================= */
+
+  .mobile-hero-logo {
+    position: absolute !important;
+    top: 5.8% !important;
+
+    width: 45.5% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .mobile-hero-logo::before {
+    display: none !important;
+  }
+
+  .mobile-hero-logo img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  /* =========================
+     EYEBROW + TAGLINE
+     ========================= */
+
+  .desktop-eyebrow {
+    display: block;
+
+    position: absolute;
+    top: 32.6%;
+
+    width: 42%;
+
+    color: #751922;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(.9rem, 1.15vw, 1.35rem);
+    font-weight: 600;
+    letter-spacing: .28em;
+
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .desktop-eyebrow::before,
+  .desktop-eyebrow::after {
+    content: "◆";
+    display: inline-block;
+
+    margin: 0 1rem;
+
+    color: #bd8424;
+    font-size: .55em;
+
+    vertical-align: middle;
+  }
+
+  .hero h1 {
+    position: absolute !important;
+    top: 37.4% !important;
+
+    width: 44% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #681720 !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(2rem, 2.35vw, 3.1rem) !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: -.02em !important;
+
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* Mobile CTA does not belong on desktop */
+  .hero-actions {
+    display: none !important;
+  }
+
+  /* =========================
+     LARGE THAI ORNAMENT
+     ========================= */
+
+  .desktop-ornament {
+    position: absolute;
+    top: 43.6%;
+
+    width: 41%;
+    height: 7rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.2rem;
+
+    color: #b78127;
+  }
+
+  .desktop-ornament::before {
+    content: "❦";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #7b1824;
+
+    font-family: Georgia, serif;
+    font-size: 4.8rem;
+    line-height: 1;
+  }
+
+  .desktop-ornament span {
+    height: 1px;
+    flex: 1;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(184,126,29,.9),
+        rgba(184,126,29,.9),
+        transparent
+      );
+  }
+
+  .desktop-ornament b {
+    visibility: hidden;
+    width: 4.5rem;
+  }
+
+  /* =========================
+     MENU + DIRECTIONS
+     ========================= */
+
+  .desktop-actions {
+    position: absolute;
+    top: 55.2%;
+
+    width: 37.5%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.35rem;
+  }
+
+  .desktop-card {
+    position: relative;
+
+    min-height: 11.3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
+    padding: 1.4rem 1.2rem;
+
+    border: 1px solid #bd8428;
+
+    clip-path:
+      polygon(
+        14px 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        14px 100%,
+        0 calc(100% - 14px),
+        0 14px
+      );
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1.75rem, 2.05vw, 2.55rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .065em;
+
+    box-shadow:
+      0 .55rem 1.1rem rgba(80, 42, 15, .10),
+      inset 0 1px 0 rgba(255,255,255,.58);
+
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease;
+  }
+
+  .desktop-card::before,
+  .desktop-card::after {
+    position: absolute;
+    color: #c08a30;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .desktop-card::before {
+    content: "⌜";
+    top: .5rem;
+    left: .55rem;
+  }
+
+  .desktop-card::after {
+    content: "⌟";
+    right: .55rem;
+    bottom: .5rem;
+  }
+
+  .desktop-menu {
+    background:
+      linear-gradient(
+        180deg,
+        #861d2d 0%,
+        #691520 100%
+      );
+
+    color: #f3d789;
+
+    border-color: #d09a38;
+
+    box-shadow:
+      0 .7rem 1.3rem rgba(69, 22, 18, .18),
+      inset 0 1px 0 rgba(255,255,255,.09);
+  }
+
+  .desktop-directions {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,249,235,.90),
+        rgba(244,220,175,.58)
+      );
+
+    color: #691721;
+  }
+
+  .desktop-card-icon {
+    display: block;
+
+    color: #d59a31;
+
+    font-family: Georgia, serif;
+    font-size: 3.25rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .desktop-menu .desktop-card-icon {
+    color: #f1d386;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+
+    .desktop-card:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 .9rem 1.45rem rgba(74, 36, 13, .17),
+        inset 0 1px 0 rgba(255,255,255,.6);
+    }
+
+    .desktop-menu:hover {
+      box-shadow:
+        0 .95rem 1.55rem rgba(68, 20, 17, .22),
+        inset 0 1px 0 rgba(255,255,255,.1);
+    }
+  }
+
+  /* =========================
+     INFORMATION STRIP
+     ========================= */
+
+  .desktop-info {
+    position: absolute;
+    top: 79.8%;
+
+    width: 45%;
+
+    display: grid;
+    grid-template-columns: 1.45fr .85fr 1.25fr;
+
+    align-items: stretch;
+
+    border-top: 1px solid rgba(177,118,27,.50);
+    border-bottom: 1px solid rgba(177,118,27,.38);
+  }
+
+  .desktop-info-item {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.15rem 1.2rem;
+
+    color: #661720;
+
+    text-decoration: none;
+  }
+
+  .desktop-info-item + .desktop-info-item {
+    border-left: 1px solid rgba(177,118,27,.38);
+  }
+
+  .desktop-info-item div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: .28rem;
+  }
+
+  .desktop-info-item strong {
+    color: #651620;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(.9rem, 1vw, 1.18rem);
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 1.1;
+  }
+
+  .desktop-info-item span:not(.info-icon) {
+    color: #6b342c;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(.9rem, .92vw, 1.08rem);
+    line-height: 1.25;
+  }
+
+  .info-icon {
+    flex: 0 0 auto;
+
+    color: #b98024;
+
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .phone strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.15rem, 1.35vw, 1.55rem);
+    letter-spacing: .015em;
+  }
+
+  /* =========================
+     BOTTOM LINE
+     ========================= */
+
+  .desktop-footerline {
+    position: absolute;
+    top: 91.4%;
+
+    width: 39%;
+
+    display: block;
+
+    color: #721923;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(.82rem, .96vw, 1.08rem);
+    font-weight: 500;
+    letter-spacing: .27em;
+
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .desktop-footerline span {
+    display: inline-block;
+
+    margin: 0 .8rem;
+
+    color: #bd8427;
+  }
+
+}
+
+
+/* =========================================================
+   VERY WIDE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1500px) and (min-height: 760px) {
+
+  .mobile-hero-logo,
+  .desktop-eyebrow,
+  .hero h1,
+  .desktop-ornament,
+  .desktop-actions,
+  .desktop-info,
+  .desktop-footerline {
+    left: 68.5% !important;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET — PASS 2
+   Bring live page closer to approved visual target.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  /* -----------------------------------------
+     Slightly more breathing room under logo
+     ----------------------------------------- */
+
+  .desktop-eyebrow {
+    top: 33.7% !important;
+    font-size: clamp(1rem, 1.22vw, 1.45rem) !important;
+    letter-spacing: .30em !important;
+  }
+
+  .hero h1 {
+    top: 38.4% !important;
+    font-size: clamp(2.1rem, 2.45vw, 3.25rem) !important;
+  }
+
+
+  /* -----------------------------------------
+     Proper ornamental centrepiece
+     ----------------------------------------- */
+
+  .desktop-ornament {
+    top: 44.2% !important;
+    width: 40% !important;
+    height: 8.4rem !important;
+
+    gap: 0 !important;
+  }
+
+  .desktop-ornament span {
+    position: relative !important;
+    flex: 1 !important;
+
+    height: 1px !important;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(185,126,28,.22) 10%,
+        rgba(185,126,28,.9) 55%,
+        rgba(185,126,28,.9) 100%
+      ) !important;
+  }
+
+  .desktop-ornament span:last-of-type {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(185,126,28,.9) 0%,
+        rgba(185,126,28,.9) 45%,
+        rgba(185,126,28,.22) 90%,
+        transparent 100%
+      ) !important;
+  }
+
+  .desktop-ornament::before {
+    content: "♛" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 45% !important;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(180deg) !important;
+
+    color: #801824 !important;
+
+    font-family: Georgia, serif !important;
+    font-size: 5.4rem !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+
+    text-shadow:
+      0 1px 0 #d79b31,
+      0 -1px 0 rgba(255,255,255,.35) !important;
+
+    z-index: 2 !important;
+  }
+
+  .desktop-ornament::after {
+    content: "❧   ❧" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 64% !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 21rem !important;
+
+    color: #ba8128 !important;
+
+    font-family: Georgia, serif !important;
+    font-size: 2.6rem !important;
+    letter-spacing: 5.7rem !important;
+    line-height: 1 !important;
+
+    text-align: center !important;
+
+    z-index: 1 !important;
+  }
+
+  .desktop-ornament b {
+    display: block !important;
+    visibility: hidden !important;
+    width: 8.8rem !important;
+    flex: 0 0 8.8rem !important;
+  }
+
+
+  /* -----------------------------------------
+     Hero cards — much closer to target
+     ----------------------------------------- */
+
+  .desktop-actions {
+    top: 57.2% !important;
+
+    width: 38.5% !important;
+
+    gap: 1.4rem !important;
+  }
+
+  .desktop-card {
+    min-height: 10.8rem !important;
+
+    gap: 1rem !important;
+
+    border-radius: .45rem !important;
+
+    font-size: clamp(1.9rem, 2.15vw, 2.65rem) !important;
+
+    box-shadow:
+      0 .65rem 1.25rem rgba(79,42,14,.12),
+      inset 0 1px 0 rgba(255,255,255,.6) !important;
+  }
+
+  .desktop-menu {
+    border: 2px solid #bc8327 !important;
+
+    background:
+      linear-gradient(
+        155deg,
+        #8b1e2f 0%,
+        #741622 55%,
+        #62121d 100%
+      ) !important;
+  }
+
+  .desktop-directions {
+    border: 2px solid rgba(184,124,31,.70) !important;
+
+    background:
+      linear-gradient(
+        155deg,
+        rgba(255,251,240,.94) 0%,
+        rgba(251,233,199,.78) 100%
+      ) !important;
+  }
+
+  .desktop-card-icon {
+    font-size: 3.6rem !important;
+  }
+
+
+  /* -----------------------------------------
+     Make MENU especially obvious
+     ----------------------------------------- */
+
+  .desktop-menu span:last-child {
+    font-size: 1.08em !important;
+    letter-spacing: .08em !important;
+  }
+
+
+  /* -----------------------------------------
+     Information strip — larger and clearer
+     ----------------------------------------- */
+
+  .desktop-info {
+    top: 80.7% !important;
+
+    width: 44.5% !important;
+
+    grid-template-columns: 1.45fr .9fr 1.25fr !important;
+  }
+
+  .desktop-info-item {
+    min-height: 5rem !important;
+
+    gap: 1rem !important;
+
+    padding:
+      1.15rem
+      1.3rem !important;
+  }
+
+  .desktop-info-item strong {
+    font-size: clamp(1rem, 1.02vw, 1.22rem) !important;
+  }
+
+  .desktop-info-item span:not(.info-icon) {
+    font-size: clamp(.92rem, .96vw, 1.12rem) !important;
+  }
+
+  .info-icon {
+    font-size: 2.2rem !important;
+  }
+
+  .phone strong {
+    font-size: clamp(1.25rem, 1.45vw, 1.7rem) !important;
+  }
+
+
+  /* -----------------------------------------
+     Bottom descriptor
+     ----------------------------------------- */
+
+  .desktop-footerline {
+    top: 92.2% !important;
+
+    font-size: clamp(.86rem, 1vw, 1.15rem) !important;
+    letter-spacing: .28em !important;
+  }
+
+}
+

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>Ruk Thai | Thai Restaurant Greerton, Tauranga</title>
+<meta name="description" content="Ruk Thai in Greerton, Tauranga. View the menu, get directions, or call 07 579 6180.">
+<meta name="theme-color" content="#741d2b">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="mobile-portrait.css">
+<link rel="stylesheet" href="mobile-landscape.css">
+<link rel="stylesheet" href="desktop.css">
+</head>
+
+<body class="portrait-gateway">
+
+<main id="main">
+
+<section class="hero" aria-label="Ruk Thai landing page">
+
+  <div class="hero-copy">
+
+    <a class="mobile-hero-logo" href="index.html" aria-label="Ruk Thai home">
+      <img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">
+    </a>
+
+    <div class="desktop-eyebrow">AUTHENTIC THAI CUISINE</div>
+    <h1>Thai food in Greerton, Tauranga</h1>
+
+    <!-- MOBILE ACTIONS — preserved -->
+    <div class="hero-actions">
+
+      <a class="btn btn-primary"
+         href="tel:+6475796180"
+         aria-label="Call Ruk Thai on 07 579 6180">
+
+        <span class="cta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.8"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                     19.79 19.79 0 0 1-8.63-3.07
+                     19.5 19.5 0 0 1-6-6
+                     A19.79 19.79 0 0 1 2.12 4.18
+                     2 2 0 0 1 4.11 2h3
+                     a2 2 0 0 1 2 1.72
+                     c.12.9.33 1.78.62 2.63
+                     a2 2 0 0 1-.45 2.11
+                     L8 9.73a16 16 0 0 0 6 6
+                     l1.27-1.27a2 2 0 0 1 2.11-.45
+                     c.85.29 1.73.5 2.63.62
+                     A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+
+        <span class="cta-title">CALL TO ORDER</span>
+      </a>
+
+      <a class="btn btn-outline" href="menu.html">
+        <span class="cta-secondary-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.7"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M4 3.5h6a2 2 0 0 1 2 2V21
+                     a2.5 2.5 0 0 0-2.5-2.5H4z"/>
+            <path d="M20 3.5h-6a2 2 0 0 0-2 2V21
+                     a2.5 2.5 0 0 1 2.5-2.5H20z"/>
+            <path d="M6.5 7h3M6.5 10h3M14.5 7h3M14.5 10h3"/>
+          </svg>
+        </span>
+        <span>Menu</span>
+      </a>
+
+      <a class="text-link"
+         href="directions.html"
+         aria-label="Directions and location information for Ruk Thai">
+
+        <span class="cta-secondary-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a7 7 0 0 0-7 7
+                     c0 5.25 7 13 7 13s7-7.75 7-13
+                     a7 7 0 0 0-7-7zm0 9.4
+                     A2.4 2.4 0 1 1 12 6.6
+                     a2.4 2.4 0 0 1 0 4.8z"/>
+          </svg>
+        </span>
+
+        <span>Directions</span>
+      </a>
+
+    </div>
+
+
+    <!-- DESKTOP LANDING CONTENT -->
+
+    <div class="desktop-ornament" aria-hidden="true">
+      <span></span>
+      <b>◆</b>
+      <span></span>
+    </div>
+
+    <nav class="desktop-actions" aria-label="Primary">
+      <a class="desktop-card desktop-menu" href="menu.html">
+        <span class="desktop-card-icon" aria-hidden="true">▤</span>
+        <span>MENU</span>
+      </a>
+
+      <a class="desktop-card desktop-directions" href="directions.html">
+        <span class="desktop-card-icon" aria-hidden="true">●</span>
+        <span>DIRECTIONS</span>
+      </a>
+    </nav>
+
+    <div class="desktop-info" aria-label="Ruk Thai information">
+
+      <div class="desktop-info-item hours">
+        <span class="info-icon" aria-hidden="true">◷</span>
+        <div>
+          <strong>OPENING HOURS</strong>
+          <span>Monday closed</span>
+          <span>Tue–Sun · 11am–2pm · 4–9pm</span>
+        </div>
+      </div>
+
+      <a class="desktop-info-item phone"
+         href="tel:+6475796180"
+         aria-label="Phone Ruk Thai on 07 579 6180">
+        <span class="info-icon" aria-hidden="true">☎</span>
+        <div>
+          <strong>07 579 6180</strong>
+        </div>
+      </a>
+
+      <a class="desktop-info-item address"
+         href="directions.html">
+        <span class="info-icon" aria-hidden="true">●</span>
+        <div>
+          <strong>123 Chadwick Road</strong>
+          <span>Greerton, Tauranga</span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+</body>
+</html>

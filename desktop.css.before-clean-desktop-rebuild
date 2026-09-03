@@ -1,0 +1,868 @@
+/* =========================================================
+   RUK THAI — APPROVED DESKTOP LANDING TARGET
+   DESKTOP ONLY.
+   Mobile portrait + mobile landscape are intentionally untouched.
+   ========================================================= */
+
+.desktop-eyebrow,
+.desktop-ornament,
+.desktop-actions,
+.desktop-info,
+.desktop-footerline {
+    display: none;
+}
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    html,
+    body,
+    body.portrait-gateway,
+    #main {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
+        max-height: 100dvh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #f2d9ad;
+    }
+
+    body.portrait-gateway {
+        width: 100dvw;
+        max-width: 100dvw;
+    }
+
+    /* =====================================================
+       FULL SCREEN BACKGROUND
+       ===================================================== */
+
+    .hero {
+        position: relative !important;
+        isolation: isolate;
+        display: block !important;
+
+        width: 100dvw !important;
+        max-width: 100dvw !important;
+
+        height: 100dvh !important;
+        min-height: 100dvh !important;
+        max-height: 100dvh !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden !important;
+
+        background:
+            #f2d9ad
+            url("assets/hero/hero-desktop.png")
+            left center / cover
+            no-repeat !important;
+    }
+
+    .hero-copy {
+        position: absolute !important;
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        z-index: 2;
+    }
+
+    /* =====================================================
+       DESKTOP CONTENT AXIS
+       Target content sits around 67% of viewport width.
+       ===================================================== */
+
+    .mobile-hero-logo,
+    .desktop-eyebrow,
+    .hero h1,
+    .desktop-ornament,
+    .desktop-actions,
+    .desktop-info,
+    .desktop-footerline {
+        left: 67.2% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .mobile-hero-logo {
+        position: absolute !important;
+
+        top: 7.4% !important;
+
+        width: 53.5% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-decoration: none;
+        isolation: auto !important;
+    }
+
+    .mobile-hero-logo::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    .mobile-hero-logo img {
+        display: block !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        max-width: none !important;
+        max-height: none !important;
+
+        object-fit: contain !important;
+
+        filter:
+            contrast(1.08)
+            saturate(1.04)
+            drop-shadow(0 1px 0 rgba(91, 25, 17, .14));
+    }
+
+    /* =====================================================
+       AUTHENTIC THAI CUISINE
+       ===================================================== */
+
+    .desktop-eyebrow {
+        display: block !important;
+
+        position: absolute !important;
+
+        top: 35.8% !important;
+
+        width: 48% !important;
+
+        color: #711923;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(.9rem, 1.08vw, 1.35rem);
+        font-weight: 600;
+
+        line-height: 1;
+
+        letter-spacing: .31em;
+
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .desktop-eyebrow::before,
+    .desktop-eyebrow::after {
+        content: "❧";
+
+        display: inline-block;
+
+        margin: 0 1rem;
+
+        color: #bd8425;
+
+        font-family: Georgia, serif;
+        font-size: 1.1em;
+
+        vertical-align: -.05em;
+    }
+
+    .desktop-eyebrow::after {
+        transform: scaleX(-1);
+    }
+
+    /* =====================================================
+       HEADLINE
+       ===================================================== */
+
+    .hero h1 {
+        position: absolute !important;
+
+        top: 40.0% !important;
+
+        width: 47% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        color: #65151f !important;
+
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: clamp(2rem, 2.42vw, 3.25rem) !important;
+        font-weight: 400 !important;
+
+        line-height: 1 !important;
+        letter-spacing: -.025em !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    /* Existing mobile actions remain in HTML but not on desktop. */
+    .hero-actions {
+        display: none !important;
+    }
+
+    /* =====================================================
+       CENTRAL THAI ORNAMENT
+       ===================================================== */
+
+    .desktop-ornament {
+        display: flex !important;
+
+        position: absolute !important;
+
+        top: 44.3% !important;
+
+        width: 45% !important;
+        height: 10.4rem !important;
+
+        align-items: center;
+        justify-content: center;
+
+        pointer-events: none;
+    }
+
+    .desktop-ornament span {
+        position: relative;
+
+        flex: 1;
+
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(187,130,38,.10) 8%,
+                rgba(187,130,38,.72) 56%,
+                rgba(187,130,38,.88) 100%
+            );
+    }
+
+    .desktop-ornament span:last-of-type {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(187,130,38,.88) 0%,
+                rgba(187,130,38,.72) 44%,
+                rgba(187,130,38,.10) 92%,
+                transparent 100%
+            );
+    }
+
+    .desktop-ornament b {
+        visibility: hidden;
+
+        flex: 0 0 10rem;
+
+        width: 10rem;
+    }
+
+    .desktop-ornament::before {
+        content: "♛";
+
+        position: absolute;
+
+        left: 50%;
+        top: 48%;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(180deg);
+
+        z-index: 3;
+
+        color: #781823;
+
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 6.6rem;
+        font-weight: 400;
+
+        line-height: 1;
+
+        text-shadow:
+            0 1px 0 rgba(210,151,48,.95),
+            0 -1px 0 rgba(255,248,218,.55);
+    }
+
+    .desktop-ornament::after {
+        content: "❧        ❧";
+
+        position: absolute;
+
+        left: 50%;
+        top: 67%;
+
+        transform: translateX(-50%);
+
+        width: 31rem;
+
+        color: #b57d27;
+
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2.8rem;
+
+        line-height: 1;
+
+        text-align: center;
+        white-space: pre;
+
+        z-index: 2;
+    }
+
+    /* =====================================================
+       MENU + DIRECTIONS
+       ===================================================== */
+
+    .desktop-actions {
+        display: grid !important;
+
+        position: absolute !important;
+
+        top: 58.2% !important;
+
+        width: 45.2% !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, .96fr);
+
+        gap: 1.35rem;
+    }
+
+    .desktop-card {
+        position: relative;
+
+        min-height: 10.6rem;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: .8rem;
+
+        padding: 1.2rem 1rem;
+
+        border: 2px solid #c0872a;
+
+        clip-path:
+            polygon(
+                12px 0,
+                calc(100% - 12px) 0,
+                100% 12px,
+                100% calc(100% - 12px),
+                calc(100% - 12px) 100%,
+                12px 100%,
+                0 calc(100% - 12px),
+                0 12px
+            );
+
+        text-decoration: none;
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-size: clamp(1.65rem, 1.9vw, 2.35rem);
+        font-weight: 700;
+
+        line-height: 1;
+
+        letter-spacing: .055em;
+
+        text-align: center;
+
+        transition:
+            transform .18s ease,
+            box-shadow .18s ease;
+    }
+
+    .desktop-card::before,
+    .desktop-card::after {
+        position: absolute;
+
+        color: #c08a30;
+
+        font-family: Georgia, serif;
+        font-size: 1rem;
+
+        line-height: 1;
+    }
+
+    .desktop-card::before {
+        content: "⌜";
+
+        top: .45rem;
+        left: .5rem;
+    }
+
+    .desktop-card::after {
+        content: "⌟";
+
+        right: .5rem;
+        bottom: .45rem;
+    }
+
+    .desktop-menu {
+        color: #f2d68b;
+
+        border-color: #c38a2d;
+
+        background:
+            linear-gradient(
+                160deg,
+                #8a1d2e 0%,
+                #741622 54%,
+                #5e111a 100%
+            );
+
+        box-shadow:
+            0 .65rem 1.25rem rgba(66, 21, 16, .20),
+            inset 0 1px 0 rgba(255,255,255,.10);
+    }
+
+    .desktop-directions {
+        color: #6c1822;
+
+        background:
+            linear-gradient(
+                160deg,
+                rgba(255,250,238,.94) 0%,
+                rgba(248,226,186,.74) 100%
+            );
+
+        box-shadow:
+            0 .6rem 1.15rem rgba(77, 43, 18, .12),
+            inset 0 1px 0 rgba(255,255,255,.60);
+    }
+
+    .desktop-card-icon {
+        display: block;
+
+        color: #d39a31;
+
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 3.6rem;
+        font-weight: 400;
+
+        line-height: .9;
+    }
+
+    .desktop-menu .desktop-card-icon {
+        color: #edd080;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .desktop-card:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+    /* =====================================================
+       INFORMATION STRIP
+       ===================================================== */
+
+    .desktop-info {
+        display: grid !important;
+
+        position: absolute !important;
+
+        top: 81.0% !important;
+
+        width: 45.3% !important;
+
+        grid-template-columns:
+            1.25fr
+            .9fr
+            1.15fr;
+
+        align-items: stretch;
+
+        border-top: 1px solid rgba(177,118,27,.52);
+        border-bottom: 1px solid rgba(177,118,27,.34);
+    }
+
+    .desktop-info-item {
+        min-width: 0;
+        min-height: 5.1rem;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: .9rem;
+
+        padding: .9rem 1rem;
+
+        color: #651620;
+
+        text-decoration: none;
+    }
+
+    .desktop-info-item + .desktop-info-item {
+        border-left: 1px solid rgba(177,118,27,.44);
+    }
+
+    .desktop-info-item div {
+        min-width: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: .18rem;
+    }
+
+    .desktop-info-item strong {
+        color: #651620;
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-size: clamp(.78rem, .85vw, 1rem);
+        font-weight: 700;
+
+        line-height: 1.15;
+        letter-spacing: .02em;
+    }
+
+    .desktop-info-item span:not(.info-icon) {
+        color: #6c342c;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: clamp(.78rem, .82vw, .98rem);
+
+        line-height: 1.2;
+    }
+
+    .info-icon {
+        flex: 0 0 auto;
+
+        color: #b67d24;
+
+        font-family: Georgia, serif;
+
+        font-size: 2.15rem;
+
+        line-height: 1;
+    }
+
+    .phone strong {
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: clamp(1.08rem, 1.2vw, 1.45rem);
+
+        letter-spacing: .015em;
+    }
+
+    /* =====================================================
+       BOTTOM DESCRIPTOR
+       ===================================================== */
+
+    .desktop-footerline {
+        display: block !important;
+
+        position: absolute !important;
+
+        top: 92.6% !important;
+
+        width: 43% !important;
+
+        color: #741923;
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-size: clamp(.72rem, .88vw, 1rem);
+        font-weight: 600;
+
+        line-height: 1;
+
+        letter-spacing: .31em;
+
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .desktop-footerline span {
+        display: inline-block;
+
+        margin: 0 .85rem;
+
+        color: #b98126;
+    }
+}
+
+/* =========================================================
+   LARGE / WIDE DESKTOP
+   Keep target composition stable.
+   ========================================================= */
+
+@media (min-width: 1500px) and (min-height: 760px) {
+
+    .mobile-hero-logo,
+    .desktop-eyebrow,
+    .hero h1,
+    .desktop-ornament,
+    .desktop-actions,
+    .desktop-info,
+    .desktop-footerline {
+        left: 67.6% !important;
+    }
+
+    .mobile-hero-logo {
+        width: 52.5% !important;
+    }
+
+    .desktop-actions,
+    .desktop-info {
+        width: 44.5% !important;
+    }
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 01 — LOGO ONLY
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        left: 65.2% !important;
+        top: 8.6% !important;
+        width: 57.5% !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 02 — LOGO LOCK
+   Matched proportionally to approved target.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        top: 8.7% !important;
+        left: 61.1% !important;
+        width: 53.7% !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 02 — LOGO LOCK
+   Matched proportionally to approved target.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        top: 8.7% !important;
+        left: 61.1% !important;
+        width: 53.7% !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 03 — EYEBROW + HEADLINE
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .desktop-eyebrow {
+        top: 36.9% !important;
+        left: 61.1% !important;
+        width: 34% !important;
+        font-size: clamp(.92rem, 1.02vw, 1.18rem) !important;
+        letter-spacing: .34em !important;
+    }
+
+    .hero h1 {
+        top: 41.0% !important;
+        left: 61.1% !important;
+        width: 40% !important;
+        font-size: clamp(2.15rem, 2.5vw, 3.15rem) !important;
+        line-height: 1 !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 04 — LOGO VERTICAL LOCK
+   Clear the eyebrow exactly as in approved target.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        top: 4.2% !important;
+        left: 61.1% !important;
+        width: 53.7% !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 05 — LOGO FINAL RESPONSIVE LOCK
+   Scale against BOTH viewport width and height so wide
+   desktop screens preserve the approved target proportions.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        top: 8.5% !important;
+        left: 61.1% !important;
+        width: min(53.8vw, 93.3vh) !important;
+        max-width: none !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 06 — LOGO TRUE FINAL LOCK
+   Match visible approved target, accounting for transparent
+   space inside the logo PNG.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        top: 4.2% !important;
+        left: 61.1% !important;
+        width: 53.7vw !important;
+        max-width: none !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 07 — LOGO HORIZONTAL LOCK
+   Compensates for transparent space inside logo PNG.
+   Size and vertical position intentionally unchanged.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        left: 67.7% !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET TUNING 08 — LOGO HORIZONTAL FINAL
+   Width + vertical position locked.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .mobile-hero-logo {
+        left: 60% !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET FOUNDATION — 16:9 DESIGN STAGE
+   The approved desktop target is composed at 16:9.
+   On wider monitors, scale the artwork and live-content stage
+   by viewport HEIGHT instead of stretching everything by width.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .hero {
+        background-size: auto 100% !important;
+        background-position: left center !important;
+        background-repeat: no-repeat !important;
+        background-color: #f2d9ad !important;
+    }
+
+    .hero-copy {
+        inset: auto !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        width: min(100vw, 177.7778vh) !important;
+        height: 100vh !important;
+
+        max-width: none !important;
+
+        transform: none !important;
+    }
+
+    /* Reset logo onto the approved 16:9 stage.
+       All following desktop components will now use this same stage. */
+
+    .mobile-hero-logo {
+        top: 4.2% !important;
+        left: 60% !important;
+        width: 53.7% !important;
+        max-width: none !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET FOUNDATION 02 — CENTRE 16:9 STAGE
+   Removes the awkward right-side gap on ultrawide viewports.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    body.portrait-gateway,
+    #main {
+        background: #f2d9ad !important;
+    }
+
+    .hero {
+        background-position: center center !important;
+    }
+
+    .hero-copy {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+}
+
+/* =========================================================
+   DESKTOP TARGET FOUNDATION 03 — RESTORE FULL-VIEWPORT ART
+   Background fills browser again.
+   Live content will be tuned independently.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+    .hero {
+        width: 100vw !important;
+        height: 100vh !important;
+
+        background-image: url("assets/hero/hero-desktop.png") !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .hero-copy {
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        transform: none !important;
+    }
+
+}
