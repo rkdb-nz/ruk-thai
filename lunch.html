@@ -59,6 +59,9 @@ h1 { margin:0;font-family:Georgia,serif;font-size:clamp(3.4rem,7vw,6.8rem);font-
 .lunch-list strong { display:block;font-size:1rem;line-height:1.35; }
 .lunch-list span { display:block;margin-top:6px;color:#f3dfe2;font-size:.9rem; }
 .footer { padding:20px;text-align:center;color:#e5c77c;background:var(--deep);font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase; }
+@media(min-width:761px) {
+  .actions .action[href^="tel:"] { display:none; }
+}
 @media(max-width:760px) {
   .masthead { min-height:108px;border-top-width:5px; }
   .masthead::before,.masthead::after { width:15vw; }
