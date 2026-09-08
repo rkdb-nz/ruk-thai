@@ -715,7 +715,7 @@
 
   /* Button group. */
   .desktop-actions {
-    left: 38.795% !important;
+    left: 62% !important;
     top: 57.3% !important;
     width: 46.41% !important;
     height: 17.75% !important;
@@ -1146,7 +1146,7 @@
 /* Desktop buttons — approved design, 8% size reduction */
 @media (min-width: 901px) {
   .desktop-actions {
-    transform: scale(.86) !important;
+    transform: translateX(-50%) scale(.86) !important;
     transform-origin: center center !important;
   }
 }
