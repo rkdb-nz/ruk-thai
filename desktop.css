@@ -1284,6 +1284,7 @@
 
   /* Same width; slightly shorter and lower. */
   .mobile-hero-logo {
+    left: 34.225% !important;
     top: 4.05% !important;
     transform: scaleY(.89) !important;
     transform-origin: top left !important;
@@ -1309,11 +1310,13 @@
     margin-left: 1.3rem !important;
   }
 
-  /* Slightly wider, centred left and lowered. */
+  /* Centre the rendered headline itself on the shared composition axis. */
   .hero h1 {
-    left: 38.65% !important;
+    left: 62% !important;
     top: 39.15% !important;
-    width: 46.8% !important;
+    width: max-content !important;
+
+    transform: translateX(-50%) !important;
 
     font-size: clamp(2.15rem, 3.5vw, 3.9rem) !important;
   }
