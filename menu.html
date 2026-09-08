@@ -87,7 +87,14 @@ body.menu-page { color:#35191e; background:var(--menu-cream); }
 .menu-page .menu-nav .lunch-nav-link { color:#f1ce70;background:var(--menu-burgundy); }
 
 .menu-page .lunch { margin-top:0; }
-.menu-page .menu-wrap { padding-top:clamp(42px,6vw,82px); }
+.menu-page .menu-wrap { padding-top:clamp(30px,3.5vw,52px); }
+@media (min-width:701px) {
+  .menu-page .menu-wrap { padding-top:38px; }
+  .menu-page .menu-heading .eyebrow { margin-bottom:4px; }
+  .menu-page .menu-heading h2 { margin-top:0; margin-bottom:20px; line-height:1; }
+  .menu-page .menu-nav { margin:18px 0 10px; }
+  .menu-page .menu-section { padding-top:28px; }
+}
 .menu-page .menu-heading { max-width:780px; margin-inline:auto; text-align:center; }
 .menu-page .menu-heading .eyebrow {
   margin-bottom:12px;
