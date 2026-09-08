@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 :root { --menu-burgundy:#741d2b; --menu-dark:#4c111d; --menu-gold:#b7934a; --menu-cream:#f6efdf; }
-html { scroll-behavior:smooth; }
-body.menu-page { margin:0; color:#35191e; background:var(--menu-cream); }
+html { height:auto!important; min-height:100%!important; max-height:none!important; overflow-x:hidden!important; overflow-y:auto!important; overscroll-behavior:auto!important; scroll-behavior:smooth; }
+body.menu-page, body.menu-page #main { width:100%!important; height:auto!important; min-height:100%!important; max-height:none!important; margin:0; overflow-x:hidden!important; overflow-y:visible!important; overscroll-behavior:auto!important; }
+body.menu-page { color:#35191e; background:var(--menu-cream); }
 .menu-page-header {
   position:sticky; top:0; z-index:50;
   min-height:82px; padding:12px clamp(18px,4vw,56px);
