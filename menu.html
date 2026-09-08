@@ -13,38 +13,55 @@ html { height:auto!important; min-height:100%!important; max-height:none!importa
 body.menu-page, body.menu-page #main { width:100%!important; height:auto!important; min-height:100%!important; max-height:none!important; margin:0; overflow-x:hidden!important; overflow-y:visible!important; overscroll-behavior:auto!important; }
 body.menu-page { color:#35191e; background:var(--menu-cream); }
 .menu-page-header {
-  position:sticky; top:0; z-index:50;
-  min-height:82px; padding:12px clamp(18px,4vw,56px);
-  display:flex; align-items:center; justify-content:space-between; gap:22px;
-  border-bottom:1px solid rgba(183,147,74,.65);
-  background:rgba(246,239,223,.96);
-  box-shadow:0 8px 24px rgba(76,17,29,.12);
-  backdrop-filter:blur(12px);
-}
-.menu-page-logo { display:block; width:clamp(150px,18vw,230px); }
-.menu-page-logo img { display:block; width:100%; height:auto; }
-.menu-page-actions { display:flex; align-items:center; gap:12px; }
-.menu-page-actions a {
-  color:var(--menu-burgundy);
-  font:700 .76rem/1 Arial,sans-serif;
-  letter-spacing:.08em;
-  text-decoration:none;
-  text-transform:uppercase;
-}
-.menu-page-actions .call {
-  min-height:42px; padding:12px 17px;
+  position:relative; z-index:50;
+  min-height:clamp(128px,12vw,176px);
+  padding:24px clamp(22px,5vw,72px);
   display:grid; place-items:center;
-  border:1px solid #d8bb70;
-  color:#fffaf0; background:var(--menu-burgundy);
-  box-shadow:0 4px 0 rgba(76,17,29,.25);
-  clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px);
+  overflow:hidden;
+  border-top:7px solid var(--menu-burgundy);
+  border-bottom:1px solid rgba(183,147,74,.9);
+  background:
+    radial-gradient(ellipse at center, rgba(255,252,241,.98) 0%, rgba(248,231,190,.92) 50%, rgba(226,194,128,.58) 100%),
+    repeating-linear-gradient(0deg, rgba(116,29,43,.018) 0 1px, transparent 1px 4px);
+  box-shadow:0 9px 30px rgba(76,17,29,.16);
 }
+.menu-page-header::before,
+.menu-page-header::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  width:min(28vw,390px);
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--menu-gold));
+}
+.menu-page-header::before { left:4vw; }
+.menu-page-header::after { right:4vw; transform:rotate(180deg); }
+.menu-page-logo {
+  position:relative; z-index:2;
+  display:block;
+  width:clamp(230px,25vw,360px);
+  padding:9px 20px;
+  filter:drop-shadow(0 5px 8px rgba(76,17,29,.12));
+}
+.menu-page-logo::before,
+.menu-page-logo::after {
+  content:"◆";
+  position:absolute;
+  top:50%;
+  color:var(--menu-gold);
+  font-size:8px;
+  transform:translateY(-50%) rotate(45deg);
+}
+.menu-page-logo::before { left:-22px; }
+.menu-page-logo::after { right:-22px; }
+.menu-page-logo img { display:block; width:100%; height:auto; }
+.menu-page-actions { display:none; }
 .menu-page-main { overflow:hidden; }
 .menu-page .lunch { margin-top:0; }
 .menu-page .menu-wrap { padding-top:clamp(42px,6vw,82px); }
 .menu-page .menu-heading { max-width:780px; margin-inline:auto; text-align:center; }
 .menu-page .menu-heading h2 { color:var(--menu-burgundy); }
-.menu-page .menu-nav { top:82px; }
+.menu-page .menu-nav { top:0; }
 .menu-page-footer {
   padding:34px 20px 96px;
   color:#fffaf0; background:var(--menu-dark);
@@ -64,11 +81,14 @@ body.menu-page { color:#35191e; background:var(--menu-cream); }
   clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px);
 }
 @media (max-width:700px) {
-  .menu-page-header { min-height:70px; padding:10px 13px; }
-  .menu-page-logo { width:140px; }
-  .menu-page-actions > a:not(.call) { display:none; }
-  .menu-page-actions .call { min-height:40px; padding:11px 13px; font-size:.69rem; }
-  .menu-page .menu-nav { top:70px; }
+  .menu-page-header { min-height:112px; padding:18px 36px; border-top-width:5px; }
+  .menu-page-header::before, .menu-page-header::after { width:17vw; }
+  .menu-page-header::before { left:2vw; }
+  .menu-page-header::after { right:2vw; }
+  .menu-page-logo { width:min(245px,68vw); padding:7px 12px; }
+  .menu-page-logo::before { left:-10px; }
+  .menu-page-logo::after { right:-10px; }
+  .menu-page .menu-nav { top:0; }
   .menu-page .lunch { padding-top:38px; }
 }
 </style>
@@ -78,11 +98,6 @@ body.menu-page { color:#35191e; background:var(--menu-cream); }
   <a class="menu-page-logo" href="index.html" aria-label="Ruk Thai home">
     <img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">
   </a>
-  <nav class="menu-page-actions" aria-label="Menu actions">
-    <a href="directions.html">Directions</a>
-    <a href="index.html">Home</a>
-    <a class="call" href="tel:+6475796180">Call to order</a>
-  </nav>
 </header>
 <main class="menu-page-main" id="main">
 <section class="lunch" id="lunch-special"><div class="lunch-copy"><p class="eyebrow">Lunch special</p><h2>$17.00 Lunch Special</h2><p class="lunch-time">Available from 11am – 2pm</p><p>Choose from twelve lunch options, including curry, noodles, fried rice and satay.</p><a class="btn btn-primary" href="tel:+6475796180">Call to Order</a></div><ol class="lunch-list"><li><strong>1. Green Curry on Rice or Noodles</strong><span>Chicken, pork or Beef</span></li><li><strong>2. Red Curry on Rice or Noodles</strong><span>Chicken, pork or Beef</span></li><li><strong>3. Pad Thai</strong><span>Chicken, pork or beef</span></li><li><strong>4. Fried Rice</strong><span>Chicken, pork or Beef</span></li><li><strong>5. Chicken Satay + Rice + Veg</strong></li><li><strong>6. Noodle Soup (Pho)</strong><span>Chicken, Pork or Beef</span></li><li><strong>7. Laksa</strong><span>Chicken, Pork or Beef</span></li><li><strong>8. Spicy Noodles</strong><span>Chicken, Pork or Beef</span></li><li><strong>9. Mie Goreng</strong><span>Chicken, Pork or Beef</span></li><li><strong>10. Nasi Goreng</strong><span>Chicken, Pork or Beef</span></li><li><strong>11. Guay Tiew Kua</strong><span>Chicken, Pork or Beef</span></li><li><strong>12. Pad See Eiw</strong><span>Chicken, Pork or Beef</span></li></ol></section>
