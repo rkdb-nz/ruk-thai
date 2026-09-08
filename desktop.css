@@ -13,7 +13,7 @@
 }
 
 
-@media (min-width: 901px) and (min-height: 601px) {
+@media (min-width: 901px) {
 
   html,
   body,
@@ -644,12 +644,16 @@
 }
 
 /* =========================================================
-   DESKTOP TARGET — STAGE GEOMETRY CORRECTION
-   Preserve the complete approved 1672 × 941 composition.
+
+/* =========================================================
+   DESKTOP TARGET — FINAL VIEWPORT-MATCHED PASS
+   Reference composition: 1672 × 941
+   Mobile files and mobile layouts are untouched.
    ========================================================= */
 
-@media (min-width: 901px) and (min-height: 601px) {
+@media (min-width: 901px) {
 
+  /* The complete target must remain visible at wider screens. */
   .hero {
     background-position: center center !important;
     background-size: 100% 100% !important;
@@ -658,470 +662,80 @@
   .hero-copy {
     left: 0 !important;
     top: 0 !important;
-
     width: 100vw !important;
     height: 100vh !important;
-
     aspect-ratio: auto !important;
-
     transform: none !important;
   }
 
-}
-
-
-/* =========================================================
-   DESKTOP TARGET — BUTTONS FINAL PASS
-   BUTTONS ONLY.
-   ========================================================= */
-
-@media (min-width: 901px) and (min-height: 601px) {
-
-  /* Exact target button group proportions */
-  .desktop-actions {
-    left: 36.60% !important;
-    top: 56.65% !important;
-    width: 45.70% !important;
-    height: 17.45% !important;
-
-    grid-template-columns: 1.0413fr 1fr !important;
-    gap: 2.85% !important;
+  /* Logo. */
+  .mobile-hero-logo {
+    left: 34.15% !important;
+    top: 4.35% !important;
+    width: 55.55% !important;
   }
 
-
-  /* ---------- SHARED CARD GEOMETRY ---------- */
-
-  .desktop-card {
-    position: relative !important;
-
-    gap: 9% !important;
-    padding: 4.2% 5% !important;
-
-    border: 2px solid #c48a28 !important;
-    border-radius: 0 !important;
-
-    clip-path:
-      polygon(
-        8px 0,
-        calc(100% - 8px) 0,
-        100% 8px,
-        100% calc(100% - 8px),
-        calc(100% - 8px) 100%,
-        8px 100%,
-        0 calc(100% - 8px),
-        0 8px
-      ) !important;
-
-    font-family: Arial, Helvetica, sans-serif !important;
-
-    font-size: clamp(2rem, 2.55vw, 2.8rem) !important;
-    font-weight: 700 !important;
-
-    line-height: .92 !important;
-    letter-spacing: .025em !important;
-
-    text-shadow: none !important;
-
-    overflow: hidden;
+  /* Authentic Thai Cuisine. */
+  .desktop-eyebrow {
+    left: 41.6% !important;
+    top: 34.75% !important;
+    width: 40% !important;
+    font-size: clamp(.85rem, 1.13vw, 1.35rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: .31em !important;
   }
 
-
-  /* Fine inner gold frame */
-  .desktop-card::before {
-    content: "" !important;
-
-    position: absolute !important;
-    inset: 5px !important;
-
-    width: auto !important;
-    height: auto !important;
-
-    border:
-      1px solid rgba(205, 151, 53, .82) !important;
-
-    clip-path:
-      polygon(
-        5px 0,
-        calc(100% - 5px) 0,
-        100% 5px,
-        100% calc(100% - 5px),
-        calc(100% - 5px) 100%,
-        5px 100%,
-        0 calc(100% - 5px),
-        0 5px
-      );
-
-    pointer-events: none;
+  .eyebrow-flourish {
+    margin-right: 1.2rem !important;
+    font-size: 1.25em !important;
   }
 
-
-  /* Four target-style corner ornaments */
-  .desktop-card::after {
-    content: "" !important;
-
-    position: absolute !important;
-    inset: 7px !important;
-
-    width: auto !important;
-    height: auto !important;
-
-    border: 0 !important;
-
-    background:
-      /* top left */
-      linear-gradient(#d29a37,#d29a37) left top / 13px 1px no-repeat,
-      linear-gradient(#d29a37,#d29a37) left top / 1px 13px no-repeat,
-
-      /* top right */
-      linear-gradient(#d29a37,#d29a37) right top / 13px 1px no-repeat,
-      linear-gradient(#d29a37,#d29a37) right top / 1px 13px no-repeat,
-
-      /* bottom left */
-      linear-gradient(#d29a37,#d29a37) left bottom / 13px 1px no-repeat,
-      linear-gradient(#d29a37,#d29a37) left bottom / 1px 13px no-repeat,
-
-      /* bottom right */
-      linear-gradient(#d29a37,#d29a37) right bottom / 13px 1px no-repeat,
-      linear-gradient(#d29a37,#d29a37) right bottom / 1px 13px no-repeat;
-
-    pointer-events: none;
+  .eyebrow-flourish-right {
+    margin-right: 0 !important;
+    margin-left: 1.2rem !important;
   }
 
-
-  /* ---------- MENU ---------- */
-
-  .desktop-menu {
-    color: #f3d78b !important;
-
-    background:
-      radial-gradient(
-        ellipse at 50% 0%,
-        rgba(159, 47, 55, .34) 0%,
-        rgba(159, 47, 55, 0) 52%
-      ),
-      linear-gradient(
-        180deg,
-        #771622 0%,
-        #69111c 52%,
-        #581018 100%
-      ) !important;
-
-    border-color: #c8902e !important;
-
-    box-shadow:
-      0 7px 13px rgba(74, 31, 15, .22),
-      inset 0 1px 0 rgba(255,255,255,.10),
-      inset 0 -1px 0 rgba(61, 8, 15, .40) !important;
-  }
-
-
-  .desktop-menu .desktop-card-icon {
-    width: 19.5% !important;
-    min-width: 0 !important;
-
-    color: #edce75 !important;
-  }
-
-
-  .desktop-menu .desktop-card-icon svg {
-    filter:
-      drop-shadow(0 1px 0 rgba(82, 31, 7, .20));
-  }
-
-
-  /* ---------- DIRECTIONS ---------- */
-
-  .desktop-directions {
-    color: #64151f !important;
-
-    background:
-      radial-gradient(
-        ellipse at 38% 20%,
-        rgba(255,255,255,.58) 0%,
-        rgba(255,255,255,0) 48%
-      ),
-      linear-gradient(
-        145deg,
-        #fff7e6 0%,
-        #f7e7c4 54%,
-        #efd5a6 100%
-      ) !important;
-
-    border-color: #c78e2d !important;
-
-    box-shadow:
-      0 7px 13px rgba(79, 45, 17, .16),
-      inset 0 1px 0 rgba(255,255,255,.88),
-      inset 0 -1px 0 rgba(185, 126, 35, .15) !important;
-  }
-
-
-  .desktop-directions .desktop-card-icon {
-    width: 15.5% !important;
-    min-width: 0 !important;
-
-    color: #d49626 !important;
-  }
-
-
-  /* Kill previous hover movement so target stays visually fixed */
-  .desktop-card:hover {
-    transform: none !important;
-  }
-
-}
-
-
-/* =========================================================
-   DESKTOP TARGET — AUTHENTIC ORNAMENTAL BUTTON CORNERS
-   Corners only.
-   ========================================================= */
-
-@media (min-width: 901px) and (min-height: 601px) {
-
-  /*
-     Keep the fine inner frame.
-     Slightly inset it so the corner ornaments sit cleanly
-     inside the outer gold edge.
-  */
-  .desktop-card::before {
-    inset: 4px !important;
-
-    border: 1px solid rgba(199, 142, 43, .72) !important;
-
-    clip-path:
-      polygon(
-        6px 0,
-        calc(100% - 6px) 0,
-        100% 6px,
-        100% calc(100% - 6px),
-        calc(100% - 6px) 100%,
-        6px 100%,
-        0 calc(100% - 6px),
-        0 6px
-      ) !important;
-  }
-
-
-  /*
-     Full-card ornamental SVG.
-     Four mirrored Thai-style corner flourishes,
-     matching the approved target much more closely
-     than the previous straight L brackets.
-  */
-  .desktop-card::after {
-    content: "" !important;
-
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    border: 0 !important;
-
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 400' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23d19a39' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- TOP LEFT --%3E%3Cpath d='M9 56 L9 24 Q9 10 23 10 L62 10'/%3E%3Cpath d='M18 43 Q29 42 28 29 Q27 20 39 20 Q48 20 43 30 Q39 38 29 35'/%3E%3Cpath d='M18 18 Q28 18 31 10'/%3E%3Cpath d='M46 10 Q50 19 59 20'/%3E%3C!-- TOP RIGHT --%3E%3Cpath d='M991 56 L991 24 Q991 10 977 10 L938 10'/%3E%3Cpath d='M982 43 Q971 42 972 29 Q973 20 961 20 Q952 20 957 30 Q961 38 971 35'/%3E%3Cpath d='M982 18 Q972 18 969 10'/%3E%3Cpath d='M954 10 Q950 19 941 20'/%3E%3C!-- BOTTOM LEFT --%3E%3Cpath d='M9 344 L9 376 Q9 390 23 390 L62 390'/%3E%3Cpath d='M18 357 Q29 358 28 371 Q27 380 39 380 Q48 380 43 370 Q39 362 29 365'/%3E%3Cpath d='M18 382 Q28 382 31 390'/%3E%3Cpath d='M46 390 Q50 381 59 380'/%3E%3C!-- BOTTOM RIGHT --%3E%3Cpath d='M991 344 L991 376 Q991 390 977 390 L938 390'/%3E%3Cpath d='M982 357 Q971 358 972 371 Q973 380 961 380 Q952 380 957 370 Q961 362 971 365'/%3E%3Cpath d='M982 382 Q972 382 969 390'/%3E%3Cpath d='M954 390 Q950 381 941 380'/%3E%3C/g%3E%3C/svg%3E") !important;
-
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: 100% 100% !important;
-
-    pointer-events: none !important;
-
-    z-index: 3;
-  }
-
-
-  /*
-     Slightly stronger outer gold edge,
-     as in the target.
-  */
-  .desktop-card {
-    border-color: #bd8226 !important;
-
-    box-shadow:
-      0 6px 12px rgba(72, 34, 15, .17),
-      inset 0 1px 0 rgba(255,255,255,.12) !important;
-  }
-
-
-  .desktop-directions {
-    box-shadow:
-      0 6px 12px rgba(74, 42, 17, .13),
-      inset 0 1px 0 rgba(255,255,255,.78) !important;
-  }
-
-}
-
-/* =========================================================
-   DESKTOP TARGET — BUTTON CUTAWAY / SHADOW CORRECTION
-   BUTTONS ONLY
-   ========================================================= */
-
-@media (min-width: 901px) and (min-height: 601px) {
-
-  .desktop-actions {
-    left: 36.6% !important;
-    top: 56.6% !important;
-    width: 45.7% !important;
-    height: 17.45% !important;
-    grid-template-columns: 1.045fr 1fr !important;
-    gap: 2.7% !important;
-  }
-
-  .desktop-card {
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: column !important;
-
-    padding: 0 !important;
-    gap: 0.75rem !important;
-
-    border: 1.5px solid #c88d2e !important;
-    border-radius: 0 !important;
-
-    clip-path: polygon(
-      16px 0,
-      calc(100% - 16px) 0,
-      100% 16px,
-      100% calc(100% - 16px),
-      calc(100% - 16px) 100%,
-      16px 100%,
-      0 calc(100% - 16px),
-      0 16px
-    ) !important;
-
-    overflow: hidden !important;
-
-    box-shadow: none !important;
-    filter: drop-shadow(0 5px 7px rgba(85, 46, 20, 0.28)) !important;
-
-    transform: none !important;
-  }
-
-  .desktop-card:hover {
-    transform: none !important;
-    filter: drop-shadow(0 5px 7px rgba(85, 46, 20, 0.28)) !important;
-  }
-
-  .desktop-card::before {
-    content: "" !important;
-    position: absolute !important;
-    inset: 4px !important;
-
-    border: 1px solid rgba(209, 154, 57, 0.9) !important;
-
-    clip-path: polygon(
-      10px 0,
-      calc(100% - 10px) 0,
-      100% 10px,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      10px 100%,
-      0 calc(100% - 10px),
-      0 10px
-    ) !important;
-
-    background: none !important;
-    pointer-events: none !important;
-    z-index: 2 !important;
-  }
-
-  .desktop-card::after {
-    content: "" !important;
-    position: absolute !important;
-    inset: 7px !important;
-    width: auto !important;
-    height: auto !important;
-    border: 0 !important;
-    pointer-events: none !important;
-    z-index: 3 !important;
-
-    background:
-      linear-gradient(#d39a39,#d39a39) left 0 top 0 / 10px 1px no-repeat,
-      linear-gradient(#d39a39,#d39a39) left 0 top 0 / 1px 10px no-repeat,
-
-      linear-gradient(#d39a39,#d39a39) right 0 top 0 / 10px 1px no-repeat,
-      linear-gradient(#d39a39,#d39a39) right 0 top 0 / 1px 10px no-repeat,
-
-      linear-gradient(#d39a39,#d39a39) left 0 bottom 0 / 10px 1px no-repeat,
-      linear-gradient(#d39a39,#d39a39) left 0 bottom 0 / 1px 10px no-repeat,
-
-      linear-gradient(#d39a39,#d39a39) right 0 bottom 0 / 10px 1px no-repeat,
-      linear-gradient(#d39a39,#d39a39) right 0 bottom 0 / 1px 10px no-repeat;
-  }
-
-  .desktop-menu {
-    background:
-      radial-gradient(circle at 50% 14%, rgba(173, 46, 58, 0.22) 0%, rgba(173, 46, 58, 0) 40%),
-      linear-gradient(180deg, #801726 0%, #73131f 50%, #5d1019 100%) !important;
-    border-color: #bb8327 !important;
-    color: #f1d684 !important;
-  }
-
-  .desktop-directions {
-    background:
-      linear-gradient(180deg, #fff9ec 0%, #f5e7c5 100%) !important;
-    border-color: #c38a2b !important;
-    color: #681621 !important;
-  }
-
-  .desktop-menu .desktop-card-icon {
-    width: 15.8% !important;
-    min-width: 0 !important;
-    color: #efcf78 !important;
-    margin-bottom: 0.15rem !important;
-  }
-
-  .desktop-directions .desktop-card-icon {
-    width: 12.2% !important;
-    min-width: 0 !important;
-    color: #d89a28 !important;
-    margin-bottom: 0.15rem !important;
-  }
-
-  .desktop-card > span:last-child {
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: clamp(1.2rem, 2.15vw, 2.2rem) !important;
-    font-weight: 700 !important;
+  /* Headline. */
+  .hero h1 {
+    left: 42.1% !important;
+    top: 39.15% !important;
+    width: 38.8% !important;
+    font-size: clamp(1.9rem, 2.58vw, 3rem) !important;
     line-height: 1 !important;
-    letter-spacing: 0.02em !important;
+    letter-spacing: -.026em !important;
   }
 
-}
+  /* Central ornament. */
+  .desktop-ornament {
+    left: 36.3% !important;
+    top: 42.15% !important;
+    width: 52.5% !important;
+    height: 14.15% !important;
+  }
 
-/* =========================================================
-   DESKTOP TARGET — TRUE BUTTON SHELL
-   Rebuilds the MENU / DIRECTIONS card shell properly.
-   Buttons only.
-   ========================================================= */
-
-@media (min-width: 901px) and (min-height: 601px) {
-
+  /* Button group. */
   .desktop-actions {
-    left: 36.60% !important;
-    top: 56.62% !important;
-    width: 45.68% !important;
-    height: 17.48% !important;
-    grid-template-columns: 1.04fr 1fr !important;
-    gap: 2.95% !important;
+    left: 37.02% !important;
+    top: 57.3% !important;
+    width: 46.41% !important;
+    height: 17.75% !important;
+    grid-template-columns: 1.06fr 1fr !important;
+    gap: 2.58% !important;
   }
 
   .desktop-card {
-    --cut: 15px;
+    --cut: clamp(11px, .72vw, 14px);
 
     position: relative !important;
     isolation: isolate !important;
+    overflow: visible !important;
 
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
 
-    gap: 0.62rem !important;
+    gap: clamp(.75rem, 1.45vh, 1rem) !important;
     padding: 0 !important;
 
     background: transparent !important;
@@ -1130,8 +744,6 @@
     clip-path: none !important;
     box-shadow: none !important;
     filter: none !important;
-
-    overflow: visible !important;
     transform: none !important;
   }
 
@@ -1141,13 +753,16 @@
     filter: none !important;
   }
 
-  /* front plate + real shadow */
+  /* Solid cutaway plate and visible target shadow. */
   .desktop-card::before {
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
     z-index: 0 !important;
-    pointer-events: none !important;
+
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
 
     clip-path: polygon(
       var(--cut) 0,
@@ -1160,20 +775,30 @@
       0 var(--cut)
     ) !important;
 
-    filter: drop-shadow(0 5px 7px rgba(84, 45, 20, 0.30)) !important;
+    filter:
+      drop-shadow(0 5px 2px rgba(70, 33, 12, .42))
+      drop-shadow(2px 2px 1px rgba(116, 67, 20, .28)) !important;
+
+    pointer-events: none !important;
   }
 
-  /* gold border + inner line + corner ornaments */
+  /* Double border and curled corner decoration. */
   .desktop-card::after {
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
     z-index: 1 !important;
-    pointer-events: none !important;
 
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 430 168' preserveAspectRatio='none'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='%23b97618' stroke-width='2' d='M13 1H417L429 13V155L417 167H13L1 155V13Z'/%3E%3Cpath stroke='%23d6a13e' stroke-width='1' d='M17 5H413L425 17V151L413 163H17L5 151V17Z'/%3E%3Cg stroke='%23d6a13e' stroke-width='1.4'%3E%3Cpath d='M9 29Q9 10 29 10H42M15 24Q26 24 25 15Q25 11 30 11Q35 12 32 17Q29 23 23 20'/%3E%3Cpath d='M421 29Q421 10 401 10H388M415 24Q404 24 405 15Q405 11 400 11Q395 12 398 17Q401 23 407 20'/%3E%3Cpath d='M9 139Q9 158 29 158H42M15 144Q26 144 25 153Q25 157 30 157Q35 156 32 151Q29 145 23 148'/%3E%3Cpath d='M421 139Q421 158 401 158H388M415 144Q404 144 405 153Q405 157 400 157Q395 156 398 151Q401 145 407 148'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: 100% 100% !important;
+
+    pointer-events: none !important;
   }
 
   .desktop-card > * {
@@ -1183,49 +808,715 @@
 
   .desktop-menu::before {
     background:
-      radial-gradient(circle at 50% 22%, rgba(176, 42, 57, 0.20) 0%, rgba(176, 42, 57, 0) 42%),
-      linear-gradient(180deg, #7d1524 0%, #6d121e 54%, #5a1019 100%) !important;
+      radial-gradient(
+        ellipse at 45% 3%,
+        rgba(173, 52, 62, .32) 0%,
+        rgba(173, 52, 62, 0) 53%
+      ),
+      linear-gradient(
+        145deg,
+        #811c2a 0%,
+        #68131d 58%,
+        #4e0d15 100%
+      ) !important;
   }
 
   .desktop-directions::before {
     background:
-      radial-gradient(circle at 50% 18%, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0) 44%),
-      linear-gradient(180deg, #fff9eb 0%, #f5e7c7 100%) !important;
-  }
-
-  .desktop-menu::after,
-  .desktop-directions::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 430 172' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23d8a03b' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke-width='2' d='M16 1H414L429 16V156L414 171H16L1 156V16Z'/%3E%3Cpath stroke-width='1' opacity='.95' d='M20 5H410L425 20V152L410 167H20L5 152V20Z'/%3E%3Cpath stroke-width='1.45' d='M10 27Q10 10 27 10H40'/%3E%3Cpath stroke-width='1.45' d='M16 23Q24 23 24 16Q24 12 28 12Q32 12 31 16Q30 21 24 20'/%3E%3Cpath stroke-width='1.45' d='M420 27Q420 10 403 10H390'/%3E%3Cpath stroke-width='1.45' d='M414 23Q406 23 406 16Q406 12 402 12Q398 12 399 16Q400 21 406 20'/%3E%3Cpath stroke-width='1.45' d='M10 145Q10 162 27 162H40'/%3E%3Cpath stroke-width='1.45' d='M16 149Q24 149 24 156Q24 160 28 160Q32 160 31 156Q30 151 24 152'/%3E%3Cpath stroke-width='1.45' d='M420 145Q420 162 403 162H390'/%3E%3Cpath stroke-width='1.45' d='M414 149Q406 149 406 156Q406 160 402 160Q398 160 399 156Q400 151 406 152'/%3E%3C/g%3E%3C/svg%3E") !important;
+      radial-gradient(
+        ellipse at 33% 12%,
+        rgba(255, 255, 255, .6) 0%,
+        rgba(255, 255, 255, 0) 48%
+      ),
+      linear-gradient(
+        145deg,
+        #fff9e9 0%,
+        #f8e8c4 59%,
+        #efd3a1 100%
+      ) !important;
   }
 
   .desktop-menu {
-    color: #f2d783 !important;
+    color: #f3dfaa !important;
   }
 
   .desktop-directions {
-    color: #65151f !important;
+    color: #65131d !important;
   }
 
   .desktop-menu .desktop-card-icon {
-    width: 16.2% !important;
+    width: 18.7% !important;
     min-width: 0 !important;
+    margin: 0 !important;
     color: #efcf77 !important;
-    margin: 0 0 0.06rem 0 !important;
   }
 
   .desktop-directions .desktop-card-icon {
-    width: 12.5% !important;
+    width: 14.5% !important;
     min-width: 0 !important;
-    color: #d79a28 !important;
-    margin: 0 0 0.08rem 0 !important;
+    margin: 0 !important;
+    color: #d49420 !important;
+  }
+
+  .desktop-directions .desktop-card-icon circle {
+    fill: #f7e7c3 !important;
   }
 
   .desktop-card > span:last-child {
     font-family: Arial, Helvetica, sans-serif !important;
-    font-size: clamp(1.95rem, 2.55vw, 2.75rem) !important;
+    font-size: clamp(2.15rem, 2.72vw, 3.25rem) !important;
     font-weight: 700 !important;
     line-height: 1 !important;
-    letter-spacing: 0.015em !important;
+    letter-spacing: .012em !important;
   }
 
+  /* Information strip. */
+  .desktop-info {
+    left: 37.2% !important;
+    top: 78.3% !important;
+    width: 46.3% !important;
+    height: 9.4% !important;
+    grid-template-columns: 1.18fr .92fr 1.08fr !important;
+  }
+
+  .desktop-info-item {
+    gap: 6% !important;
+    padding: 5.5% 7% !important;
+  }
+
+  .desktop-info-item strong {
+    font-size: clamp(.72rem, .92vw, 1.1rem) !important;
+  }
+
+  .desktop-info-item span:not(.info-icon) {
+    font-size: clamp(.68rem, .84vw, 1rem) !important;
+  }
+
+  .info-icon {
+    width: 16% !important;
+  }
+
+  .phone .info-icon {
+    width: 17% !important;
+  }
+
+  .phone strong {
+    font-size: clamp(.95rem, 1.32vw, 1.55rem) !important;
+  }
+
+  .address .info-icon {
+    width: 15% !important;
+  }
+
+  /* Footer. */
+  .desktop-footerline {
+    left: 42.05% !important;
+    top: 93.15% !important;
+    width: 36.9% !important;
+    font-size: clamp(.72rem, .94vw, 1.1rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: .29em !important;
+  }
+
+  .desktop-footerline b {
+    font-size: 1em !important;
+  }
 }
+
+
+/* =========================================================
+   DESKTOP BUTTONS — TARGET REBUILD
+   Buttons only. Everything else is preserved.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .desktop-card {
+    --corner: clamp(12px, .75vw, 15px);
+    --corner-half: calc(var(--corner) / 2);
+
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: visible !important;
+
+    padding: 0 !important;
+    gap: clamp(.7rem, 1.25vh, .95rem) !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  /* Real stepped cutaway silhouette and cast shadow. */
+  .desktop-card::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
+
+    clip-path: polygon(
+      0 var(--corner),
+      var(--corner-half) var(--corner),
+      var(--corner-half) var(--corner-half),
+      var(--corner) var(--corner-half),
+      var(--corner) 0,
+
+      calc(100% - var(--corner)) 0,
+      calc(100% - var(--corner)) var(--corner-half),
+      calc(100% - var(--corner-half)) var(--corner-half),
+      calc(100% - var(--corner-half)) var(--corner),
+      100% var(--corner),
+
+      100% calc(100% - var(--corner)),
+      calc(100% - var(--corner-half)) calc(100% - var(--corner)),
+      calc(100% - var(--corner-half)) calc(100% - var(--corner-half)),
+      calc(100% - var(--corner)) calc(100% - var(--corner-half)),
+      calc(100% - var(--corner)) 100%,
+
+      var(--corner) 100%,
+      var(--corner) calc(100% - var(--corner-half)),
+      var(--corner-half) calc(100% - var(--corner-half)),
+      var(--corner-half) calc(100% - var(--corner)),
+      0 calc(100% - var(--corner))
+    ) !important;
+
+    filter:
+      drop-shadow(0 7px 3px rgba(89, 47, 15, .46))
+      drop-shadow(2px 2px 1px rgba(121, 73, 22, .34)) !important;
+
+    pointer-events: none !important;
+  }
+
+  /* Border follows the same stepped cutaway shape. */
+  .desktop-card::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 430 168' preserveAspectRatio='none'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='%23a96813' stroke-width='2.2' d='M1 14H7V7H14V1H416V7H423V14H429V154H423V161H416V167H14V161H7V154H1Z'/%3E%3Cpath stroke='%23d7a13a' stroke-width='1.15' d='M5 17H11V11H17V5H413V11H419V17H425V151H419V157H413V163H17V157H11V151H5Z'/%3E%3Cg stroke='%23d9a33d' stroke-width='1.45'%3E%3Cpath d='M11 28Q12 14 29 12H43M16 24Q27 25 26 16Q26 12 31 12Q36 13 33 18Q30 24 24 21'/%3E%3Cpath d='M419 28Q418 14 401 12H387M414 24Q403 25 404 16Q404 12 399 12Q394 13 397 18Q400 24 406 21'/%3E%3Cpath d='M11 140Q12 154 29 156H43M16 144Q27 143 26 152Q26 156 31 156Q36 155 33 150Q30 144 24 147'/%3E%3Cpath d='M419 140Q418 154 401 156H387M414 144Q403 143 404 152Q404 156 399 156Q394 155 397 150Q400 144 406 147'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% 100% !important;
+
+    pointer-events: none !important;
+  }
+
+  .desktop-card > * {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* Target burgundy plaque. */
+  .desktop-menu::before {
+    background:
+      radial-gradient(
+        ellipse at 42% 6%,
+        rgba(170, 48, 57, .42) 0%,
+        rgba(170, 48, 57, 0) 55%
+      ),
+      linear-gradient(
+        150deg,
+        #801b28 0%,
+        #68121c 60%,
+        #490b12 100%
+      ) !important;
+  }
+
+  /* Warm parchment—not white. */
+  .desktop-directions::before {
+    background:
+      radial-gradient(
+        ellipse at 36% 18%,
+        rgba(255, 249, 226, .34) 0%,
+        rgba(255, 249, 226, 0) 52%
+      ),
+      linear-gradient(
+        145deg,
+        #f8e8bd 0%,
+        #f3dca8 58%,
+        #eccf91 100%
+      ) !important;
+  }
+
+  .desktop-menu {
+    color: #f4e4b6 !important;
+  }
+
+  .desktop-directions {
+    color: #64131d !important;
+  }
+
+  /* Replace the thin outline book with the target filled book. */
+  .desktop-menu .desktop-card-icon {
+    width: clamp(64px, 4.35vw, 76px) !important;
+    height: clamp(51px, 3.45vw, 61px) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 60'%3E%3Cpath fill='%23e8bd62' stroke='%23906018' stroke-width='2' d='M37 53C29 46 20 44 7 44V6c13 0 23 3 30 10Z'/%3E%3Cpath fill='%23e8bd62' stroke='%23906018' stroke-width='2' d='M39 53c8-7 17-9 30-9V6c-13 0-23 3-30 10Z'/%3E%3Cpath fill='none' stroke='%23835b18' stroke-width='2' d='M38 15v38M50 17h12M50 23h12M50 29h12'/%3E%3Cpath fill='none' stroke='%23f6dfa2' stroke-width='1.4' d='M10 10c11 .3 19 2.7 24 8v28c-6-4-14-6-24-6ZM66 10c-11 .3-19 2.7-24 8v28c6-4 14-6 24-6Z' opacity='.75'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+  }
+
+  .desktop-menu .desktop-card-icon svg {
+    display: none !important;
+  }
+
+  /* Replace the existing pin with the broader target pin. */
+  .desktop-directions .desktop-card-icon {
+    width: clamp(47px, 3.15vw, 56px) !important;
+    height: clamp(57px, 3.8vw, 68px) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 72'%3E%3Cpath fill='%23d99519' d='M29 2C14.8 2 5 12.5 5 26.5 5 44 29 70 29 70s24-26 24-43.5C53 12.5 43.2 2 29 2Z'/%3E%3Ccircle cx='29' cy='26' r='9' fill='%23f6e3b3'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+  }
+
+  .desktop-directions .desktop-card-icon svg {
+    display: none !important;
+  }
+
+  .desktop-card > span:last-child {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(2.15rem, 2.62vw, 3.15rem) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: .012em !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP BUTTONS — ICON SCALE + VISIBLE SHADOW
+   Buttons only.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  /* Shadow the complete cutaway plaque silhouette. */
+  .desktop-card {
+    filter:
+      drop-shadow(0 8px 4px rgba(73, 37, 13, .48))
+      drop-shadow(3px 3px 1px rgba(126, 78, 24, .34)) !important;
+
+    gap: clamp(.55rem, 1vh, .75rem) !important;
+  }
+
+  .desktop-card:hover {
+    filter:
+      drop-shadow(0 8px 4px rgba(73, 37, 13, .48))
+      drop-shadow(3px 3px 1px rgba(126, 78, 24, .34)) !important;
+  }
+
+  /* Prevent the plate from adding a second competing shadow. */
+  .desktop-card::before {
+    filter: none !important;
+  }
+
+  /* Larger target-style book. */
+  .desktop-menu .desktop-card-icon {
+    width: clamp(82px, 5.2vw, 96px) !important;
+    height: clamp(65px, 4.15vw, 77px) !important;
+  }
+
+  /* Larger target-style location pin. */
+  .desktop-directions .desktop-card-icon {
+    width: clamp(60px, 3.85vw, 72px) !important;
+    height: clamp(72px, 4.6vw, 86px) !important;
+  }
+}
+
+
+/* Desktop buttons — approved design, 8% size reduction */
+@media (min-width: 901px) {
+  .desktop-actions {
+    transform: scale(.92) !important;
+    transform-origin: center center !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP BRANDING — TARGET RESTORATION
+   Logo, cuisine line, headline and ornament only.
+   Approved buttons remain untouched.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .mobile-hero-logo {
+    left: 34.15% !important;
+    top: 4.35% !important;
+    width: 53.85% !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .mobile-hero-logo img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .desktop-eyebrow {
+    left: 44.45% !important;
+    top: 34.55% !important;
+    width: 32.90% !important;
+
+    font-size: clamp(.72rem, 1.03vw, 1.08rem) !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: .31em !important;
+  }
+
+  .eyebrow-flourish {
+    margin-right: 1rem !important;
+    font-size: 1.25em !important;
+  }
+
+  .eyebrow-flourish-right {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+  }
+
+  .hero h1 {
+    left: 43.25% !important;
+    top: 38.65% !important;
+    width: 35.90% !important;
+
+    font-size: clamp(1.65rem, 2.25vw, 2.45rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -.026em !important;
+  }
+
+  .desktop-ornament {
+    left: 37.45% !important;
+    top: 42.65% !important;
+    width: 44.95% !important;
+    height: 12.10% !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP BRANDING — FINAL VISUAL CORRECTION
+   Branding only. Buttons and lower content untouched.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  /* Wider but vertically shallower, matching the target frame. */
+  .mobile-hero-logo {
+    left: 34.15% !important;
+    top: 3.45% !important;
+    width: 55.55% !important;
+    height: auto !important;
+    transform: scaleY(.925) !important;
+    transform-origin: top left !important;
+  }
+
+  /* Properly separated and visually substantial. */
+  .desktop-eyebrow {
+    left: 39.8% !important;
+    top: 34.75% !important;
+    width: 44.1% !important;
+
+    font-size: clamp(.92rem, 1.18vw, 1.4rem) !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: .38em !important;
+  }
+
+  .eyebrow-flourish {
+    margin-right: 1.15rem !important;
+    font-size: 1.18em !important;
+  }
+
+  .eyebrow-flourish-right {
+    margin-right: 0 !important;
+    margin-left: 1.15rem !important;
+  }
+
+  /* Match the target headline prominence and width. */
+  .hero h1 {
+    left: 39.7% !important;
+    top: 38.25% !important;
+    width: 44.3% !important;
+
+    font-size: clamp(2rem, 3.2vw, 3.5rem) !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: -.026em !important;
+  }
+
+  /* Wider, taller and raised to sit beneath the headline. */
+  .desktop-ornament {
+    left: 35.15% !important;
+    top: 40.45% !important;
+    width: 54.7% !important;
+    height: 14.5% !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP BRANDING — FINAL MICRO-ALIGNMENT
+   Approved buttons and lower content untouched.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  /* Same width; slightly shorter and lower. */
+  .mobile-hero-logo {
+    top: 4.05% !important;
+    transform: scaleY(.89) !important;
+    transform-origin: top left !important;
+  }
+
+  /* Larger and lowered clear of the logo frame. */
+  .desktop-eyebrow {
+    left: 39.25% !important;
+    top: 35.15% !important;
+    width: 45.5% !important;
+
+    font-size: clamp(1rem, 1.34vw, 1.55rem) !important;
+    letter-spacing: .4em !important;
+  }
+
+  .eyebrow-flourish {
+    margin-right: 1.3rem !important;
+    font-size: 1.25em !important;
+  }
+
+  .eyebrow-flourish-right {
+    margin-right: 0 !important;
+    margin-left: 1.3rem !important;
+  }
+
+  /* Slightly wider, centred left and lowered. */
+  .hero h1 {
+    left: 38.65% !important;
+    top: 39.15% !important;
+    width: 46.8% !important;
+
+    font-size: clamp(2.15rem, 3.5vw, 3.9rem) !important;
+  }
+
+  /* Extend the flourish left and restore its target depth. */
+  .desktop-ornament {
+    left: 32.6% !important;
+    top: 40.45% !important;
+    width: 60.9% !important;
+    height: 17.5% !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP LOWER PANEL — TARGET FINISH
+   Information strip and footer only.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  .desktop-info {
+    position: absolute !important;
+    overflow: visible !important;
+
+    border-top: 1px solid rgba(176, 112, 25, .58) !important;
+    border-bottom: 1px solid rgba(176, 112, 25, .58) !important;
+  }
+
+  .desktop-info-item {
+    gap: 7% !important;
+    padding: 4.5% 7% !important;
+  }
+
+  .desktop-info-item + .desktop-info-item {
+    border-left: 1px solid rgba(176, 112, 25, .62) !important;
+  }
+
+  /* Opening hours. */
+  .desktop-info-item strong {
+    font-size: clamp(.82rem, 1vw, 1.2rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.12 !important;
+  }
+
+  .desktop-info-item span:not(.info-icon) {
+    font-size: clamp(.76rem, .92vw, 1.08rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .hours .info-icon {
+    width: 17% !important;
+    color: #731723 !important;
+  }
+
+  /* Telephone. */
+  .phone .info-icon {
+    width: 18% !important;
+    color: #731723 !important;
+  }
+
+  .phone strong {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(1.05rem, 1.45vw, 1.7rem) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Address. */
+  .address .info-icon {
+    width: 16% !important;
+    color: #d09222 !important;
+  }
+
+  /* Target ornament interrupting the lower rule. */
+  .desktop-info::after {
+    content: "" !important;
+
+    position: absolute !important;
+    left: 50% !important;
+    bottom: -13px !important;
+
+    width: 86px !important;
+    height: 26px !important;
+
+    transform: translateX(-50%) !important;
+
+    background-color: #efd5a6 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 86 26'%3E%3Cg fill='none' stroke='%23bd7d1f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 13H27M59 13H86'/%3E%3Cpath d='M27 13c6 0 7-7 11-7 3 0 2 5 5 7-3 2-2 7-5 7-4 0-5-7-11-7Z'/%3E%3Cpath d='M59 13c-6 0-7-7-11-7-3 0-2 5-5 7 3 2 2 7 5 7 4 0 5-7 11-7Z'/%3E%3Cpath d='M43 2v22M36 13h14'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+
+    pointer-events: none !important;
+  }
+
+  /* Compact and centre the three lower descriptors. */
+  .desktop-footerline {
+    left: 40.65% !important;
+    top: 92.85% !important;
+    width: 25.4% !important;
+
+    font-size: clamp(.78rem, 1.02vw, 1.2rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: .28em !important;
+  }
+
+  .desktop-footerline b {
+    color: #b87920 !important;
+    font-size: 1em !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP LOWER PANEL — SPACING + TYPE RHYTHM
+   Lower information section only.
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  /* Raise and slightly tighten the information strip. */
+  .desktop-info {
+    top: 77.1% !important;
+    height: 9.25% !important;
+    border-bottom: 0 !important;
+  }
+
+  .desktop-info-item {
+    padding-top: 4% !important;
+    padding-bottom: 4% !important;
+  }
+
+  /* Clear heading/detail hierarchy. */
+  .desktop-info-item strong {
+    font-weight: 700 !important;
+  }
+
+  .desktop-info-item span:not(.info-icon) {
+    font-weight: 400 !important;
+  }
+
+  .hours strong {
+    font-weight: 700 !important;
+  }
+
+  .hours span:not(.info-icon) {
+    font-weight: 400 !important;
+  }
+
+  .phone strong {
+    font-weight: 700 !important;
+  }
+
+  .address strong {
+    font-weight: 400 !important;
+  }
+
+  .address span:not(.info-icon) {
+    font-weight: 400 !important;
+  }
+
+  /* Rebuild the lower rule with a clean central opening. */
+  .desktop-info::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 1px !important;
+
+    background:
+      linear-gradient(
+        to right,
+        rgba(176, 112, 25, .58) 0%,
+        rgba(176, 112, 25, .58) 44%,
+        transparent 44%,
+        transparent 56%,
+        rgba(176, 112, 25, .58) 56%,
+        rgba(176, 112, 25, .58) 100%
+      ) !important;
+
+    pointer-events: none !important;
+  }
+
+  /* Remove the visible rectangular patch. */
+  .desktop-info::after {
+    bottom: -12px !important;
+    background-color: transparent !important;
+  }
+
+  /* Bring the descriptor row closer to the divider. */
+  .desktop-footerline {
+    left: 40.65% !important;
+    top: 89.3% !important;
+    width: 25.4% !important;
+
+    font-size: clamp(.78rem, 1.02vw, 1.2rem) !important;
+    font-weight: 500 !important;
+    letter-spacing: .28em !important;
+  }
+
+  .desktop-footerline b {
+    font-weight: 400 !important;
+  }
+}
+
