@@ -719,7 +719,7 @@
     top: 57.3% !important;
     width: 46.41% !important;
     height: 17.75% !important;
-    grid-template-columns: 1.06fr 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 2.58% !important;
   }
 
@@ -1146,7 +1146,7 @@
 /* Desktop buttons — approved design, 8% size reduction */
 @media (min-width: 901px) {
   .desktop-actions {
-    transform: translateX(-50%) scale(.86) !important;
+    transform: translateX(-50%) scale(.774) !important;
     transform-origin: center center !important;
   }
 }
@@ -1468,7 +1468,7 @@
   }
 
   .address strong {
-    font-weight: 400 !important;
+    font-weight: 700 !important;
   }
 
   .address span:not(.info-icon) {
