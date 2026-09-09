@@ -181,15 +181,200 @@ body.menu-page { color:#35191e; background:var(--menu-cream); }
   .restaurant-illustration img { min-height:240px; object-fit:cover; }
   .menu-page .lunch { padding-top:38px; }
 }
+
+/* Botanical menu opening — matched to the approved reference */
+.menu-hero {
+  position:relative;
+  min-height:690px;
+  padding:18px clamp(28px,5vw,78px) 42px;
+  overflow:hidden;
+  border-top:7px solid var(--menu-burgundy);
+  border-bottom:1px solid rgba(183,147,74,.72);
+  background:#f8edda url("assets/hero/menu-botanical-header.jpg") center top/cover no-repeat;
+}
+.menu-hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 -32px 46px rgba(116,29,43,.035);
+}
+.menu-hero > * { position:relative; z-index:1; }
+.menu-hero .menu-page-header {
+  min-height:245px;
+  padding:34px 20px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border:0;
+  background:none;
+  box-shadow:none;
+}
+.menu-hero .menu-page-header::before,
+.menu-hero .menu-page-header::after { display:none; }
+.menu-hero .menu-page-logo {
+  width:clamp(330px,36vw,540px);
+  padding:0;
+  filter:drop-shadow(0 6px 8px rgba(76,17,29,.14));
+}
+.menu-page-tagline {
+  margin:16px 0 0;
+  color:#9b6710;
+  font:600 clamp(.72rem,1.05vw,.96rem)/1.3 Georgia,"Times New Roman",serif;
+  letter-spacing:.28em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.menu-page-tagline span { padding:0 .35em;color:#c7932b; }
+
+.menu-hero .lunch-feature {
+  width:min(1040px,88%);
+  margin:0 auto;
+  border:2px solid #d5aa43;
+  border-radius:999px;
+  clip-path:none;
+  box-shadow:0 8px 20px rgba(76,17,29,.23),inset 0 0 0 1px rgba(255,244,200,.22);
+}
+.menu-hero .lunch-feature a {
+  min-height:76px;
+  padding:8px 17px 8px 13px;
+  grid-template-columns:58px auto 1fr auto;
+  gap:clamp(14px,2vw,30px);
+}
+.menu-hero .lunch-feature a::before {
+  content:"♜";
+  width:50px;height:50px;
+  display:grid;place-items:center;
+  border:2px solid #e7c66f;
+  border-radius:50%;
+  color:#f1ce70;
+  font-size:1.65rem;
+  transform:rotate(180deg);
+}
+.menu-hero .lunch-feature-kicker {
+  padding-right:clamp(15px,2vw,28px);
+  border-right:1px solid rgba(241,206,112,.55);
+  font:600 clamp(.72rem,1vw,.9rem)/1 Georgia,serif;
+  letter-spacing:.2em;
+}
+.menu-hero .lunch-feature strong {
+  display:flex;
+  align-items:center;
+  gap:clamp(16px,2vw,30px);
+  font-size:clamp(1rem,1.6vw,1.45rem);
+  white-space:nowrap;
+}
+.menu-hero .lunch-feature-price {
+  padding-right:clamp(16px,2vw,28px);
+  border-right:1px solid rgba(241,206,112,.55);
+  font-size:2em;
+}
+.menu-hero .lunch-feature-link {
+  min-width:220px;
+  padding:15px 24px;
+  border:1px solid #d5aa43;
+  border-radius:999px;
+  color:#601722;
+  background:linear-gradient(#fff5d5,#edc86f);
+  box-shadow:inset 0 1px 0 #fff,0 3px 8px rgba(0,0,0,.14);
+  font-family:Georgia,serif;
+  font-size:.82rem;
+  text-align:center;
+}
+.menu-hero .menu-heading {
+  margin:28px auto 0;
+}
+.menu-hero .menu-heading .eyebrow {
+  margin:0 0 0;
+  font-size:clamp(2.4rem,4vw,4rem);
+  line-height:1;
+}
+.menu-hero .menu-heading h2 {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:26px;
+  margin:2px 0 22px;
+  font-size:clamp(3.4rem,6vw,6.4rem);
+}
+.menu-hero .menu-heading h2::before,
+.menu-hero .menu-heading h2::after {
+  content:"";
+  width:min(15vw,170px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,#c9962e);
+}
+.menu-hero .menu-heading h2::after { transform:rotate(180deg); }
+.menu-hero .menu-nav {
+  position:relative;
+  top:auto;
+  z-index:2;
+  justify-content:center;
+  gap:7px;
+  margin:0;
+  padding:12px 0 0;
+  overflow:visible;
+  border:0;
+  background:transparent;
+}
+.menu-hero .menu-nav a {
+  padding:.72rem .8rem;
+  border-color:#d1a047;
+  border-radius:5px;
+  background:rgba(255,248,231,.93);
+  box-shadow:0 5px 11px rgba(76,17,29,.13);
+  font-family:Georgia,serif;
+  font-size:.8rem;
+}
+.menu-hero .menu-nav .lunch-nav-link {
+  color:#f5d77e;
+  box-shadow:0 5px 13px rgba(76,17,29,.24);
+}
+.menu-page .menu-wrap { padding-top:20px; }
+
+@media (max-width:900px) {
+  .menu-hero { min-height:0;padding:12px 16px 30px;background-position:center top; }
+  .menu-hero .menu-page-header { min-height:190px;padding:26px 45px 12px; }
+  .menu-hero .menu-page-logo { width:min(390px,62vw); }
+  .menu-page-tagline { max-width:72%;font-size:.68rem;letter-spacing:.18em; }
+  .menu-hero .lunch-feature { width:min(650px,92%); }
+  .menu-hero .lunch-feature a { grid-template-columns:auto 1fr auto;padding:10px 14px; }
+  .menu-hero .lunch-feature a::before { display:none; }
+  .menu-hero .lunch-feature-kicker { display:none; }
+  .menu-hero .lunch-feature strong { font-size:1rem; }
+  .menu-hero .lunch-feature-price { font-size:1.7em; }
+  .menu-hero .lunch-feature-link { min-width:170px;padding:13px 17px; }
+  .menu-hero .menu-heading { margin-top:25px; }
+  .menu-hero .menu-nav { justify-content:flex-start;overflow-x:auto;padding:10px 2px 8px; }
+}
+@media (max-width:600px) {
+  .menu-hero { padding-inline:10px;background-size:auto 560px; }
+  .menu-hero .menu-page-header { min-height:165px;padding-inline:55px; }
+  .menu-hero .menu-page-logo { width:min(290px,70vw); }
+  .menu-page-tagline { max-width:88%;margin-top:10px;font-size:.56rem;letter-spacing:.12em; }
+  .menu-hero .lunch-feature { width:calc(100% - 10px); }
+  .menu-hero .lunch-feature a { grid-template-columns:1fr;gap:5px;padding:14px;text-align:center; }
+  .menu-hero .lunch-feature strong { justify-content:center;white-space:normal; }
+  .menu-hero .lunch-feature-price { padding-right:12px; }
+  .menu-hero .lunch-feature-link { justify-self:center;min-width:190px;margin-top:5px; }
+  .menu-hero .menu-heading .eyebrow { font-size:2.2rem; }
+  .menu-hero .menu-heading h2 { gap:12px;font-size:3.35rem;margin-bottom:12px; }
+  .menu-hero .menu-heading h2::before,
+  .menu-hero .menu-heading h2::after { width:40px; }
+}
+
 </style>
 </head>
 <body class="menu-page">
+<main class="menu-page-main" id="main">
+<section class="menu-hero">
 <header class="menu-page-header">
   <a class="menu-page-logo" href="index.html" aria-label="Ruk Thai home">
     <img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">
   </a>
+
+  <p class="menu-page-tagline">Authentic Thai cuisine <span>•</span> Greerton, Tauranga</p>
 </header>
-<main class="menu-page-main" id="main">
 <aside class="lunch-feature" aria-label="Ruk Thai lunch special">
   <a href="lunch.html">
     <span class="lunch-feature-kicker">Lunch special</span>
@@ -197,7 +382,10 @@ body.menu-page { color:#35191e; background:var(--menu-cream); }
     <span class="lunch-feature-link">View lunch menu <b>→</b></span>
   </a>
 </aside>
-<section class="menu-wrap" id="menu"><div class="menu-heading"><p class="eyebrow" lang="th">เมนูทั้งหมด</p><h2>Full Menu</h2></div><nav class="menu-nav" aria-label="Menu categories"><a href="#appetizers">Appetizers</a><a href="#soups">Soups</a><a href="#curry">Curry</a><a href="#main-course">Main Course</a><a href="#salads">Salads</a><a href="#deep-fried-meals">Deep Fried Meals</a><a href="#noodles">Noodles</a><a href="#rice-dishes">Rice Dishes</a><a href="#vegetarian">Vegetarian</a><a class="lunch-nav-link" href="lunch.html">Lunch Special</a></nav><section class="menu-section" id="appetizers"><div class="section-kicker">Ruk Thai menu</div><h2>Appetizers</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>1. Chicken Satay</h3><span class="price">$12.00</span></div><p>Grilled marinated chicken on skewers served with satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>2. Spring Rolls</h3></div><p>A. Spring Rolls (Vegetarian) $11.00</p><p>B. Prawn Rolls $12.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>3. Curry Puffs (Vegetarian)</h3><span class="price">$11.00</span></div><p>Potato, kumara and sweet corn and pumpkin wrapped in puff pastry served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>4. Thai Fishcakes</h3><span class="price">$11.00</span></div><p>Fishcakes with curry paste and herbs served with sweet chilli sauce</p></article><figure class="menu-art-card"><img src="assets/food/1.png" alt="Illustrated crispy Ruk Thai appetiser" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>5. Wonton</h3><span class="price">$11.00</span></div><p>Crispy wonton with marinated pork mince served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>6. Prawn Dumplings</h3><span class="price">$11.00</span></div><p>Crispy Deep Fried Prawn Dumplings served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>7. Moo Tod</h3><span class="price">$12.00</span></div><p>Deep fried marinated pork belly served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>8. Mixed Entree</h3><span class="price">$13.00</span></div><p>One piece of each Appetizers 2A, 2B, 3, 4, 5, 6</p></article></div></section><section class="menu-section" id="soups"><div class="section-kicker">Ruk Thai menu</div><h2>Soups</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>9. Tom Yum Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and Mushrooms in hot and sour soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>10. Tom Yum Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and Mushrooms in hot and sour soup</p></article><figure class="menu-art-card"><img src="assets/food/2.png" alt="Illustrated Thai soup" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>11. Tom Kha Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and Mushrooms in coconut milk soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>12. Tom Kha Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and Mushrooms in coconut milk soup</p></article></div></section><section class="menu-section" id="curry"><div class="section-kicker">Ruk Thai menu</div><h2>Curry</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>13. Green Curry</h3></div><p>Green curry paste cooked in coconut milk and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>14. Red Curry</h3></div><p>Red curry paste cooked in coconut milk and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Duck or Lamb $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>15. Panang Curry</h3></div><p>Panang curry paste cooked in coconut milk, vegetables and crushed peanuts with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>16. Massaman Curry</h3></div><p>Massaman Curry paste cooked in coconut milk, peanut, onion, potato and tamarind sauce with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>17. Yellow Curry</h3></div><p>Yellow Curry paste cooked in coconut milk, peanut, onion and potato with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>18. Choo Chee</h3></div><p>Red Curry cooked in coconut milk, kaffir lime leaves and vegetables with your choice of :</p><p>Fish or Prawns $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article></div></section><section class="menu-section" id="main-course"><div class="section-kicker">Ruk Thai menu</div><h2>Main Course</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>19. Pad Prik Pow</h3></div><p>Stir fried mild chilli paste and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns, Fish, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>20. Pad Ginger</h3></div><p>Stir fried ginger, garlic and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>21. Pad Garlic and Pepper</h3></div><p>Stir fried garlic, pepper and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p><p>Lamb or Pork Belly $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops $27.00</p></article><figure class="menu-art-card"><img src="assets/food/3.png" alt="Illustrated prawn stir-fry" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>22. Pad Oyster Sauce</h3></div><p>Stir fried vegetables and oyster sauce with your choice of :</p><p>Chicken, Pork or Beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>23. Pad Cashew Nuts</h3></div><p>Stir fried cashew nuts and vegetables with your choice of:</p><p>Chicken, Pork or Beef $23.50</p><p>Prawns or Fish $25.50</p><p>Duck or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>24. Sweet and Sour</h3></div><p>Stir fried sweet and sour sauce and vegetables with your choice of :</p><p>Chicken or Pork $22.50</p><p>Prawns, Fish, or Pork Belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>25. Pad Basil</h3></div><p>Stir fried chilli, basil and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>26. Pad Peanut Sauce</h3></div><p>Stir fried peanut sauce and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>27. Pad Prik Gang</h3></div><p>Stir fried curry paste, vegetables and coconut milk with your choice of:</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><figure class="menu-art-card"><img src="assets/food/4.png" alt="Illustrated dark glazed Ruk Thai dish" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>28. Duck Honey Sauce</h3><span class="price">$25.50</span></div><p>Roasted Duck on steam vegetables topped with honey sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>29. Fish with Thai Chilli Sauce</h3><span class="price">$25.50</span></div><p>Fish fillet on steam vegetables topped with Thai style chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>30. Pad Sarm Rod (Tri Flavoured)</h3></div><p>Stir fried Tri flavoured (Spicy-Sweet & Sour sauce) and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>31. Pad Pong Garee Talay</h3><span class="price">$27.00</span></div><p>Stir fried mixed seafood, egg, curry powder and vegetables</p></article><article class="menu-item"><div class="menu-item-head"><h3>32. Hor Mok Talay</h3><span class="price">$27.00</span></div><p>Mixed Seafood cooked in curry paste and coconut milk with herbs and egg</p></article></div></section><section class="menu-section" id="salads"><div class="section-kicker">Ruk Thai menu</div><h2>Salads</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>33. Larb</h3><span class="price">$25.50</span></div><p>Minced Meat Salad with herbs, lemon juice and chilli with your choice of: Chicken, Pork or Beef</p></article><article class="menu-item"><div class="menu-item-head"><h3>34. Nam Tok</h3><span class="price">$25.50</span></div><p>Sliced (Pork or Beef) with herbs, red onion, lemon juice and chilli</p></article><article class="menu-item"><div class="menu-item-head"><h3>35. Yum Nua (Thai Beef Salad)</h3><span class="price">$25.50</span></div><p>Sliced Beef with Thai style chilli sauce, onion, tomato and herbs</p></article><article class="menu-item"><div class="menu-item-head"><h3>36. Yum Talay (Seafood Salad)</h3><span class="price">$27.00</span></div><p>Mixed Seafood with Thai style chilli sauce, onion, tomato and herbs</p></article></div></section><section class="menu-section" id="deep-fried-meals"><div class="section-kicker">Ruk Thai menu</div><h2>Deep Fried Meals</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>37. Pork Ribs Garlic & Pepper sauce</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Garlic & Papper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>38. Pork Ribs Honey sauce</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>39. Pork Ribs Sarm Rod (Tri flavoured sauce)</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Tri flavoured sauce</p></article><figure class="menu-art-card"><img src="assets/food/6.png" alt="Illustrated sliced pork with vegetables" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>40. Fried Chicken Garlic & Pepper sauce</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Garlic & Papper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>41. Fried Chicken Honey sauce</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>42. Fried Chicken Sarm Rod (Tri flavoured sauce)</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Tri flavoured sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>Roti</h3><span class="price">$4.00</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>Extra Rice</h3><span class="price">$4.00</span></div></article></div><div class="menu-note"><p>All Curries, Main Courses, Salads and Deep fried Meals come with a side of Jasmine Rice (exclude Noodles and Rice dishes).</p><p>Please make us aware of any food allergies when ordering.</p></div></section><section class="menu-section" id="noodles"><div class="section-kicker">Ruk Thai menu</div><h2>Noodles</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>43. Pad See Eiw</h3></div><p>Stir fried thick rice-noodles, egg and vegetables with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>44. Pad Thai</h3></div><p>Stir fried rice-noodles, egg, crushed peanuts, bean sprouts and spring onion with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>45. Spicy Noodles</h3></div><p>Stir fried rice-noodles, egg, and vegetables with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>46. Guay Tiew Kua</h3></div><p>Stir fried thick rice-noodles, egg, bean sprouts and spring onion with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>47. Mi Goreng</h3></div><p>Stir fried wheat-noodles, egg, vegetables and curry paste with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>48. Noodle Soup (Pho)</h3></div><p>Rice-noodles and bean sprouts in broth with your choice of :</p><p>Chicken, Pork or Beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>49. Laksa</h3></div><p>Wheat-noodles and bean sprouts in laksa curry soup with your choice of :</p><p>Chicken, Pork or Beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>50. Lard Na</h3></div><p>Thick rice-noodles top with vegetables and thai gravy with your choice of :</p><p>Chicken, Pork or beef $22.00</p><p>Prawns $25.50</p><p>Mixed Seafood $27.00</p></article></div></section><section class="menu-section" id="rice-dishes"><div class="section-kicker">Ruk Thai menu</div><h2>Rice Dishes</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>51. Fried Rice</h3></div><p>Fried rice with egg, spring onion and mixed vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>52. Spicy Fried Rice</h3></div><p>Fried rice with egg, chilli, spring onion and mixed vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>53. Nasi Goreng</h3></div><p>Fried rice with egg, curry paste, spring onion and mix vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>54. Tom Yum Fried Rice</h3></div><p>Chicken, Pork or Beef $20.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>55. BBQ Duck on Rice</h3><span class="price">$24.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>56. Deep Fried Pork Belly on Rice</h3><span class="price">$22.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>57. Chicken Satay on Rice</h3><span class="price">$20.50</span></div></article></div></section><section class="menu-section" id="vegetarian"><div class="section-kicker">Ruk Thai menu</div><h2>Vegetarian</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>58. Tofu Cashew Nuts</h3><span class="price">$21.50</span></div><p>Stir fried tofu with vegetables and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>59. Tofu Peanut Sauce</h3><span class="price">$21.50</span></div><p>Vegetables and tofu stir fried in peanut satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>60. Green Curry Tofu</h3><span class="price">$21.50</span></div><p>Tofu and vegetables cooked in green curry paste and coconut milk</p></article><figure class="menu-art-card"><img src="assets/food/5.png" alt="Illustrated mixed vegetable stir-fry" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>61. Pineapple Fried Rice</h3><span class="price">$19.00</span></div><p>Fried rice with egg, pineapple, mix vegetables, curry powder and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>62. Vegetarian Pad Thai</h3><span class="price">$20.00</span></div><p>Stir fried rice-noodles with egg, tofu, crushed peanuts, bean sprouts and spring onion</p></article><article class="menu-item"><div class="menu-item-head"><h3>63. Sweet and Sour Tofu</h3><span class="price">$21.50</span></div><p>Stir fried vegetables and tofu in sweet and sour sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>64. Stir fried Vegetables</h3><span class="price">$20.50</span></div><p>Pick a flavour</p><p>• garlic & peppers</p><p>• garlic& ginger</p><p>• cashew nuts</p><p>• chilli basil</p><p>• peanut sauce</p></article></div><div class="menu-note"><p>Please let us know if you are unable to eat fish sauce.</p><p>Please specify if you would like your meal made Vegan.</p></div></section></section>
+<div class="menu-heading"><p class="eyebrow" lang="th">เมนูทั้งหมด</p><h2>Full Menu</h2></div>
+<nav class="menu-nav" aria-label="Menu categories"><a href="#appetizers">Appetizers</a><a href="#soups">Soups</a><a href="#curry">Curry</a><a href="#main-course">Main Course</a><a href="#salads">Salads</a><a href="#deep-fried-meals">Deep Fried Meals</a><a href="#noodles">Noodles</a><a href="#rice-dishes">Rice Dishes</a><a href="#vegetarian">Vegetarian</a><a class="lunch-nav-link" href="lunch.html">Lunch Special</a></nav>
+</section>
+<section class="menu-wrap" id="menu"><section class="menu-section" id="appetizers"><div class="section-kicker">Ruk Thai menu</div><h2>Appetizers</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>1. Chicken Satay</h3><span class="price">$12.00</span></div><p>Grilled marinated chicken on skewers served with satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>2. Spring Rolls</h3></div><p>A. Spring Rolls (Vegetarian) $11.00</p><p>B. Prawn Rolls $12.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>3. Curry Puffs (Vegetarian)</h3><span class="price">$11.00</span></div><p>Potato, kumara and sweet corn and pumpkin wrapped in puff pastry served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>4. Thai Fishcakes</h3><span class="price">$11.00</span></div><p>Fishcakes with curry paste and herbs served with sweet chilli sauce</p></article><figure class="menu-art-card"><img src="assets/food/1.png" alt="Illustrated crispy Ruk Thai appetiser" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>5. Wonton</h3><span class="price">$11.00</span></div><p>Crispy wonton with marinated pork mince served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>6. Prawn Dumplings</h3><span class="price">$11.00</span></div><p>Crispy Deep Fried Prawn Dumplings served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>7. Moo Tod</h3><span class="price">$12.00</span></div><p>Deep fried marinated pork belly served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>8. Mixed Entree</h3><span class="price">$13.00</span></div><p>One piece of each Appetizers 2A, 2B, 3, 4, 5, 6</p></article></div></section><section class="menu-section" id="soups"><div class="section-kicker">Ruk Thai menu</div><h2>Soups</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>9. Tom Yum Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and Mushrooms in hot and sour soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>10. Tom Yum Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and Mushrooms in hot and sour soup</p></article><figure class="menu-art-card"><img src="assets/food/2.png" alt="Illustrated Thai soup" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>11. Tom Kha Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and Mushrooms in coconut milk soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>12. Tom Kha Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and Mushrooms in coconut milk soup</p></article></div></section><section class="menu-section" id="curry"><div class="section-kicker">Ruk Thai menu</div><h2>Curry</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>13. Green Curry</h3></div><p>Green curry paste cooked in coconut milk and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>14. Red Curry</h3></div><p>Red curry paste cooked in coconut milk and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Duck or Lamb $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>15. Panang Curry</h3></div><p>Panang curry paste cooked in coconut milk, vegetables and crushed peanuts with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>16. Massaman Curry</h3></div><p>Massaman Curry paste cooked in coconut milk, peanut, onion, potato and tamarind sauce with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>17. Yellow Curry</h3></div><p>Yellow Curry paste cooked in coconut milk, peanut, onion and potato with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>18. Choo Chee</h3></div><p>Red Curry cooked in coconut milk, kaffir lime leaves and vegetables with your choice of :</p><p>Fish or Prawns $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article></div></section><section class="menu-section" id="main-course"><div class="section-kicker">Ruk Thai menu</div><h2>Main Course</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>19. Pad Prik Pow</h3></div><p>Stir fried mild chilli paste and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns, Fish, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>20. Pad Ginger</h3></div><p>Stir fried ginger, garlic and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>21. Pad Garlic and Pepper</h3></div><p>Stir fried garlic, pepper and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p><p>Lamb or Pork Belly $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops $27.00</p></article><figure class="menu-art-card"><img src="assets/food/3.png" alt="Illustrated prawn stir-fry" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>22. Pad Oyster Sauce</h3></div><p>Stir fried vegetables and oyster sauce with your choice of :</p><p>Chicken, Pork or Beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>23. Pad Cashew Nuts</h3></div><p>Stir fried cashew nuts and vegetables with your choice of:</p><p>Chicken, Pork or Beef $23.50</p><p>Prawns or Fish $25.50</p><p>Duck or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>24. Sweet and Sour</h3></div><p>Stir fried sweet and sour sauce and vegetables with your choice of :</p><p>Chicken or Pork $22.50</p><p>Prawns, Fish, or Pork Belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>25. Pad Basil</h3></div><p>Stir fried chilli, basil and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>26. Pad Peanut Sauce</h3></div><p>Stir fried peanut sauce and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>27. Pad Prik Gang</h3></div><p>Stir fried curry paste, vegetables and coconut milk with your choice of:</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><figure class="menu-art-card"><img src="assets/food/4.png" alt="Illustrated dark glazed Ruk Thai dish" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>28. Duck Honey Sauce</h3><span class="price">$25.50</span></div><p>Roasted Duck on steam vegetables topped with honey sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>29. Fish with Thai Chilli Sauce</h3><span class="price">$25.50</span></div><p>Fish fillet on steam vegetables topped with Thai style chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>30. Pad Sarm Rod (Tri Flavoured)</h3></div><p>Stir fried Tri flavoured (Spicy-Sweet & Sour sauce) and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>31. Pad Pong Garee Talay</h3><span class="price">$27.00</span></div><p>Stir fried mixed seafood, egg, curry powder and vegetables</p></article><article class="menu-item"><div class="menu-item-head"><h3>32. Hor Mok Talay</h3><span class="price">$27.00</span></div><p>Mixed Seafood cooked in curry paste and coconut milk with herbs and egg</p></article></div></section><section class="menu-section" id="salads"><div class="section-kicker">Ruk Thai menu</div><h2>Salads</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>33. Larb</h3><span class="price">$25.50</span></div><p>Minced Meat Salad with herbs, lemon juice and chilli with your choice of: Chicken, Pork or Beef</p></article><article class="menu-item"><div class="menu-item-head"><h3>34. Nam Tok</h3><span class="price">$25.50</span></div><p>Sliced (Pork or Beef) with herbs, red onion, lemon juice and chilli</p></article><article class="menu-item"><div class="menu-item-head"><h3>35. Yum Nua (Thai Beef Salad)</h3><span class="price">$25.50</span></div><p>Sliced Beef with Thai style chilli sauce, onion, tomato and herbs</p></article><article class="menu-item"><div class="menu-item-head"><h3>36. Yum Talay (Seafood Salad)</h3><span class="price">$27.00</span></div><p>Mixed Seafood with Thai style chilli sauce, onion, tomato and herbs</p></article></div></section><section class="menu-section" id="deep-fried-meals"><div class="section-kicker">Ruk Thai menu</div><h2>Deep Fried Meals</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>37. Pork Ribs Garlic & Pepper sauce</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Garlic & Papper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>38. Pork Ribs Honey sauce</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>39. Pork Ribs Sarm Rod (Tri flavoured sauce)</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Tri flavoured sauce</p></article><figure class="menu-art-card"><img src="assets/food/6.png" alt="Illustrated sliced pork with vegetables" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>40. Fried Chicken Garlic & Pepper sauce</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Garlic & Papper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>41. Fried Chicken Honey sauce</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>42. Fried Chicken Sarm Rod (Tri flavoured sauce)</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Tri flavoured sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>Roti</h3><span class="price">$4.00</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>Extra Rice</h3><span class="price">$4.00</span></div></article></div><div class="menu-note"><p>All Curries, Main Courses, Salads and Deep fried Meals come with a side of Jasmine Rice (exclude Noodles and Rice dishes).</p><p>Please make us aware of any food allergies when ordering.</p></div></section><section class="menu-section" id="noodles"><div class="section-kicker">Ruk Thai menu</div><h2>Noodles</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>43. Pad See Eiw</h3></div><p>Stir fried thick rice-noodles, egg and vegetables with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>44. Pad Thai</h3></div><p>Stir fried rice-noodles, egg, crushed peanuts, bean sprouts and spring onion with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>45. Spicy Noodles</h3></div><p>Stir fried rice-noodles, egg, and vegetables with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>46. Guay Tiew Kua</h3></div><p>Stir fried thick rice-noodles, egg, bean sprouts and spring onion with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>47. Mi Goreng</h3></div><p>Stir fried wheat-noodles, egg, vegetables and curry paste with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>48. Noodle Soup (Pho)</h3></div><p>Rice-noodles and bean sprouts in broth with your choice of :</p><p>Chicken, Pork or Beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>49. Laksa</h3></div><p>Wheat-noodles and bean sprouts in laksa curry soup with your choice of :</p><p>Chicken, Pork or Beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>50. Lard Na</h3></div><p>Thick rice-noodles top with vegetables and thai gravy with your choice of :</p><p>Chicken, Pork or beef $22.00</p><p>Prawns $25.50</p><p>Mixed Seafood $27.00</p></article></div></section><section class="menu-section" id="rice-dishes"><div class="section-kicker">Ruk Thai menu</div><h2>Rice Dishes</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>51. Fried Rice</h3></div><p>Fried rice with egg, spring onion and mixed vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>52. Spicy Fried Rice</h3></div><p>Fried rice with egg, chilli, spring onion and mixed vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>53. Nasi Goreng</h3></div><p>Fried rice with egg, curry paste, spring onion and mix vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>54. Tom Yum Fried Rice</h3></div><p>Chicken, Pork or Beef $20.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>55. BBQ Duck on Rice</h3><span class="price">$24.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>56. Deep Fried Pork Belly on Rice</h3><span class="price">$22.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>57. Chicken Satay on Rice</h3><span class="price">$20.50</span></div></article></div></section><section class="menu-section" id="vegetarian"><div class="section-kicker">Ruk Thai menu</div><h2>Vegetarian</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>58. Tofu Cashew Nuts</h3><span class="price">$21.50</span></div><p>Stir fried tofu with vegetables and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>59. Tofu Peanut Sauce</h3><span class="price">$21.50</span></div><p>Vegetables and tofu stir fried in peanut satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>60. Green Curry Tofu</h3><span class="price">$21.50</span></div><p>Tofu and vegetables cooked in green curry paste and coconut milk</p></article><figure class="menu-art-card"><img src="assets/food/5.png" alt="Illustrated mixed vegetable stir-fry" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>61. Pineapple Fried Rice</h3><span class="price">$19.00</span></div><p>Fried rice with egg, pineapple, mix vegetables, curry powder and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>62. Vegetarian Pad Thai</h3><span class="price">$20.00</span></div><p>Stir fried rice-noodles with egg, tofu, crushed peanuts, bean sprouts and spring onion</p></article><article class="menu-item"><div class="menu-item-head"><h3>63. Sweet and Sour Tofu</h3><span class="price">$21.50</span></div><p>Stir fried vegetables and tofu in sweet and sour sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>64. Stir fried Vegetables</h3><span class="price">$20.50</span></div><p>Pick a flavour</p><p>• garlic & peppers</p><p>• garlic& ginger</p><p>• cashew nuts</p><p>• chilli basil</p><p>• peanut sauce</p></article></div><div class="menu-note"><p>Please let us know if you are unable to eat fish sauce.</p><p>Please specify if you would like your meal made Vegan.</p></div></section></section>
 
 <section class="restaurant-illustration" aria-label="Ruk Thai restaurant illustration">
   <figure><img src="assets/food/7.png" alt="Illustrated Ruk Thai storefront" loading="lazy"></figure>
