@@ -110,13 +110,17 @@ h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;le
 }
 .logo{
   position:relative;
-  top:-11px;
+  top:0;
+  transform:none;
+  overflow:visible;
 }
 .logo img{
+  display:block;
   width:100%;
+  max-width:none;
   margin-left:0;
-  transform:scale(1.06);
-  clip-path:inset(17% 6% 18%);
+  transform:none;
+  clip-path:none;
 }
 @media (min-width:981px){
   .masthead{padding-top:4px}
@@ -128,14 +132,14 @@ h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;le
 
 /* Borderless logo and comfortably filled lunch list */
 .logo{
-  overflow:hidden;
+  overflow:visible;
 }
 .logo img{
-  width:116%;
+  width:100%;
   max-width:none;
-  margin-left:-8%;
-  transform:scale(1.14);
-  clip-path:inset(17% 7% 18%);
+  margin-left:0;
+  transform:none;
+  clip-path:none;
 }
 @media (min-width:981px){
   .masthead{padding-top:10px}
