@@ -24,6 +24,62 @@ h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;le
 .footer{position:relative;z-index:3;padding:18px;border-top:1px solid #d7aa4877;color:#d2a244;background:#130306;text-align:center;font-size:.61rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}.footer:before,.footer:after{content:"◆";padding:0 18px;color:#b9862f}
 @media(max-width:980px){body{padding:0}.page{min-height:100vh;border:0}.page:before{display:none}.masthead{min-height:110px}.logo{width:min(320px,44vw)}.layout{grid-template-columns:1fr}.offer{min-height:520px}.menu{padding:44px 32px 54px}.menu:before{display:none}}
 @media(max-width:640px){.masthead{grid-template-columns:1fr;min-height:118px}.logo{grid-column:1;justify-self:center;width:min(275px,74vw)}.mini-nav{display:none}.tagline{font-size:.48rem;letter-spacing:.15em}.offer{min-height:500px;padding:26px 18px;background-position:42% center}.offer-copy{max-width:278px;padding:21px}h1{font-size:4.4rem}.menu{padding:38px 20px 48px}.menu-title{text-align:center}.list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}.list li{min-height:76px}.footer:before,.footer:after{padding:0 8px}}
+
+/* Desktop proportion correction — compact 4:3 menu card */
+@media (min-width:981px) {
+  body {
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    padding:20px;
+  }
+  .page {
+    width:min(1280px,calc(100vw - 40px));
+    min-height:0;
+    aspect-ratio:1.32 / 1;
+    max-height:calc(100vh - 40px);
+  }
+  .masthead {
+    height:18.5%;
+    min-height:0;
+    padding-top:18px;
+  }
+  .logo { width:clamp(250px,23vw,350px); }
+  .layout {
+    height:73.5%;
+    min-height:0;
+    grid-template-columns:1fr 1fr;
+  }
+  .offer {
+    min-height:0;
+    height:100%;
+    align-items:center;
+    padding:32px 46px;
+    background-position:center;
+  }
+  .offer-copy {
+    width:285px;
+    margin-left:auto;
+    padding:21px 23px;
+  }
+  h1 { font-size:clamp(4.1rem,4.9vw,5.55rem); }
+  .menu { padding:34px 40px 38px; }
+  .menu-title { margin-bottom:22px; }
+  .list { column-gap:34px; }
+  .list li { min-height:0;height:auto;padding:3px 0 14px 31px;margin-bottom:12px; }
+  .list li::before { font-size:.95rem; }
+  .list strong { font-size:.78rem; }
+  .list span { margin-top:4px;font-size:.6rem; }
+  .footer {
+    height:8%;
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 20px;
+  }
+}
+
 </style></head>
 <body><div class="page">
 <header class="masthead"><a class="logo" href="index.html" aria-label="Ruk Thai home"><img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai"></a><nav class="mini-nav" aria-label="Page navigation"><a href="menu.html">Full menu</a><a href="directions.html">Directions</a></nav><p class="tagline">Thai cuisine · Greerton, Tauranga</p></header>
