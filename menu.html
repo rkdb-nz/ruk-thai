@@ -460,9 +460,9 @@ body.menu-page {
   position:absolute;
   z-index:-1;
   inset:-35% auto -35% -38%;
-  width:30%;
+  width:44%;
   pointer-events:none;
-  background:linear-gradient(105deg,transparent 0%,rgba(255,244,194,.04) 25%,rgba(255,232,145,.24) 50%,rgba(255,244,194,.04) 75%,transparent 100%);
+  background:linear-gradient(105deg,transparent 0%,rgba(255,224,116,.18) 22%,rgba(255,214,75,.72) 50%,rgba(255,224,116,.18) 78%,transparent 100%);
   transform:skewX(-16deg);
   opacity:0;
 }
@@ -516,20 +516,20 @@ body.menu-page {
 /* Continuous, restrained lunch-banner motion */
 .menu-hero .lunch-feature::after{
   opacity:1;
-  animation:lunch-sheen-loop 11s ease-in-out infinite;
+  animation:lunch-sheen-loop 8s linear infinite;
 }
 .menu-hero .lunch-feature a::before{
-  animation:lunch-medallion-loop 8s ease-in-out infinite;
+  animation:none;
 }
 .menu-hero .lunch-feature-link b{
   display:inline-block;
-  animation:lunch-arrow-loop 6.5s ease-in-out infinite;
+  animation:none;
 }
 @keyframes lunch-sheen-loop{
-  0%,60%{left:-38%;opacity:0}
-  66%{opacity:.12}
-  86%{left:116%;opacity:.45}
-  91%,100%{left:116%;opacity:0}
+  0%,74.9%{left:-46%;opacity:0}
+  75%{left:-46%;opacity:.82}
+  97%{left:112%;opacity:.82}
+  100%{left:112%;opacity:0}
 }
 @keyframes lunch-medallion-loop{
   0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(215,170,72,0)}
