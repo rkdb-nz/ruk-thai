@@ -516,30 +516,28 @@ body.menu-page {
 /* Continuous, restrained lunch-banner motion */
 .menu-hero .lunch-feature::after{
   opacity:1;
-  animation:lunch-sheen-loop 5.8s cubic-bezier(.22,.8,.24,1) infinite;
+  animation:lunch-sheen-loop 11s ease-in-out infinite;
 }
 .menu-hero .lunch-feature a::before{
-  animation:lunch-medallion-loop 4.6s ease-in-out infinite;
+  animation:lunch-medallion-loop 8s ease-in-out infinite;
 }
 .menu-hero .lunch-feature-link b{
   display:inline-block;
-  animation:lunch-arrow-loop 2.8s ease-in-out infinite;
+  animation:lunch-arrow-loop 6.5s ease-in-out infinite;
 }
 @keyframes lunch-sheen-loop{
-  0%,58%{left:-38%;opacity:0}
-  62%{opacity:.2}
-  78%{left:116%;opacity:1}
-  79%,100%{left:116%;opacity:0}
+  0%,60%{left:-38%;opacity:0}
+  66%{opacity:.12}
+  86%{left:116%;opacity:.45}
+  91%,100%{left:116%;opacity:0}
 }
 @keyframes lunch-medallion-loop{
-  0%,100%{transform:rotate(0) scale(1);box-shadow:0 0 0 0 rgba(215,170,72,0)}
-  50%{transform:rotate(-3deg) scale(1.035);box-shadow:0 0 0 4px rgba(215,170,72,.07),inset 0 0 12px rgba(255,232,145,.1)}
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(215,170,72,0)}
+  50%{transform:scale(1.015);box-shadow:0 0 0 3px rgba(215,170,72,.045),inset 0 0 10px rgba(255,232,145,.07)}
 }
 @keyframes lunch-arrow-loop{
-  0%,64%,100%{transform:translateX(0)}
-  76%{transform:translateX(4px)}
-  86%{transform:translateX(0)}
-  93%{transform:translateX(3px)}
+  0%,70%,100%{transform:translateX(0)}
+  84%{transform:translateX(3px)}
 }
 @media(prefers-reduced-motion:reduce){
   .menu-hero .lunch-feature::after,
