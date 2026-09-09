@@ -447,6 +447,43 @@ body.menu-page {
   letter-spacing:.08em;
 }
 
+
+/* Dash-style lunch page drawer */
+.lunch-drawer-backdrop{
+  position:fixed;z-index:89;inset:0;
+  background:rgba(20,4,8,.56);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 240ms ease,visibility 0s linear 240ms;
+  backdrop-filter:blur(3px);
+}
+.lunch-drawer{
+  position:fixed;z-index:90;top:0;right:0;bottom:0;
+  width:min(1320px,94vw);
+  background:#1b0408;
+  box-shadow:-28px 0 65px rgba(20,4,8,.5);
+  transform:translateX(102%);
+  visibility:hidden;
+  transition:transform 300ms cubic-bezier(.22,.8,.24,1),visibility 0s linear 300ms;
+}
+.lunch-drawer iframe{display:block;width:100%;height:100%;border:0;background:#1d1d1d}
+.lunch-drawer-close{
+  position:absolute;z-index:2;top:18px;left:18px;
+  width:44px;height:44px;display:grid;place-items:center;
+  border:1px solid #d5aa43;border-radius:50%;
+  color:#f3d270;background:#4c111d;
+  box-shadow:0 5px 16px rgba(0,0,0,.28);
+  font:300 1.7rem/1 Georgia,serif;cursor:pointer
+}
+.lunch-drawer-close:hover,.lunch-drawer-close:focus-visible{color:#4c111d;background:#f3d270}
+body.lunch-drawer-open{overflow:hidden!important}
+body.lunch-drawer-open .lunch-drawer-backdrop{opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;transition-delay:0s}
+@media(max-width:700px){
+  .lunch-drawer{width:100vw}
+  .lunch-drawer-close{top:10px;left:10px;width:40px;height:40px}
+}
+@media(prefers-reduced-motion:reduce){.lunch-drawer,.lunch-drawer-backdrop{transition:none}}
+
 </style>
 </head>
 <body class="menu-page">
@@ -478,5 +515,37 @@ body.menu-page {
   <p><a href="tel:+6475796180">07 579 6180</a></p>
 </footer>
 <a class="menu-home-float" href="index.html">← Ruk Thai</a>
+<div class="lunch-drawer-backdrop" aria-hidden="true"></div>
+<aside class="lunch-drawer" aria-label="Lunch menu" aria-hidden="true">
+  <button class="lunch-drawer-close" type="button" aria-label="Close lunch menu">×</button>
+  <iframe title="Ruk Thai lunch menu" data-src="lunch.html"></iframe>
+</aside>
+<script>
+const lunchDrawer=document.querySelector('.lunch-drawer');
+const lunchBackdrop=document.querySelector('.lunch-drawer-backdrop');
+const lunchFrame=lunchDrawer.querySelector('iframe');
+const lunchClose=lunchDrawer.querySelector('.lunch-drawer-close');
+let lunchTrigger=null;
+function openLunchDrawer(trigger){
+  lunchTrigger=trigger;
+  if(!lunchFrame.src) lunchFrame.src=lunchFrame.dataset.src;
+  document.body.classList.add('lunch-drawer-open');
+  lunchDrawer.setAttribute('aria-hidden','false');
+  lunchBackdrop.setAttribute('aria-hidden','false');
+}
+function closeLunchDrawer(){
+  document.body.classList.remove('lunch-drawer-open');
+  lunchDrawer.setAttribute('aria-hidden','true');
+  lunchBackdrop.setAttribute('aria-hidden','true');
+  if(lunchTrigger) lunchTrigger.focus();
+}
+document.querySelectorAll('a[href="lunch.html"]').forEach(link=>link.addEventListener('click',event=>{
+  event.preventDefault();
+  openLunchDrawer(link);
+}));
+lunchClose.addEventListener('click',closeLunchDrawer);
+lunchBackdrop.addEventListener('click',closeLunchDrawer);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('lunch-drawer-open'))closeLunchDrawer()});
+</script>
 </body>
 </html>
