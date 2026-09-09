@@ -1,112 +1,33 @@
 <!doctype html>
-<html lang="en-NZ">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>$17 Lunch Special | Ruk Thai</title>
-<meta name="description" content="Ruk Thai $17 lunch special, available 11am–2pm in Greerton, Tauranga.">
-<meta name="theme-color" content="#741d2b">
+<html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>$17 Lunch Special | Ruk Thai</title><meta name="description" content="Ruk Thai $17 lunch special, available 11am–2pm in Greerton, Tauranga."><meta name="theme-color" content="#26070c">
 <style>
-:root { --wine:#741d2b; --deep:#4c111d; --gold:#d5aa43; --cream:#f7edda; --paper:#fff9ee; }
-* { box-sizing:border-box; }
-html,body { margin:0; min-height:100%; }
-body {
-  color:#fffaf0;
-  background:
-    radial-gradient(circle at 50% 0, rgba(255,247,218,.22), transparent 30rem),
-    var(--wine);
-  font-family:Arial,sans-serif;
-}
-.masthead {
-  min-height:clamp(116px,11vw,160px);
-  padding:22px;
-  display:grid; place-items:center;
-  position:relative;
-  border-top:7px solid var(--deep);
-  border-bottom:1px solid rgba(213,170,67,.85);
-  background:radial-gradient(ellipse at center,#fffdf5 0%,#f6e7c2 60%,#dfbd77 125%);
-  box-shadow:0 10px 30px rgba(40,5,12,.22);
-}
-.masthead::before,.masthead::after {
-  content:""; position:absolute; top:50%; width:min(28vw,380px); height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold));
-}
-.masthead::before { left:4vw; }
-.masthead::after { right:4vw; transform:rotate(180deg); }
-.logo { position:relative;z-index:1;width:clamp(225px,24vw,350px);filter:drop-shadow(0 5px 8px rgba(76,17,29,.12)); }
-.logo img { display:block;width:100%;height:auto; }
-.lunch-page { width:min(1280px,calc(100% - 40px));margin:auto;padding:clamp(46px,6vw,86px) 0 60px; }
-.intro { display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.8fr);gap:clamp(42px,7vw,100px);align-items:start; }
-.eyebrow { margin:0 0 16px;color:#f2cf6d;font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase; }
-h1 { margin:0;font-family:Georgia,serif;font-size:clamp(3.4rem,7vw,6.8rem);font-weight:400;line-height:.88;letter-spacing:-.045em; }
-.time { margin:26px 0 0;font-size:clamp(1.05rem,1.5vw,1.28rem); }
-.note { margin:12px 0 0;max-width:35ch;color:#f3dfe2;line-height:1.55; }
-.actions { margin-top:30px;display:flex;flex-wrap:wrap;gap:12px; }
-.action {
-  min-height:50px;padding:15px 20px;display:grid;place-items:center;
-  border:1px solid #e8c66f;color:var(--deep);background:#f0c75a;
-  box-shadow:0 6px 0 rgba(43,5,12,.35);
-  font-size:.75rem;font-weight:900;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;
-  clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);
-}
-.action.secondary { color:#fffaf0;background:transparent;box-shadow:none; }
-.lunch-list { margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 52px;list-style:none;counter-reset:lunch; }
-.lunch-list li {
-  counter-increment:lunch;position:relative;min-height:84px;padding:2px 0 20px 42px;
-  border-bottom:1px solid rgba(255,255,255,.15);
-}
-.lunch-list li::before { content:counter(lunch);position:absolute;left:0;top:1px;color:#f2cf6d;font:700 1rem Georgia,serif; }
-.lunch-list strong { display:block;font-size:1rem;line-height:1.35; }
-.lunch-list span { display:block;margin-top:6px;color:#f3dfe2;font-size:.9rem; }
-.footer { padding:20px;text-align:center;color:#e5c77c;background:var(--deep);font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase; }
-@media(min-width:761px) {
-  .actions .action[href^="tel:"] { display:none; }
-}
-@media(max-width:760px) {
-  .masthead { min-height:108px;border-top-width:5px; }
-  .masthead::before,.masthead::after { width:15vw; }
-  .logo { width:min(240px,67vw); }
-  .lunch-page { width:min(100% - 30px,560px);padding:38px 0 46px; }
-  .intro { grid-template-columns:1fr;gap:38px; }
-  h1 { font-size:clamp(3.7rem,18vw,5.5rem); }
-  .lunch-list { grid-template-columns:1fr; }
-  .lunch-list li { min-height:76px; }
-  .actions { display:grid;grid-template-columns:1fr; }
-}
-</style>
-</head>
-<body>
-<header class="masthead">
-  <a class="logo" href="index.html" aria-label="Ruk Thai home"><img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai"></a>
-</header>
-<main class="lunch-page">
-  <div class="intro">
-    <section>
-      <p class="eyebrow">Lunch special</p>
-      <h1>$17<br>Lunch<br>Special</h1>
-      <p class="time">Available from <strong>11am–2pm</strong></p>
-      <p class="note">Choose from twelve lunch favourites. Call Ruk Thai directly to order.</p>
-      <div class="actions">
-        <a class="action" href="tel:+6475796180">Call to order</a>
-        <a class="action secondary" href="menu.html">View full menu</a>
-      </div>
-    </section>
-    <ol class="lunch-list">
-      <li><strong>Green Curry on Rice or Noodles</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Red Curry on Rice or Noodles</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Pad Thai</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Fried Rice</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Chicken Satay + Rice + Veg</strong></li>
-      <li><strong>Noodle Soup (Pho)</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Laksa</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Spicy Noodles</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Mie Goreng</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Nasi Goreng</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Guay Tiew Kua</strong><span>Chicken, pork or beef</span></li>
-      <li><strong>Pad See Eiw</strong><span>Chicken, pork or beef</span></li>
-    </ol>
-  </div>
-</main>
-<footer class="footer">Ruk Thai · Greerton, Tauranga</footer>
-</body>
-</html>
+:root{--deep:#1b0408;--wine:#641421;--gold:#d7aa48;--cream:#fff1d2}*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{padding:clamp(8px,1.3vw,20px);color:var(--cream);background:#1d1d1d;font-family:Arial,sans-serif}
+.page{position:relative;min-height:calc(100vh - 40px);overflow:hidden;border:1px solid #b9852c;background:radial-gradient(circle at 62% 18%,#721928 0,#3a0912 37%,#180306 100%);box-shadow:0 20px 60px #0008}
+.page:before{content:"";position:absolute;z-index:5;inset:8px;pointer-events:none;border:1px solid #d7aa4845}
+.masthead{position:relative;z-index:3;min-height:126px;padding:22px 5vw 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid #d7aa4866;background:#10020599}
+.logo{grid-column:2;width:clamp(245px,27vw,420px);filter:brightness(1.22) drop-shadow(0 4px 8px #0008)}.logo img{display:block;width:100%}
+.mini-nav{grid-column:3;justify-self:end;display:flex;gap:24px}.mini-nav a{color:#ddb457;font-size:.63rem;font-weight:800;letter-spacing:.15em;text-decoration:none;text-transform:uppercase}
+.tagline{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);margin:0;color:#d3a649;font-size:.55rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;white-space:nowrap}
+.layout{min-height:calc(100vh - 202px);display:grid;grid-template-columns:minmax(340px,.88fr) minmax(580px,1.4fr)}
+.offer{position:relative;min-height:650px;padding:44px clamp(26px,4vw,62px);display:flex;align-items:flex-end;background:linear-gradient(180deg,#1603050a 20%,#17030622 45%,#180307e6 94%),linear-gradient(90deg,transparent 65%,#210409aa),url("assets/hero/lunch-atmosphere.jpg") center/cover no-repeat}
+.offer-copy{z-index:2;width:min(310px,90%);margin-left:auto;padding:25px;border-left:1px solid #d7aa4899;background:#1c0409c9;backdrop-filter:blur(3px)}
+.eyebrow,.menu-title{margin:0 0 9px;color:#e1b653;font-size:.68rem;font-weight:800;letter-spacing:.23em;text-transform:uppercase}
+h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;letter-spacing:-.05em}h1 span{display:block;color:#efc55d;font-size:1.18em;line-height:.83}
+.time{margin:20px 0 0;padding-top:15px;border-top:1px solid #d7aa4866;font-size:.91rem}.note{margin:8px 0 0;color:#ead5d5;font:400 .83rem/1.45 Georgia,serif}
+.button{display:block;width:max-content;margin-top:17px;padding:13px 18px;border:1px solid #e0b34e;border-radius:3px;color:#4b0b14;background:linear-gradient(#fff0b1,#daa43b);box-shadow:0 5px 14px #0006;font-size:.65rem;font-weight:900;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}
+.menu{position:relative;padding:54px clamp(35px,5vw,78px) 62px;background:linear-gradient(115deg,#74182a7d,#25060b30)}.menu:before{content:"";position:absolute;left:0;top:7%;bottom:7%;width:1px;background:linear-gradient(transparent,var(--gold),transparent)}
+.menu-title{margin-bottom:32px}.list{margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;column-gap:clamp(28px,4vw,62px);list-style:none;counter-reset:n}
+.list li{counter-increment:n;position:relative;min-height:88px;padding:3px 0 20px 38px;border-bottom:1px solid #d7aa4838}.list li:before{content:counter(n);position:absolute;left:0;top:2px;color:#e4b74d;font:700 1.1rem Georgia,serif}
+.list strong{display:block;color:#fff1d8;font:500 .98rem/1.3 Georgia,serif}.list span{display:block;margin-top:7px;color:#d7b9bc;font-size:.72rem;line-height:1.35}
+.footer{position:relative;z-index:3;padding:18px;border-top:1px solid #d7aa4877;color:#d2a244;background:#130306;text-align:center;font-size:.61rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}.footer:before,.footer:after{content:"◆";padding:0 18px;color:#b9862f}
+@media(max-width:980px){body{padding:0}.page{min-height:100vh;border:0}.page:before{display:none}.masthead{min-height:110px}.logo{width:min(320px,44vw)}.layout{grid-template-columns:1fr}.offer{min-height:520px}.menu{padding:44px 32px 54px}.menu:before{display:none}}
+@media(max-width:640px){.masthead{grid-template-columns:1fr;min-height:118px}.logo{grid-column:1;justify-self:center;width:min(275px,74vw)}.mini-nav{display:none}.tagline{font-size:.48rem;letter-spacing:.15em}.offer{min-height:500px;padding:26px 18px;background-position:42% center}.offer-copy{max-width:278px;padding:21px}h1{font-size:4.4rem}.menu{padding:38px 20px 48px}.menu-title{text-align:center}.list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}.list li{min-height:76px}.footer:before,.footer:after{padding:0 8px}}
+</style></head>
+<body><div class="page">
+<header class="masthead"><a class="logo" href="index.html" aria-label="Ruk Thai home"><img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai"></a><nav class="mini-nav" aria-label="Page navigation"><a href="menu.html">Full menu</a><a href="directions.html">Directions</a></nav><p class="tagline">Thai cuisine · Greerton, Tauranga</p></header>
+<main class="layout"><section class="offer"><div class="offer-copy"><p class="eyebrow">Lunch special</p><h1><span>$17</span>Lunch<br>Special</h1><p class="time">Available from <strong>11am–2pm</strong></p><p class="note">Choose from twelve lunch favourites. Call Ruk Thai directly to order.</p><a class="button" href="menu.html">View full menu →</a></div></section>
+<section class="menu" aria-labelledby="lunch-title"><p class="menu-title" id="lunch-title">Lunch menu</p><ol class="list">
+<li><strong>Green Curry on Rice or Noodles</strong><span>Chicken, pork or beef</span></li><li><strong>Red Curry on Rice or Noodles</strong><span>Chicken, pork or beef</span></li><li><strong>Pad Thai</strong><span>Chicken, pork or beef</span></li><li><strong>Fried Rice</strong><span>Chicken, pork or beef</span></li><li><strong>Chicken Satay + Rice + Veg</strong></li><li><strong>Noodle Soup (Pho)</strong><span>Chicken, pork or beef</span></li><li><strong>Laksa</strong><span>Chicken, pork or beef</span></li><li><strong>Spicy Noodles</strong><span>Chicken, pork or beef</span></li><li><strong>Mie Goreng</strong><span>Chicken, pork or beef</span></li><li><strong>Nasi Goreng</strong><span>Chicken, pork or beef</span></li><li><strong>Guay Tiew Kua</strong><span>Chicken, pork or beef</span></li><li><strong>Pad See Eiw</strong><span>Chicken, pork or beef</span></li>
+</ol></section></main><footer class="footer">Ruk Thai · Greerton, Tauranga</footer></div></body></html>
