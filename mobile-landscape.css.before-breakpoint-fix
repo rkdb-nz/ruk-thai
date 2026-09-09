@@ -1,0 +1,421 @@
+/* Ruk Thai — dedicated mobile landscape landing composition.
+   This is intentionally independent of the approved portrait layout. */
+
+@media (orientation: landscape) and (max-height: 600px) {
+  html,
+  body,
+  body.portrait-gateway,
+  #main {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background: #f4dfba;
+  }
+
+  body.portrait-gateway {
+    width: 100dvw;
+    max-width: 100dvw;
+  }
+
+  /* Landscape uses the approved horizontal artwork only. */
+  .hero {
+    position: relative;
+    isolation: isolate;
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100dvw !important;
+    max-width: 100dvw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: #f4dfba !important;
+    background-image: url("assets/hero/hero-landscape.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+    background-size: cover !important;
+  }
+
+  .hero-copy {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Exact requested landscape-only changes from the previous pass:
+     logo +18%; content 6 percentage points left / 5 points down. */
+  .mobile-hero-logo {
+    position: absolute !important;
+    top: 13.5% !important;
+    left: 49.5% !important;
+    width: 41.89% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    isolation: auto !important;
+    text-decoration: none;
+  }
+
+  .mobile-hero-logo::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .mobile-hero-logo img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 31.86dvh !important;
+    object-fit: contain;
+    filter: contrast(1.12) saturate(1.07) drop-shadow(0 1px 0 rgba(82, 11, 23, .14));
+  }
+
+  .hero h1 {
+    position: absolute !important;
+    top: 42.5% !important;
+    left: 44.5% !important;
+    width: 46% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #65151f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5128rem, 6.405dvh, 2.4644rem) !important;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.025em;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Width 35.5% -> 40.825% is exactly +15%, which makes each
+     secondary grid cell 15% wider when the gaps are also scaled 15%. */
+  .hero-actions {
+    position: absolute !important;
+    top: 56.5% !important;
+    left: 51.5% !important;
+    width: 40.825% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: .552rem .483rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .text-link {
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  /* Container grew 15%; 97.391304% of it yields exactly +12%
+     versus the previous full-width primary action. */
+  .hero-actions .btn-primary {
+    grid-column: 1 / -1;
+    width: 97.391304% !important;
+    justify-self: center;
+    min-height: 3.7856rem !important;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: .7296rem;
+    padding: .56rem .8288rem !important;
+    border: 1px solid #d8a13a;
+    border-radius: .55rem;
+    background: linear-gradient(180deg, #741724 0%, #65131e 100%);
+    color: #f4d98f;
+    box-shadow: 0 .2rem .45rem rgba(73, 29, 10, .13);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .hero-actions .btn-primary .cta-icon {
+    grid-row: 1 / 3;
+    width: 1.5048rem;
+    height: 1.5048rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    align-self: end;
+    font-size: clamp(.8436rem, 3.306dvh, 1.0716rem);
+    line-height: 1;
+    letter-spacing: .05em;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    align-self: start;
+    margin-top: .2052rem;
+    color: #fff0d7;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(.8208rem, 2.964dvh, 1.0032rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: .035em;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    width: 100% !important;
+    min-height: 4.163rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: .2736rem;
+    padding: .46rem .322rem !important;
+    border: 1px solid #c89331;
+    border-radius: 0;
+    background: rgba(255, 244, 221, .46);
+    color: #65151f;
+    text-transform: uppercase;
+    letter-spacing: .045em;
+    font-size: clamp(.7068rem, 2.622dvh, .8664rem);
+    font-weight: 700;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.482rem;
+    height: 1.482rem;
+    color: #d3982c;
+  }
+
+  .hero-actions svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  /* Active compact-landscape refinement only. */
+  .mobile-hero-logo {
+    top: 11.5% !important;
+    left: 48.5% !important;
+    width: 44.132% !important;
+  }
+
+  .hero h1 {
+    top: 40% !important;
+    left: 42.5% !important;
+    width: 46% !important;
+    font-size: clamp(1.4757rem, 6.832dvh, 2.0496rem) !important;
+  }
+
+  .hero-actions {
+    top: 54% !important;
+    left: 50.5% !important;
+    width: 39.1% !important;
+    gap: .46rem .414rem !important;
+  }
+
+  .hero-actions .btn-primary {
+    width: 97.391304% !important;
+    min-height: 3.5683rem !important;
+    padding: .484rem .6944rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.7881rem !important;
+  }
+}
+
+/* =========================================================
+   RUK THAI — MOBILE LANDSCAPE FINAL SCALE PASS
+   Approved landscape composition.
+   Overrides compact-height rules above.
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    top: 8% !important;
+    left: 54% !important;
+    width: 38% !important;
+  }
+
+  .hero h1 {
+    top: 39% !important;
+    left: 49% !important;
+    width: 49% !important;
+    font-size: clamp(1.22rem, 5.8dvh, 1.72rem) !important;
+    line-height: 1 !important;
+  }
+
+  .hero-actions {
+    top: 52% !important;
+    left: 55% !important;
+    width: 38% !important;
+    gap: .46rem .42rem !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 3.4rem !important;
+    padding: .48rem .72rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-icon {
+    width: 1.42rem !important;
+    height: 1.42rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    font-size: .88rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    font-size: .78rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.45rem !important;
+    padding: .42rem .3rem !important;
+    font-size: .7rem !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.42rem !important;
+    height: 1.42rem !important;
+  }
+}
+
+
+/* =========================================================
+   RUK THAI — LANDSCAPE FINAL OVERRIDE
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    top: 7.5% !important;
+    left: 52.5% !important;
+    width: 41.5% !important;
+  }
+
+  .hero h1 {
+    top: 39% !important;
+    left: 47.5% !important;
+    width: 50.5% !important;
+    font-size: 1.55rem !important;
+  }
+
+  .hero-actions {
+    top: 52% !important;
+    left: 53.5% !important;
+    width: 40.5% !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 3.7rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.7rem !important;
+  }
+
+}
+
+
+/* =========================================================
+   RUK THAI — LANDSCAPE VISUAL WEIGHT FIX
+   Removes the hidden logo height cap.
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    top: 6.5% !important;
+    left: 52% !important;
+    width: 42% !important;
+  }
+
+  .mobile-hero-logo img {
+    max-height: 35dvh !important;
+  }
+
+  .hero h1 {
+    top: 39.5% !important;
+    left: 47% !important;
+    width: 51% !important;
+    font-size: 1.65rem !important;
+  }
+
+  .hero-actions {
+    top: 53% !important;
+    left: 53% !important;
+    width: 41% !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 3.85rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 3.8rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    font-size: .94rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    font-size: .84rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    font-size: .74rem !important;
+  }
+}
+
+
+/* =========================================================
+   RUK THAI — LANDSCAPE CENTRING PASS
+   Keep current scale, just centre the right-hand content block.
+   ========================================================= */
+
+@media (orientation: landscape) and (max-height: 430px) {
+
+  .mobile-hero-logo {
+    left: 68.5% !important;
+    width: 40% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .hero h1 {
+    left: 68.5% !important;
+    width: 42% !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+  }
+
+  .hero-actions {
+    left: 68.5% !important;
+    width: 40% !important;
+    transform: translateX(-50%) !important;
+  }
+
+}
+

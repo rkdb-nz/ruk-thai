@@ -13,7 +13,7 @@
 }
 
 
-@media (min-width: 901px) {
+@media (min-width: 901px) and (min-height: 601px) {
 
   html,
   body,
@@ -651,7 +651,7 @@
    Mobile files and mobile layouts are untouched.
    ========================================================= */
 
-@media (min-width: 901px) {
+@media (min-width: 901px) and (min-height: 601px) {
 
   /* The complete target must remain visible at wider screens. */
   .hero {
@@ -715,11 +715,11 @@
 
   /* Button group. */
   .desktop-actions {
-    left: 62% !important;
+    left: 37.02% !important;
     top: 57.3% !important;
     width: 46.41% !important;
     height: 17.75% !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1.06fr 1fr !important;
     gap: 2.58% !important;
   }
 
@@ -872,7 +872,7 @@
 
   /* Information strip. */
   .desktop-info {
-    left: 38.85% !important;
+    left: 37.2% !important;
     top: 78.3% !important;
     width: 46.3% !important;
     height: 9.4% !important;
@@ -929,7 +929,7 @@
    Buttons only. Everything else is preserved.
    ========================================================= */
 
-@media (min-width: 901px) {
+@media (min-width: 901px) and (min-height: 601px) {
 
   .desktop-card {
     --corner: clamp(12px, .75vw, 15px);
@@ -1107,7 +1107,7 @@
    Buttons only.
    ========================================================= */
 
-@media (min-width: 901px) {
+@media (min-width: 901px) and (min-height: 601px) {
 
   /* Shadow the complete cutaway plaque silhouette. */
   .desktop-card {
@@ -1144,382 +1144,10 @@
 
 
 /* Desktop buttons — approved design, 8% size reduction */
-@media (min-width: 901px) {
+@media (min-width: 901px) and (min-height: 601px) {
   .desktop-actions {
-    transform: translateX(-50%) scale(.774) !important;
+    transform: scale(.92) !important;
     transform-origin: center center !important;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP BRANDING — TARGET RESTORATION
-   Logo, cuisine line, headline and ornament only.
-   Approved buttons remain untouched.
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-  .mobile-hero-logo {
-    left: 34.15% !important;
-    top: 4.35% !important;
-    width: 53.85% !important;
-    height: auto !important;
-    transform: none !important;
-  }
-
-  .mobile-hero-logo img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-  }
-
-  .desktop-eyebrow {
-    left: 44.45% !important;
-    top: 34.55% !important;
-    width: 32.90% !important;
-
-    font-size: clamp(.72rem, 1.03vw, 1.08rem) !important;
-    font-weight: 600 !important;
-    line-height: 1 !important;
-    letter-spacing: .31em !important;
-  }
-
-  .eyebrow-flourish {
-    margin-right: 1rem !important;
-    font-size: 1.25em !important;
-  }
-
-  .eyebrow-flourish-right {
-    margin-right: 0 !important;
-    margin-left: 1rem !important;
-  }
-
-  .hero h1 {
-    left: 43.25% !important;
-    top: 38.65% !important;
-    width: 35.90% !important;
-
-    font-size: clamp(1.65rem, 2.25vw, 2.45rem) !important;
-    line-height: 1 !important;
-    letter-spacing: -.026em !important;
-  }
-
-  .desktop-ornament {
-    left: 37.45% !important;
-    top: 42.65% !important;
-    width: 44.95% !important;
-    height: 12.10% !important;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP BRANDING — FINAL VISUAL CORRECTION
-   Branding only. Buttons and lower content untouched.
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-  /* Wider but vertically shallower, matching the target frame. */
-  .mobile-hero-logo {
-    left: 34.15% !important;
-    top: 3.45% !important;
-    width: 55.55% !important;
-    height: auto !important;
-    transform: scaleY(.925) !important;
-    transform-origin: top left !important;
-  }
-
-  /* Properly separated and visually substantial. */
-  .desktop-eyebrow {
-    left: 39.8% !important;
-    top: 34.75% !important;
-    width: 44.1% !important;
-
-    font-size: clamp(.92rem, 1.18vw, 1.4rem) !important;
-    font-weight: 600 !important;
-    line-height: 1 !important;
-    letter-spacing: .38em !important;
-  }
-
-  .eyebrow-flourish {
-    margin-right: 1.15rem !important;
-    font-size: 1.18em !important;
-  }
-
-  .eyebrow-flourish-right {
-    margin-right: 0 !important;
-    margin-left: 1.15rem !important;
-  }
-
-  /* Match the target headline prominence and width. */
-  .hero h1 {
-    left: 39.7% !important;
-    top: 38.25% !important;
-    width: 44.3% !important;
-
-    font-size: clamp(2rem, 3.2vw, 3.5rem) !important;
-    font-weight: 400 !important;
-    line-height: 1 !important;
-    letter-spacing: -.026em !important;
-  }
-
-  /* Wider, taller and raised to sit beneath the headline. */
-  .desktop-ornament {
-    left: 35.15% !important;
-    top: 40.45% !important;
-    width: 54.7% !important;
-    height: 14.5% !important;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP BRANDING — FINAL MICRO-ALIGNMENT
-   Approved buttons and lower content untouched.
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-  /* Same width; slightly shorter and raised to match the target frame. */
-  .mobile-hero-logo {
-    left: 34.225% !important;
-    top: 3.35% !important;
-    transform: scaleY(.89) !important;
-    transform-origin: top left !important;
-  }
-
-  /* Larger and lowered clear of the logo frame. */
-  .desktop-eyebrow {
-    left: 39.25% !important;
-    top: 35.15% !important;
-    width: 45.5% !important;
-
-    font-size: clamp(1rem, 1.34vw, 1.55rem) !important;
-    letter-spacing: .4em !important;
-  }
-
-  .eyebrow-flourish {
-    margin-right: 1.3rem !important;
-    font-size: 1.25em !important;
-  }
-
-  .eyebrow-flourish-right {
-    margin-right: 0 !important;
-    margin-left: 1.3rem !important;
-  }
-
-  /* Centre the rendered headline itself on the shared composition axis. */
-  .hero h1 {
-    left: 62% !important;
-    top: 39.15% !important;
-    width: max-content !important;
-
-    transform: translateX(-50%) !important;
-
-    font-size: clamp(2.15rem, 3.5vw, 3.9rem) !important;
-  }
-
-  /* Extend the flourish left and restore its target depth. */
-  .desktop-ornament {
-    left: 31.55% !important;
-    top: 40.45% !important;
-    width: 60.9% !important;
-    height: 17.5% !important;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP LOWER PANEL — TARGET FINISH
-   Information strip and footer only.
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-  .desktop-info {
-    position: absolute !important;
-    overflow: visible !important;
-
-    border-top: 1px solid rgba(176, 112, 25, .58) !important;
-    border-bottom: 1px solid rgba(176, 112, 25, .58) !important;
-  }
-
-  .desktop-info-item {
-    gap: 7% !important;
-    padding: 4.5% 7% !important;
-  }
-
-  .desktop-info-item + .desktop-info-item {
-    border-left: 1px solid rgba(176, 112, 25, .62) !important;
-  }
-
-  /* Opening hours. */
-  .desktop-info-item strong {
-    font-size: clamp(.82rem, 1vw, 1.2rem) !important;
-    font-weight: 700 !important;
-    line-height: 1.12 !important;
-  }
-
-  .desktop-info-item span:not(.info-icon) {
-    font-size: clamp(.76rem, .92vw, 1.08rem) !important;
-    line-height: 1.2 !important;
-  }
-
-  .hours .info-icon {
-    width: 17% !important;
-    color: #731723 !important;
-  }
-
-  /* Telephone. */
-  .phone .info-icon {
-    width: 18% !important;
-    color: #731723 !important;
-  }
-
-  .phone strong {
-    font-family: Georgia, "Times New Roman", serif !important;
-    font-size: clamp(1.05rem, 1.45vw, 1.7rem) !important;
-    font-weight: 700 !important;
-  }
-
-  /* Address. */
-  .address .info-icon {
-    width: 16% !important;
-    color: #d09222 !important;
-  }
-
-  /* Target ornament interrupting the lower rule. */
-  .desktop-info::after {
-    content: "" !important;
-
-    position: absolute !important;
-    left: 50% !important;
-    bottom: -13px !important;
-
-    width: 86px !important;
-    height: 26px !important;
-
-    transform: translateX(-50%) !important;
-
-    background-color: #efd5a6 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 86 26'%3E%3Cg fill='none' stroke='%23bd7d1f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 13H27M59 13H86'/%3E%3Cpath d='M27 13c6 0 7-7 11-7 3 0 2 5 5 7-3 2-2 7-5 7-4 0-5-7-11-7Z'/%3E%3Cpath d='M59 13c-6 0-7-7-11-7-3 0-2 5-5 7 3 2 2 7 5 7 4 0 5-7 11-7Z'/%3E%3Cpath d='M43 2v22M36 13h14'/%3E%3C/g%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: contain !important;
-
-    pointer-events: none !important;
-  }
-
-  /* Compact and centre the three lower descriptors. */
-  .desktop-footerline {
-    left: 40.65% !important;
-    top: 92.85% !important;
-    width: 25.4% !important;
-
-    font-size: clamp(.78rem, 1.02vw, 1.2rem) !important;
-    font-weight: 600 !important;
-    letter-spacing: .28em !important;
-  }
-
-  .desktop-footerline b {
-    color: #b87920 !important;
-    font-size: 1em !important;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP LOWER PANEL — SPACING + TYPE RHYTHM
-   Lower information section only.
-   ========================================================= */
-
-@media (min-width: 901px) {
-
-  /* Raise and slightly tighten the information strip. */
-  .desktop-info {
-    top: 77.1% !important;
-    height: 9.25% !important;
-    border-bottom: 0 !important;
-  }
-
-  .desktop-info-item {
-    padding-top: 4% !important;
-    padding-bottom: 4% !important;
-  }
-
-  /* Clear heading/detail hierarchy. */
-  .desktop-info-item strong {
-    font-weight: 700 !important;
-  }
-
-  .desktop-info-item span:not(.info-icon) {
-    font-weight: 400 !important;
-  }
-
-  .hours strong {
-    font-weight: 700 !important;
-  }
-
-  .hours span:not(.info-icon) {
-    font-weight: 400 !important;
-  }
-
-  .phone strong {
-    font-weight: 700 !important;
-  }
-
-  .address strong {
-    font-weight: 700 !important;
-  }
-
-  .address span:not(.info-icon) {
-    font-weight: 400 !important;
-  }
-
-  /* Rebuild the lower rule with a clean central opening. */
-  .desktop-info::before {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    height: 1px !important;
-
-    background:
-      linear-gradient(
-        to right,
-        rgba(176, 112, 25, .58) 0%,
-        rgba(176, 112, 25, .58) 44%,
-        transparent 44%,
-        transparent 56%,
-        rgba(176, 112, 25, .58) 56%,
-        rgba(176, 112, 25, .58) 100%
-      ) !important;
-
-    pointer-events: none !important;
-  }
-
-  /* Remove the visible rectangular patch. */
-  .desktop-info::after {
-    bottom: -12px !important;
-    background-color: transparent !important;
-  }
-
-  /* Bring the descriptor row closer to the divider. */
-  .desktop-footerline {
-    left: 49.3% !important;
-    top: 89.3% !important;
-    width: 25.4% !important;
-
-    font-size: clamp(.78rem, 1.02vw, 1.2rem) !important;
-    font-weight: 500 !important;
-    letter-spacing: .28em !important;
-  }
-
-  .desktop-footerline b {
-    font-weight: 400 !important;
   }
 }
 
