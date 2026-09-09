@@ -80,6 +80,18 @@ h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;le
   }
 }
 
+
+/* Final target-alignment pass */
+@media (min-width:981px) {
+  .page { width:min(1280px,calc((100vh - 40px)*1.32),calc(100vw - 40px)); }
+  .logo { width:clamp(350px,31vw,425px); }
+  .offer { align-items:flex-start;padding-top:48px; }
+  .offer-copy { margin-top:0; }
+  .menu { padding-top:22px; }
+  .menu-title { margin-bottom:17px; }
+  .list li { padding-bottom:18px;margin-bottom:18px; }
+}
+
 </style></head>
 <body><div class="page">
 <header class="masthead"><a class="logo" href="index.html" aria-label="Ruk Thai home"><img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai"></a><nav class="mini-nav" aria-label="Page navigation"><a href="menu.html">Full menu</a><a href="directions.html">Directions</a></nav><p class="tagline">Thai cuisine · Greerton, Tauranga</p></header>
