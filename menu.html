@@ -448,6 +448,71 @@ body.menu-page {
 }
 
 
+/* Classy lunch-banner motion */
+.menu-hero .lunch-feature{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transition:transform .42s cubic-bezier(.22,.8,.24,1),box-shadow .42s ease,border-color .42s ease;
+}
+.menu-hero .lunch-feature::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-35% auto -35% -38%;
+  width:30%;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,244,194,.04) 25%,rgba(255,232,145,.24) 50%,rgba(255,244,194,.04) 75%,transparent 100%);
+  transform:skewX(-16deg);
+  opacity:0;
+}
+.menu-hero .lunch-feature a::before{
+  transition:transform .42s cubic-bezier(.22,.8,.24,1),box-shadow .42s ease,background-color .42s ease;
+}
+.menu-hero .lunch-feature-link,
+.menu-hero .lunch-feature-link b{
+  transition:transform .34s cubic-bezier(.22,.8,.24,1),box-shadow .34s ease,background .34s ease;
+}
+.menu-hero .lunch-feature:hover,
+.menu-hero .lunch-feature:focus-within{
+  transform:translateY(-3px);
+  border-color:#ebc96f;
+  box-shadow:0 15px 30px rgba(76,17,29,.28),inset 0 0 0 1px rgba(255,244,200,.32);
+}
+.menu-hero .lunch-feature:hover::after,
+.menu-hero .lunch-feature:focus-within::after{
+  opacity:1;
+  animation:lunch-sheen 1.05s cubic-bezier(.22,.8,.24,1) both;
+}
+.menu-hero .lunch-feature:hover a::before,
+.menu-hero .lunch-feature:focus-within a::before{
+  transform:rotate(-5deg) scale(1.06);
+  background-color:rgba(215,170,72,.12);
+  box-shadow:0 0 0 5px rgba(215,170,72,.09),inset 0 0 14px rgba(255,232,145,.12);
+}
+.menu-hero .lunch-feature:hover .lunch-feature-link,
+.menu-hero .lunch-feature:focus-within .lunch-feature-link{
+  transform:translateX(3px);
+  background:linear-gradient(#fff8dd,#f3cf76);
+  box-shadow:inset 0 1px 0 #fff,0 7px 16px rgba(0,0,0,.2);
+}
+.menu-hero .lunch-feature:hover .lunch-feature-link b,
+.menu-hero .lunch-feature:focus-within .lunch-feature-link b{
+  display:inline-block;
+  transform:translateX(4px);
+}
+@keyframes lunch-sheen{
+  0%{left:-38%}
+  100%{left:116%}
+}
+@media(prefers-reduced-motion:reduce){
+  .menu-hero .lunch-feature,
+  .menu-hero .lunch-feature::after,
+  .menu-hero .lunch-feature a::before,
+  .menu-hero .lunch-feature-link,
+  .menu-hero .lunch-feature-link b{animation:none!important;transition:none!important;transform:none!important}
+}
+
 /* Dash-style lunch page drawer */
 .lunch-drawer-backdrop{
   position:fixed;z-index:89;inset:0;
