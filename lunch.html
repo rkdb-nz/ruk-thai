@@ -145,7 +145,7 @@ function setMenu(open){
   page.classList.toggle('menu-open',open);
   toggle.setAttribute('aria-expanded',String(open));
   panel.setAttribute('aria-hidden',String(!open));
-  if(open) closeButton.focus();
+
 }
 toggle.addEventListener('click',()=>setMenu(!page.classList.contains('menu-open')));
 closeButton.addEventListener('click',()=>{setMenu(false);toggle.focus()});
