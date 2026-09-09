@@ -93,6 +93,39 @@ h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;le
 }
 
 
+/* Target palette, raised logo and clean masthead edge */
+:root{--deep:#140205;--wine:#3b0912;--gold:#d7aa48;--cream:#fff1d2}
+.page{
+  background:radial-gradient(circle at 58% 16%,#4a0b16 0,#27050b 42%,#100103 100%);
+}
+.masthead{
+  border-bottom:0;
+  background:#130205;
+}
+.menu{
+  background:linear-gradient(120deg,#3b0912 0%,#2b060c 58%,#220409 100%);
+}
+.offer-copy{
+  background:rgba(24,3,7,.9);
+}
+.logo{
+  position:relative;
+  top:-11px;
+}
+.logo img{
+  width:100%;
+  margin-left:0;
+  transform:scale(1.06);
+  clip-path:inset(17% 6% 18%);
+}
+@media (min-width:981px){
+  .masthead{padding-top:4px}
+  .logo{width:clamp(400px,38vw,480px);height:108px}
+}
+@media (max-width:980px){
+  .logo{top:-6px;width:min(340px,72vw)}
+}
+
 /* Borderless logo and comfortably filled lunch list */
 .logo{
   overflow:hidden;
