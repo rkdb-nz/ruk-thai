@@ -430,6 +430,15 @@ body.menu-page { color:#35191e; background:var(--menu-cream); }
   .menu-page .menu-section { scroll-margin-top:76px; }
 }
 
+
+/* Sticky containment fix */
+body.menu-page #main {
+  overflow:visible!important;
+}
+body.menu-page {
+  overflow-x:clip!important;
+}
+
 </style>
 </head>
 <body class="menu-page">
