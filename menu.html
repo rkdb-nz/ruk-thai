@@ -842,6 +842,25 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* Make the mobile sheen immediately visible and easier to perceive. */
+@media (max-width:900px) and (prefers-reduced-motion:no-preference) {
+  .menu-hero .lunch-feature::after {
+    width:52%;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,224,116,.22) 24%,
+      rgba(255,226,112,.88) 50%,
+      rgba(255,224,116,.22) 76%,
+      transparent 100%
+    );
+    animation:lunch-sheen-loop 8s linear infinite;
+    animation-delay:-6s;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
