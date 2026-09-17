@@ -185,11 +185,276 @@ h1{margin:0;color:#fff1d1;font:400 clamp(3.8rem,6vw,6.8rem)/.79 Georgia,serif;le
   .menu{position:relative;inset:auto;width:100%;transform:none;opacity:1;visibility:visible;pointer-events:auto;box-shadow:none}
 }
 
+
+
+/* =========================================================
+   MOBILE LUNCH INVITATION
+   Desktop presentation above 980px remains unchanged.
+   ========================================================= */
+.mobile-lunch-call{display:none}
+
+@media (max-width:980px){
+  body{
+    padding:0;
+    background:#f3e2bf;
+  }
+  .page{
+    min-height:100dvh;
+    overflow:visible;
+    color:#3d151b;
+    border:0;
+    background:
+      radial-gradient(circle at 92% 8%,rgba(215,170,72,.16),transparent 17rem),
+      #f8edd8;
+    box-shadow:none;
+  }
+  .masthead{
+    min-height:112px;
+    padding:14px 20px 12px;
+    border-top:5px solid #641421;
+    border-bottom:1px solid rgba(183,137,44,.5);
+    background:
+      radial-gradient(ellipse at center,rgba(255,251,238,.98),rgba(241,218,170,.72));
+  }
+  .logo{
+    top:0;
+    height:auto;
+    width:min(300px,70vw);
+    filter:drop-shadow(0 4px 7px rgba(76,17,29,.13));
+  }
+  .tagline{
+    bottom:8px;
+    color:#976514;
+  }
+  .layout{
+    display:block;
+    min-height:0;
+    overflow:visible;
+  }
+  .offer{
+    min-height:385px;
+    padding:24px;
+    align-items:flex-end;
+    justify-content:center;
+    background:
+      linear-gradient(180deg,rgba(27,4,8,.05) 10%,rgba(27,4,8,.76) 100%),
+      url("assets/hero/lunch-atmosphere.jpg") center 45%/cover no-repeat;
+  }
+  .offer-copy{
+    width:min(430px,100%);
+    max-width:none;
+    margin:0 auto;
+    padding:22px 24px;
+    border:1px solid rgba(226,183,83,.72);
+    border-left:1px solid rgba(226,183,83,.72);
+    border-radius:18px;
+    color:#fff1d2;
+    background:rgba(40,6,13,.88);
+    box-shadow:0 14px 34px rgba(17,1,5,.34),inset 0 0 0 1px rgba(255,240,190,.09);
+    backdrop-filter:blur(5px);
+    text-align:center;
+  }
+  .offer-copy .eyebrow{
+    margin-bottom:8px;
+  }
+  .offer-copy h1{
+    font-size:clamp(3.8rem,14vw,5.6rem);
+    line-height:.82;
+  }
+  .offer-copy .time{
+    margin-top:16px;
+    padding-top:13px;
+  }
+  .offer-copy .note{
+    max-width:31rem;
+    margin:8px auto 0;
+    color:#f3dfe0;
+  }
+  .offer-copy .button{
+    margin:15px auto 0;
+    border-radius:999px;
+  }
+  .menu{
+    padding:34px 16px 42px;
+    color:#3b1720;
+    background:
+      linear-gradient(rgba(255,250,238,.94),rgba(247,232,202,.96)),
+      repeating-linear-gradient(0deg,rgba(116,29,43,.025) 0 1px,transparent 1px 5px);
+  }
+  .menu-title{
+    margin:0 0 20px;
+    color:#741d2b;
+    font:500 2.1rem/1 Georgia,"Times New Roman",serif;
+    letter-spacing:0;
+    text-align:center;
+    text-transform:none;
+  }
+  .menu-title::after{
+    content:"Choose from twelve lunchtime favourites";
+    display:block;
+    margin-top:8px;
+    color:#936b24;
+    font:700 .64rem/1.3 Arial,sans-serif;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+  }
+  .list{
+    width:min(760px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:none;
+    grid-auto-flow:row;
+    gap:12px;
+  }
+  .list li{
+    min-height:104px;
+    margin:0;
+    padding:18px 16px 16px 54px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border:1px solid rgba(183,137,44,.38);
+    border-radius:12px;
+    color:#3b1720;
+    background:rgba(255,252,244,.92);
+    box-shadow:0 7px 18px rgba(76,17,29,.08);
+  }
+  .list li::before{
+    left:14px;
+    top:50%;
+    width:28px;
+    height:28px;
+    display:grid;
+    place-items:center;
+    border:1px solid #c69432;
+    border-radius:50%;
+    color:#741d2b;
+    background:#f2d889;
+    font:700 .82rem/1 Georgia,"Times New Roman",serif;
+    transform:translateY(-50%);
+  }
+  .list strong{
+    color:#641421;
+    font:600 1rem/1.25 Georgia,"Times New Roman",serif;
+  }
+  .list span{
+    margin-top:5px;
+    color:#76585c;
+    font:.72rem/1.35 Arial,sans-serif;
+  }
+  .mobile-lunch-call{
+    width:min(420px,100%);
+    min-height:50px;
+    margin:24px auto 0;
+    padding:14px 20px;
+    display:grid;
+    place-items:center;
+    border:1px solid #d0a13c;
+    border-radius:999px;
+    color:#fff7e5;
+    background:linear-gradient(180deg,#781a29,#5c101d);
+    box-shadow:0 8px 20px rgba(76,17,29,.2);
+    font:800 .74rem/1 Arial,sans-serif;
+    letter-spacing:.09em;
+    text-align:center;
+    text-decoration:none;
+    text-transform:uppercase;
+  }
+}
+
+@media (max-width:640px) and (orientation:portrait){
+  .masthead{min-height:108px}
+  .offer{
+    min-height:365px;
+    padding:20px 14px;
+  }
+  .offer-copy{
+    padding:19px 18px;
+  }
+  .offer-copy h1{
+    font-size:4rem;
+  }
+  .menu{
+    padding:30px 13px 36px;
+  }
+  .list{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .list li{
+    min-height:82px;
+  }
+}
+
+@media (orientation:landscape) and (max-width:980px) and (max-height:600px){
+  .masthead{
+    min-height:88px;
+    padding:8px 18px;
+  }
+  .logo{
+    width:min(260px,38vw);
+  }
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);
+    align-items:stretch;
+  }
+  .offer{
+    min-height:calc(100dvh - 88px);
+    padding:18px;
+    align-items:center;
+  }
+  .offer-copy{
+    padding:18px;
+  }
+  .offer-copy h1{
+    font-size:clamp(3.2rem,12dvh,4.5rem);
+  }
+  .offer-copy .note{
+    font-size:.76rem;
+  }
+  .menu{
+    padding:22px 16px 28px;
+  }
+  .menu-title{
+    margin-bottom:14px;
+    font-size:1.75rem;
+  }
+  .list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+  .list li{
+    min-height:78px;
+    padding:12px 11px 11px 44px;
+    border-radius:9px;
+  }
+  .list li::before{
+    left:10px;
+    width:24px;
+    height:24px;
+    font-size:.72rem;
+  }
+  .list strong{
+    font-size:.85rem;
+  }
+  .list span{
+    margin-top:3px;
+    font-size:.64rem;
+  }
+  .mobile-lunch-call{
+    min-height:44px;
+    margin-top:16px;
+    padding:11px 16px;
+  }
+}
+
 </style></head>
 <body><div class="page">
 <header class="masthead"><a class="logo" href="index.html" aria-label="Ruk Thai home"><img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai"></a><p class="tagline">Thai cuisine</p></header>
 <main class="layout"><section class="offer"><div class="offer-copy"><p class="eyebrow">Lunch special</p><h1><span>$17</span>Lunch<br>Special</h1><p class="time">Available from <strong>11am–2pm</strong></p><p class="note">Choose from twelve lunch favourites. Call Ruk Thai directly to order.</p><div class="button" lang="th">เมนูพิเศษมื้อกลางวัน</div></div></section>
 <section class="menu" id="lunch-menu" aria-labelledby="lunch-title" aria-hidden="false"><p class="menu-title" id="lunch-title">Lunch menu</p><ol class="list">
 <li><strong>Green Curry on Rice or Noodles</strong><span>Chicken, pork or beef</span></li><li><strong>Red Curry on Rice or Noodles</strong><span>Chicken, pork or beef</span></li><li><strong>Pad Thai</strong><span>Chicken, pork or beef</span></li><li><strong>Fried Rice</strong><span>Chicken, pork or beef</span></li><li><strong>Chicken Satay + Rice + Vegetables</strong></li><li><strong>Noodle Soup (Pho)</strong><span>Chicken, pork or beef</span></li><li><strong>Laksa</strong><span>Chicken, pork or beef</span></li><li><strong>Spicy Noodles</strong><span>Chicken, pork or beef</span></li><li><strong>Mie Goreng</strong><span>Chicken, pork or beef</span></li><li><strong>Nasi Goreng</strong><span>Chicken, pork or beef</span></li><li><strong>Guay Tiew Kua</strong><span>Chicken, pork or beef</span></li><li><strong>Pad See Eiw</strong><span>Chicken, pork or beef</span></li>
-</ol></section></main></div>
+</ol><a class="mobile-lunch-call" href="tel:+6475796180">Call to order · 07 579 6180</a></section></main></div>
 </body></html>
