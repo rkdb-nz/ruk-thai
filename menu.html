@@ -996,6 +996,68 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* High-visibility mobile lunch-banner animation. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    transform-origin:center;
+    animation:mobile-banner-punch 4s ease-in-out infinite!important;
+  }
+  .menu-hero .lunch-feature::after {
+    left:-72%;
+    width:72%;
+    opacity:0;
+    z-index:2;
+    mix-blend-mode:screen;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,220,75,.38) 18%,
+      rgba(255,250,205,1) 46%,
+      rgba(255,215,55,.92) 54%,
+      rgba(255,220,75,.38) 82%,
+      transparent 100%
+    );
+    filter:blur(.4px);
+    animation:mobile-banner-sweep-strong 4s cubic-bezier(.2,.72,.25,1) infinite!important;
+  }
+  .menu-hero .lunch-feature a {
+    position:relative;
+    z-index:3;
+  }
+}
+
+@keyframes mobile-banner-sweep-strong {
+  0% {
+    opacity:1;
+    transform:translateX(0) skewX(-14deg);
+  }
+  34% {
+    opacity:1;
+    transform:translateX(300%) skewX(-14deg);
+  }
+  40%,100% {
+    opacity:0;
+    transform:translateX(300%) skewX(-14deg);
+  }
+}
+
+@keyframes mobile-banner-punch {
+  0% {
+    filter:brightness(1.38) saturate(1.2);
+    box-shadow:0 0 0 2px rgba(255,214,78,.95),0 10px 34px rgba(229,174,45,.58),inset 0 0 24px rgba(255,220,85,.28);
+  }
+  18% {
+    filter:brightness(1.16) saturate(1.1);
+    box-shadow:0 0 0 1px rgba(255,214,78,.58),0 9px 25px rgba(76,17,29,.3),inset 0 0 16px rgba(255,220,85,.16);
+  }
+  42%,100% {
+    filter:brightness(1) saturate(1);
+    box-shadow:0 8px 20px rgba(76,17,29,.2),inset 0 -1px 0 rgba(255,244,200,.15);
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
