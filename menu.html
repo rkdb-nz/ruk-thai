@@ -1109,6 +1109,44 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* Guaranteed-visible white sweep: animate the banner background itself. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    background-image:
+      linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255,255,255,.18) 44%,
+        rgba(255,255,255,.92) 50%,
+        rgba(255,255,255,.18) 56%,
+        transparent 62%
+      ),
+      linear-gradient(115deg,rgba(76,17,29,.98),rgba(116,29,43,.95));
+    background-size:220% 100%,100% 100%;
+    background-repeat:no-repeat;
+    animation:mobile-white-background-sweep 4s ease-in-out infinite!important;
+  }
+  .menu-hero .lunch-feature::after {
+    display:none!important;
+    content:none!important;
+    animation:none!important;
+  }
+}
+
+@keyframes mobile-white-background-sweep {
+  0% {
+    background-position:160% 0,0 0;
+  }
+  40% {
+    background-position:-60% 0,0 0;
+  }
+  41%,100% {
+    background-position:-60% 0,0 0;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
