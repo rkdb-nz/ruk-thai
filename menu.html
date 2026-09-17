@@ -1058,6 +1058,15 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* Match portrait lunch banner to landscape: remove redundant kicker. */
+@media (max-width:600px) and (orientation:portrait) {
+  .menu-hero .lunch-feature-kicker {
+    display:none;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
