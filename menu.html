@@ -1172,6 +1172,20 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   padding-left:.15rem;
 }
 
+
+
+/* Mobile landscape menu tagline: location on its own line. */
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-page-tagline .tagline-separator {
+    display:none;
+  }
+  .menu-page-tagline .tagline-location {
+    display:block;
+    margin-top:4px;
+    padding:0;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
@@ -1182,7 +1196,7 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
     <img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">
   </a>
 
-  <p class="menu-page-tagline">Authentic Thai cuisine <span>•</span> Greerton, Tauranga</p>
+  <p class="menu-page-tagline">Authentic Thai cuisine <span class="tagline-separator">•</span> <span class="tagline-location">Greerton, Tauranga</span></p>
 </header>
 <aside class="lunch-feature" aria-label="Ruk Thai lunch special">
   <a href="lunch.html">
