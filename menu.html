@@ -747,6 +747,42 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* Mobile menu refinements: two-line landscape lunch feature; no mobile footer. */
+@media (max-width:900px) {
+  .menu-page-footer {
+    display:none;
+  }
+}
+
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature a {
+    min-height:0;
+    padding:10px 18px 11px;
+    grid-template-columns:auto minmax(0,1fr);
+    grid-template-rows:auto auto;
+    gap:7px 14px;
+  }
+  .menu-hero .lunch-feature-kicker {
+    grid-column:1;
+    grid-row:1;
+    padding-right:14px;
+  }
+  .menu-hero .lunch-feature strong {
+    grid-column:2;
+    grid-row:1;
+    justify-content:center;
+  }
+  .menu-hero .lunch-feature-link {
+    grid-column:1 / -1;
+    grid-row:2;
+    justify-self:center;
+    min-width:180px;
+    padding:7px 18px;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
