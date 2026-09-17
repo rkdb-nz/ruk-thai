@@ -159,8 +159,15 @@ address {
     padding: 16px 0 20px;
     align-content: start;
   }
-  .topbar { padding: 0 4px; }
-  .logo { width: 170px; }
+  .topbar {
+    padding: 0 4px;
+    justify-content: center;
+  }
+  .logo {
+    width: 170px;
+    margin: 0 auto;
+  }
+  .back { display: none; }
   .map-card {
     min-height: 0;
     grid-template-columns: 1fr;
@@ -219,7 +226,9 @@ address {
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .directions-page { width: min(1100px, calc(100% - 24px)); padding: 12px 0; gap: 10px; }
-  .logo { width: 145px; }
+  .topbar { justify-content: center; }
+  .logo { width: 145px; margin: 0 auto; }
+  .back { display: none; }
   .map-card { min-height: 360px; grid-template-columns: .8fr 1.5fr; }
   .details { padding: 22px 28px; }
   h1 { font-size: 2.6rem; }
