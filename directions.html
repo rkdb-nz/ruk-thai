@@ -152,6 +152,7 @@ address {
   font: .76rem/1.4 Arial, sans-serif;
   text-align: center;
 }
+.mobile-extra { display: none; }
 @media (max-width: 760px) {
   .directions-page {
     width: min(100% - 20px, 560px);
@@ -167,7 +168,52 @@ address {
   .details { padding: 28px 24px 30px; }
   h1 { font-size: clamp(2.4rem, 13vw, 3.5rem); }
   address { margin-top: 18px; }
-  .actions { margin-top: 24px; }
+  .mobile-extra {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(228,201,134,.42);
+  }
+  .mobile-info-row {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .mobile-info-icon {
+    color: #e4c986;
+    font: 700 1.2rem/1 Arial, sans-serif;
+    text-align: center;
+  }
+  .mobile-info-row strong,
+  .mobile-info-row span {
+    display: block;
+  }
+  .mobile-info-row strong {
+    color: #f7e8b8;
+    font: 800 .76rem/1.2 Arial, sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .mobile-info-row span {
+    margin-top: 4px;
+    color: #fffaf0;
+    font: .97rem/1.45 Georgia, "Times New Roman", serif;
+  }
+  .service-line {
+    margin: 2px 0 0;
+    color: #e4c986;
+    font: 800 .72rem/1.3 Arial, sans-serif;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .actions {
+    margin-top: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .actions .button:first-child { grid-column: 1 / -1; }
   .map { min-height: 43dvh; }
   .map iframe { min-height: 43dvh; }
 }
@@ -177,9 +223,50 @@ address {
   .map-card { min-height: 360px; grid-template-columns: .8fr 1.5fr; }
   .details { padding: 22px 28px; }
   h1 { font-size: 2.6rem; }
-  address { margin-top: 12px; font-size: 1rem; line-height: 1.35; }
-  .actions { margin-top: 16px; grid-template-columns: 1fr 1fr; }
-  .button { min-height: 44px; padding: 10px 12px; }
+  address { margin-top: 10px; font-size: .95rem; line-height: 1.3; }
+  .mobile-extra {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 11px;
+    border-top: 1px solid rgba(228,201,134,.42);
+  }
+  .mobile-info-row {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+  .mobile-info-icon {
+    color: #e4c986;
+    font: 700 .95rem/1 Arial, sans-serif;
+    text-align: center;
+  }
+  .mobile-info-row strong,
+  .mobile-info-row span { display: block; }
+  .mobile-info-row strong {
+    color: #f7e8b8;
+    font: 800 .62rem/1.15 Arial, sans-serif;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .mobile-info-row span {
+    margin-top: 2px;
+    color: #fffaf0;
+    font: .77rem/1.25 Georgia, "Times New Roman", serif;
+  }
+  .service-line {
+    margin: 0;
+    color: #e4c986;
+    font: 800 .6rem/1.2 Arial, sans-serif;
+    letter-spacing: .08em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .actions { margin-top: 10px; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .actions .button:first-child { grid-column: 1 / -1; }
+  .button { min-height: 38px; padding: 8px 10px; font-size: .66rem; }
   .map, .map iframe { min-height: 360px; }
 }
 </style>
@@ -202,9 +289,22 @@ address {
         Greerton, Tauranga 3112<br>
         <a class="phone" href="tel:+6475796180">07 579 6180</a>
       </address>
+
+      <div class="mobile-extra" aria-label="Opening hours and services">
+        <div class="mobile-info-row">
+          <span class="mobile-info-icon" aria-hidden="true">◷</span>
+          <div>
+            <strong>Open 7 days</strong>
+            <span>Lunch 11:00am – 2:30pm<br>Dinner 4:30pm – 9:00pm</span>
+          </div>
+        </div>
+        <p class="service-line">Dine in · Takeaway · Catering</p>
+      </div>
+
       <div class="actions">
         <a class="button" href="https://www.google.com/maps/dir/?api=1&amp;destination=123+Chadwick+Road+Greerton+Tauranga+3112" target="_blank" rel="noopener">Open in Google Maps</a>
-        <a class="button secondary" href="index.html">Back to Ruk Thai</a>
+        <a class="button secondary" href="menu.html">View Menu</a>
+        <a class="button secondary" href="index.html">Home</a>
       </div>
     </div>
 
