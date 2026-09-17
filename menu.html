@@ -861,6 +861,68 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* =========================================================
+   MOBILE MENU HEADER ORDER
+   Lunch banner → logo → Full Menu.
+   Desktop intentionally untouched.
+   ========================================================= */
+@media (max-width:900px) {
+  .menu-hero {
+    display:flex;
+    flex-direction:column;
+  }
+  .menu-hero .lunch-feature {
+    order:1;
+    width:calc(100% + 32px);
+    max-width:none;
+    margin:-12px -16px 0;
+    border-width:0 0 1px;
+    border-radius:0;
+    box-shadow:0 8px 20px rgba(76,17,29,.2),inset 0 -1px 0 rgba(255,244,200,.15);
+  }
+  .menu-hero .menu-page-header {
+    order:2;
+  }
+  .menu-hero .menu-heading {
+    order:3;
+  }
+  .menu-hero .lunch-feature::after {
+    width:52%;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,224,116,.2) 24%,
+      rgba(255,226,112,.86) 50%,
+      rgba(255,224,116,.2) 76%,
+      transparent 100%
+    );
+    animation:mobile-lunch-sheen 4s linear infinite;
+    animation-delay:0s;
+  }
+}
+
+@media (max-width:600px) {
+  .menu-hero .lunch-feature {
+    width:calc(100% + 20px);
+    margin:-12px -10px 0;
+  }
+}
+
+@keyframes mobile-lunch-sheen {
+  0% { left:-58%; opacity:.9; }
+  44% { left:116%; opacity:.9; }
+  50%,100% { left:116%; opacity:0; }
+}
+
+@media (max-width:900px) and (prefers-reduced-motion:reduce) {
+  .menu-hero .lunch-feature::after {
+    animation:none!important;
+    opacity:0!important;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
