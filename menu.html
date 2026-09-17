@@ -923,6 +923,79 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* Mobile lunch banner: reliable visible animation and one-line landscape layout. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature::after {
+    left:-58%;
+    width:52%;
+    opacity:0;
+    z-index:0;
+    mix-blend-mode:screen;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,232,145,.22) 22%,
+      rgba(255,235,150,.96) 50%,
+      rgba(255,232,145,.22) 78%,
+      transparent 100%
+    );
+    animation:mobile-banner-sweep 4s ease-in-out infinite!important;
+  }
+  .menu-hero .lunch-feature {
+    animation:mobile-banner-glow 4s ease-in-out infinite!important;
+  }
+}
+
+@keyframes mobile-banner-sweep {
+  0% {
+    opacity:.95;
+    transform:translateX(0) skewX(-16deg);
+  }
+  42% {
+    opacity:.95;
+    transform:translateX(340%) skewX(-16deg);
+  }
+  48%,100% {
+    opacity:0;
+    transform:translateX(340%) skewX(-16deg);
+  }
+}
+
+@keyframes mobile-banner-glow {
+  0%,48%,100% {
+    box-shadow:0 8px 20px rgba(76,17,29,.2),inset 0 -1px 0 rgba(255,244,200,.15);
+  }
+  20% {
+    box-shadow:0 9px 24px rgba(76,17,29,.28),inset 0 -1px 0 rgba(255,226,125,.42);
+  }
+}
+
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature a {
+    min-height:58px;
+    padding:8px 18px;
+    grid-template-columns:minmax(0,auto) auto;
+    grid-template-rows:1fr;
+    justify-content:center;
+    justify-items:center;
+    gap:18px;
+  }
+  .menu-hero .lunch-feature strong {
+    grid-column:1;
+    grid-row:1;
+    justify-self:end;
+  }
+  .menu-hero .lunch-feature-link {
+    grid-column:2;
+    grid-row:1;
+    justify-self:start;
+    min-width:180px;
+    margin:0;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
