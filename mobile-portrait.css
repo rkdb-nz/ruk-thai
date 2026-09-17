@@ -230,3 +230,18 @@
     width: 53.5%;
   }
 }
+
+/* Mobile call button: centred text, no icon. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .hero-actions .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    align-self: center;
+    text-align: center;
+  }
+}
