@@ -152,35 +152,216 @@ address {
   font: .76rem/1.4 Arial, sans-serif;
   text-align: center;
 }
+.mobile-extra,
+.mobile-info-title { display: none; }
 @media (max-width: 760px) {
   .directions-page {
     width: min(100% - 20px, 560px);
     padding: 16px 0 20px;
     align-content: start;
   }
-  .topbar { padding: 0 4px; }
-  .logo { width: 170px; }
+  .topbar {
+    position: relative;
+    padding: 0 4px;
+    justify-content: center;
+  }
+  .logo {
+    width: 170px;
+    margin: 0 auto;
+  }
+  .back {
+    position: absolute;
+    left: 4px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    font-size: 0;
+    text-decoration: none;
+  }
+  .back-arrow {
+    font: 400 2rem/1 Georgia, "Times New Roman", serif;
+  }
+  .back-label { display: none; }
+  .home-action { display: none; }
   .map-card {
     min-height: 0;
     grid-template-columns: 1fr;
   }
   .details { padding: 28px 24px 30px; }
+  .details .eyebrow { display: none; }
+  .mobile-info-title {
+    display: block;
+    order: 1;
+    margin: 0 0 4px;
+    color: #fffaf0;
+    font-size: clamp(2.65rem, 14vw, 3.7rem);
+  }
+  .mobile-extra { order: 2; }
+  #directions-title {
+    order: 3;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(228,201,134,.42);
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+  address { order: 4; }
+  .actions { order: 5; }
   h1 { font-size: clamp(2.4rem, 13vw, 3.5rem); }
   address { margin-top: 18px; }
-  .actions { margin-top: 24px; }
-  .map { min-height: 43dvh; }
-  .map iframe { min-height: 43dvh; }
+  .mobile-extra {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(228,201,134,.42);
+  }
+  .mobile-info-row {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .mobile-info-icon {
+    color: #e4c986;
+    font: 700 1.2rem/1 Arial, sans-serif;
+    text-align: center;
+  }
+  .mobile-info-row strong,
+  .mobile-info-row span {
+    display: block;
+  }
+  .mobile-info-row strong {
+    color: #f7e8b8;
+    font: 800 .76rem/1.2 Arial, sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .mobile-info-row span {
+    margin-top: 4px;
+    color: #fffaf0;
+    font: .97rem/1.45 Georgia, "Times New Roman", serif;
+  }
+  .service-line {
+    margin: 2px 0 0;
+    color: #e4c986;
+    font: 800 .72rem/1.3 Arial, sans-serif;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .actions {
+    margin-top: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .actions .button:first-child { grid-column: 1 / -1; }
+  .map {
+    min-height: 36dvh;
+    margin: 14px;
+    overflow: hidden;
+    border: 6px solid #fffaf0;
+    outline: 1px solid rgba(183,147,74,.9);
+    box-shadow: 0 10px 28px rgba(76,17,29,.18);
+    background: #fffaf0;
+  }
+  .map iframe { min-height: 36dvh; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .directions-page { width: min(1100px, calc(100% - 24px)); padding: 12px 0; gap: 10px; }
-  .logo { width: 145px; }
-  .map-card { min-height: 360px; grid-template-columns: .8fr 1.5fr; }
-  .details { padding: 22px 28px; }
+  .topbar { position: relative; justify-content: center; }
+  .logo { width: 145px; margin: 0 auto; }
+  .back {
+    position: absolute;
+    left: 2px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    text-decoration: none;
+  }
+  .back-arrow {
+    font: 400 1.8rem/1 Georgia, "Times New Roman", serif;
+  }
+  .back-label { display: none; }
+  .home-action { display: none; }
+  .map-card { min-height: 360px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .details { padding: 18px 24px; }
+  .details .eyebrow { display: none; }
+  .mobile-info-title {
+    display: block;
+    order: 1;
+    margin: 0;
+    color: #fffaf0;
+    font-size: 2rem;
+    line-height: .95;
+  }
+  .mobile-extra { order: 2; }
+  #directions-title {
+    order: 3;
+    margin-top: 9px;
+    padding-top: 9px;
+    border-top: 1px solid rgba(228,201,134,.42);
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+  address { order: 4; }
+  .actions { order: 5; }
   h1 { font-size: 2.6rem; }
-  address { margin-top: 12px; font-size: 1rem; line-height: 1.35; }
-  .actions { margin-top: 16px; grid-template-columns: 1fr 1fr; }
-  .button { min-height: 44px; padding: 10px 12px; }
-  .map, .map iframe { min-height: 360px; }
+  address { margin-top: 10px; font-size: .95rem; line-height: 1.3; }
+  .mobile-extra {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 11px;
+    border-top: 1px solid rgba(228,201,134,.42);
+  }
+  .mobile-info-row {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+  .mobile-info-icon {
+    color: #e4c986;
+    font: 700 .95rem/1 Arial, sans-serif;
+    text-align: center;
+  }
+  .mobile-info-row strong,
+  .mobile-info-row span { display: block; }
+  .mobile-info-row strong {
+    color: #f7e8b8;
+    font: 800 .62rem/1.15 Arial, sans-serif;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .mobile-info-row span {
+    margin-top: 2px;
+    color: #fffaf0;
+    font: .77rem/1.25 Georgia, "Times New Roman", serif;
+  }
+  .service-line {
+    margin: 0;
+    color: #e4c986;
+    font: 800 .6rem/1.2 Arial, sans-serif;
+    letter-spacing: .08em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .actions { margin-top: 10px; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .actions .button:first-child { grid-column: 1 / -1; }
+  .button { min-height: 38px; padding: 8px 10px; font-size: .66rem; }
+  .map {
+    min-height: 328px;
+    margin: 16px;
+    overflow: hidden;
+    border: 6px solid #fffaf0;
+    outline: 1px solid rgba(183,147,74,.9);
+    box-shadow: 0 10px 28px rgba(76,17,29,.18);
+    background: #fffaf0;
+  }
+  .map iframe { min-height: 328px; }
 }
 </style>
 </head>
@@ -190,11 +371,15 @@ address {
     <a class="logo" href="index.html" aria-label="Ruk Thai home">
       <img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">
     </a>
-    <a class="back" href="index.html">← Back to Ruk Thai</a>
+    <a class="back" href="index.html" aria-label="Back to Ruk Thai">
+      <span class="back-arrow" aria-hidden="true">←</span>
+      <span class="back-label">Back to Ruk Thai</span>
+    </a>
   </header>
 
   <section class="map-card" aria-labelledby="directions-title">
     <div class="details">
+      <h1 class="mobile-info-title">Info</h1>
       <p class="eyebrow">Greerton · Tauranga</p>
       <h1 id="directions-title">Find us</h1>
       <address>
@@ -202,9 +387,21 @@ address {
         Greerton, Tauranga 3112<br>
         <a class="phone" href="tel:+6475796180">07 579 6180</a>
       </address>
+
+      <div class="mobile-extra" aria-label="Opening hours and services">
+        <div class="mobile-info-row">
+          <span class="mobile-info-icon" aria-hidden="true">◷</span>
+          <div>
+            <strong>Open 7 days</strong>
+            <span>Lunch 11:00am – 2:30pm<br>Dinner 4:30pm – 9:00pm</span>
+          </div>
+        </div>
+        <p class="service-line">Dine in · Takeaway · Catering</p>
+      </div>
+
       <div class="actions">
         <a class="button" href="https://www.google.com/maps/dir/?api=1&amp;destination=123+Chadwick+Road+Greerton+Tauranga+3112" target="_blank" rel="noopener">Open in Google Maps</a>
-        <a class="button secondary" href="index.html">Back to Ruk Thai</a>
+        <a class="button secondary home-action" href="index.html">Back to Ruk Thai</a>
       </div>
     </div>
 

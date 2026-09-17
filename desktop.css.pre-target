@@ -1,0 +1,455 @@
+
+/* =========================================================
+   RUK THAI
+   DESKTOP LANDING — FINAL TARGET
+   Mobile portrait + landscape intentionally untouched.
+   ========================================================= */
+
+.desktop-ornament,
+.desktop-actions,
+.desktop-info {
+  display: none;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  html,
+  body,
+  body.portrait-gateway,
+  #main {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #f3ddb5;
+  }
+
+
+  /* -------------------------
+     HERO ART
+     ------------------------- */
+
+  .hero {
+    position: relative;
+    width: 100dvw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+
+    background:
+      #f3ddb5
+      url("assets/hero/hero-desktop.png")
+      left center / cover
+      no-repeat !important;
+  }
+
+
+  .hero-copy {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* -------------------------
+     LOGO
+     ------------------------- */
+
+  .mobile-hero-logo {
+    position: absolute !important;
+
+    top: 7.5% !important;
+    left: 68% !important;
+
+    width: 45% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateX(-50%) !important;
+  }
+
+
+  .mobile-hero-logo::before {
+    display: none !important;
+  }
+
+
+  .mobile-hero-logo img {
+    display: block;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain;
+
+    filter:
+      contrast(1.08)
+      saturate(1.05)
+      drop-shadow(0 1px 0 rgba(85, 15, 24, .12));
+  }
+
+
+  /* -------------------------
+     TAGLINE
+     ------------------------- */
+
+  .hero h1 {
+    position: absolute !important;
+
+    top: 35.5% !important;
+    left: 68% !important;
+
+    width: 44% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateX(-50%) !important;
+
+    color: #681720;
+
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: clamp(2rem, 2.55vw, 3.35rem) !important;
+    font-weight: 400;
+    line-height: 1.05;
+
+    letter-spacing: -.025em;
+
+    text-align: center;
+    white-space: nowrap;
+  }
+
+
+  /* Existing mobile action block is not part of desktop */
+  .hero-actions {
+    display: none !important;
+  }
+
+
+  /* -------------------------
+     THAI ORNAMENT
+     ------------------------- */
+
+  .desktop-ornament {
+    position: absolute;
+
+    top: 46%;
+    left: 68%;
+
+    width: 35%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.1rem;
+
+    transform: translateX(-50%);
+
+    color: #b77c1e;
+  }
+
+
+  .desktop-ornament span {
+    height: 1px;
+    flex: 1;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(183,124,30,.72),
+        transparent
+      );
+  }
+
+
+  .desktop-ornament b {
+    color: #851b29;
+
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    text-shadow:
+      0 1px 0 rgba(255,255,255,.55);
+  }
+
+
+  /* -------------------------
+     MAIN DESKTOP ACTIONS
+     ------------------------- */
+
+  .desktop-actions {
+    position: absolute;
+
+    top: 53%;
+    left: 68%;
+
+    width: 37%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.2rem;
+
+    transform: translateX(-50%);
+  }
+
+
+  .desktop-card {
+    min-height: 9.3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: .8rem;
+
+    padding: 1rem;
+
+    border: 1px solid rgba(181,122,28,.82);
+    border-radius: .55rem;
+
+    text-decoration: none;
+
+    font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+    font-size: clamp(1.6rem, 1.8vw, 2.2rem);
+
+    font-weight: 700;
+
+    letter-spacing: .065em;
+
+    box-shadow:
+      0 .45rem 1rem rgba(83,45,13,.10),
+      inset 0 1px 0 rgba(255,255,255,.62);
+
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease,
+      border-color .18s ease;
+  }
+
+
+  .desktop-menu {
+    background:
+      linear-gradient(
+        180deg,
+        #841c2c 0%,
+        #67131f 100%
+      );
+
+    color: #f6dfa0;
+
+    border-color: #ca9230;
+
+    box-shadow:
+      0 .55rem 1.15rem rgba(70,25,15,.15),
+      inset 0 1px 0 rgba(255,255,255,.09);
+  }
+
+
+  .desktop-directions {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,249,235,.76),
+        rgba(245,221,178,.48)
+      );
+
+    color: #681720;
+  }
+
+
+  .desktop-card-icon {
+    display: block;
+
+    color: #d79c32;
+
+    font-family: Georgia, serif;
+
+    font-size: 2.25rem;
+
+    line-height: 1;
+  }
+
+
+  .desktop-menu .desktop-card-icon {
+    color: #f0d387;
+  }
+
+
+  @media (hover: hover) and (pointer: fine) {
+
+    .desktop-card:hover {
+      transform: translateY(-3px);
+
+      border-color: #c9902d;
+
+      box-shadow:
+        0 .75rem 1.35rem rgba(73,38,13,.15),
+        inset 0 1px 0 rgba(255,255,255,.55);
+    }
+
+    .desktop-menu:hover {
+      box-shadow:
+        0 .8rem 1.45rem rgba(70,25,15,.19),
+        inset 0 1px 0 rgba(255,255,255,.11);
+    }
+  }
+
+
+  /* -------------------------
+     INFORMATION STRIP
+     ------------------------- */
+
+  .desktop-info {
+    position: absolute;
+
+    top: 77%;
+    left: 68%;
+
+    width: 43%;
+
+    display: grid;
+    grid-template-columns: 1.35fr .8fr 1.25fr;
+
+    align-items: stretch;
+
+    transform: translateX(-50%);
+
+    border-top: 1px solid rgba(179,119,30,.42);
+    border-bottom: 1px solid rgba(179,119,30,.28);
+  }
+
+
+  .desktop-info-item {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: .8rem;
+
+    padding: 1rem 1.15rem;
+
+    color: #64151f;
+
+    text-decoration: none;
+  }
+
+
+  .desktop-info-item + .desktop-info-item {
+    border-left: 1px solid rgba(179,119,30,.38);
+  }
+
+
+  .desktop-info-item div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: .22rem;
+  }
+
+
+  .desktop-info-item strong {
+    color: #65151f;
+
+    font-family:
+      Arial,
+      Helvetica,
+      sans-serif;
+
+    font-size: clamp(.78rem, .85vw, 1rem);
+
+    font-weight: 700;
+
+    letter-spacing: .055em;
+
+    line-height: 1.15;
+  }
+
+
+  .desktop-info-item span:not(.info-icon) {
+    color: #6e332d;
+
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: clamp(.78rem, .8vw, .96rem);
+
+    line-height: 1.25;
+  }
+
+
+  .info-icon {
+    flex: 0 0 auto;
+
+    color: #b67c20;
+
+    font-size: 1.65rem;
+
+    line-height: 1;
+  }
+
+
+  .phone strong {
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: clamp(1rem, 1.25vw, 1.4rem);
+
+    letter-spacing: .02em;
+  }
+
+
+}
+
+
+/* =========================================================
+   WIDE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1500px) and (min-height: 760px) {
+
+  .mobile-hero-logo,
+  .hero h1,
+  .desktop-ornament,
+  .desktop-actions,
+  .desktop-info {
+    left: 68.5% !important;
+  }
+
+}

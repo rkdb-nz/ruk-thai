@@ -1,26 +1,1247 @@
 <!doctype html>
 <html lang="en-NZ">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ruk Thai | Thai Restaurant Greerton, Tauranga</title>
-<meta name="description" content="Ruk Thai in Greerton, Tauranga. View the menu, call to order, see opening hours, and get directions to 123 Chadwick Road.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ruk Thai Menu | Greerton, Tauranga</title>
+<meta name="description" content="View the Ruk Thai full menu and lunch specials. Call 07 579 6180 to order.">
 <meta name="theme-color" content="#741d2b">
-<meta property="og:title" content="Ruk Thai | Greerton, Tauranga"><meta property="og:description" content="Thai favourites, made to order in Greerton."><meta property="og:type" content="restaurant"><meta property="og:image" content="02_Ruk_Thai_Storefront_Illustration.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+:root { --menu-burgundy:#741d2b; --menu-dark:#4c111d; --menu-gold:#b7934a; --menu-cream:#f6efdf; }
+html { height:auto!important; min-height:100%!important; max-height:none!important; overflow-x:hidden!important; overflow-y:auto!important; overscroll-behavior:auto!important; scroll-behavior:smooth; }
+body.menu-page, body.menu-page #main { width:100%!important; height:auto!important; min-height:100%!important; max-height:none!important; margin:0; overflow-x:hidden!important; overflow-y:visible!important; overscroll-behavior:auto!important; }
+body.menu-page { color:#35191e; background:var(--menu-cream); }
+.menu-page-header {
+  position:relative; z-index:50;
+  min-height:clamp(128px,12vw,176px);
+  padding:24px clamp(22px,5vw,72px);
+  display:grid; place-items:center;
+  overflow:hidden;
+  border-top:7px solid var(--menu-burgundy);
+  border-bottom:1px solid rgba(183,147,74,.9);
+  background:
+    radial-gradient(ellipse at center, rgba(255,252,241,.98) 0%, rgba(248,231,190,.92) 50%, rgba(226,194,128,.58) 100%),
+    repeating-linear-gradient(0deg, rgba(116,29,43,.018) 0 1px, transparent 1px 4px);
+  box-shadow:0 9px 30px rgba(76,17,29,.16);
+}
+.menu-page-header::before,
+.menu-page-header::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  width:min(28vw,390px);
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--menu-gold));
+}
+.menu-page-header::before { left:4vw; }
+.menu-page-header::after { right:4vw; transform:rotate(180deg); }
+.menu-page-logo {
+  position:relative; z-index:2;
+  display:block;
+  width:clamp(230px,25vw,360px);
+  padding:9px 20px;
+  filter:drop-shadow(0 5px 8px rgba(76,17,29,.12));
+}
+.menu-page-logo::before,
+.menu-page-logo::after {
+  content:"◆";
+  position:absolute;
+  top:50%;
+  color:var(--menu-gold);
+  font-size:8px;
+  transform:translateY(-50%) rotate(45deg);
+}
+.menu-page-logo::before { left:-22px; }
+.menu-page-logo::after { right:-22px; }
+.menu-page-logo img { display:block; width:100%; height:auto; }
+.menu-page-actions { display:none; }
+.menu-page-main { overflow:hidden; }
+
+.lunch-feature {
+  width:min(1120px,calc(100% - 36px));
+  margin:clamp(34px,5vw,66px) auto 0;
+  background:
+    linear-gradient(115deg,rgba(76,17,29,.98),rgba(116,29,43,.95)),
+    repeating-linear-gradient(45deg,transparent 0 8px,rgba(255,255,255,.025) 8px 9px);
+  border:1px solid rgba(213,170,67,.85);
+  box-shadow:0 14px 35px rgba(76,17,29,.18);
+  clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px);
+}
+.lunch-feature a {
+  min-height:104px;padding:22px clamp(24px,4vw,52px);
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(22px,4vw,62px);
+  color:#fffaf0;text-decoration:none;
+}
+.lunch-feature-kicker {
+  color:#f1ce70;font:800 .72rem/1 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+}
+.lunch-feature strong { font:400 clamp(1.35rem,2.5vw,2.35rem)/1.1 Georgia,serif; }
+.lunch-feature-price { margin-right:.28em;color:#f1ce70;font-size:1.35em; }
+.lunch-feature-link {
+  padding-bottom:5px;border-bottom:1px solid rgba(241,206,112,.7);
+  color:#fffaf0;font:800 .73rem/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+}
+.lunch-feature-link b { color:#f1ce70;font-size:1.15em; }
+.lunch-feature a:hover .lunch-feature-link,.lunch-feature a:focus-visible .lunch-feature-link { border-bottom-color:#fffaf0; }
+.menu-page .menu-nav .lunch-nav-link { color:#f1ce70;background:var(--menu-burgundy); }
+
+.menu-page .lunch { margin-top:0; }
+.menu-page .menu-wrap { padding-top:clamp(30px,3.5vw,52px); }
+@media (min-width:701px) {
+  .menu-page .menu-wrap { padding-top:38px; }
+  .menu-page .menu-heading .eyebrow { margin-bottom:4px; }
+  .menu-page .menu-heading h2 { margin-top:0; margin-bottom:20px; line-height:1; }
+  .menu-page .menu-nav { margin:18px 0 10px; }
+  .menu-page .menu-section { padding-top:28px; }
+}
+.menu-page .menu-heading { max-width:780px; margin-inline:auto; text-align:center; }
+.menu-page .menu-heading .eyebrow {
+  margin-bottom:12px;
+  color:#9b6710;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.8rem,3.2vw,3.2rem);
+  font-weight:400;
+  line-height:1.15;
+  letter-spacing:.04em;
+  text-transform:none;
+}
+.menu-page .menu-heading h2 { color:var(--menu-burgundy); }
+.menu-page .menu-nav { top:0; justify-content:center; }
+
+/* Illustrations woven through the menu */
+.menu-art-card {
+  min-width:0;
+  margin:0;
+  padding:14px 0 16px;
+  align-self:start;
+  border-top:1px solid rgba(116,29,43,.16);
+}
+.menu-art-card img {
+  display:block;
+  width:100%;
+  height:clamp(180px,16vw,245px);
+  object-fit:cover;
+  border:1px solid rgba(183,147,74,.4);
+  background:#f8edda;
+  box-shadow:0 8px 20px rgba(76,17,29,.08);
+}
+.restaurant-illustration {
+  width:min(680px,calc(100% - 36px));
+  margin:clamp(36px,5vw,62px) auto;
+}
+.restaurant-illustration figure {
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(183,147,74,.5);
+  background:#f8edda;
+  box-shadow:0 12px 28px rgba(76,17,29,.1);
+}
+.restaurant-illustration img {
+  display:block;
+  width:100%;
+  max-height:360px;
+  object-fit:cover;
+}
+
+.menu-page-footer {
+  padding:34px 20px 96px;
+  color:#fffaf0; background:var(--menu-dark);
+  text-align:center;
+}
+.menu-page-footer p { margin:6px 0; }
+.menu-page-footer a { color:#f0d995; }
+.menu-home-float {
+  position:fixed; right:18px; bottom:18px; z-index:60;
+  min-height:46px; padding:13px 18px;
+  display:grid; place-items:center;
+  border:1px solid #d8bb70;
+  color:#fffaf0; background:var(--menu-burgundy);
+  box-shadow:0 7px 22px rgba(76,17,29,.28);
+  font:800 .74rem/1 Arial,sans-serif;
+  letter-spacing:.08em; text-decoration:none; text-transform:uppercase;
+  clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px);
+}
+@media (max-width:700px) {
+  .menu-page-header { min-height:112px; padding:18px 36px; border-top-width:5px; }
+  .menu-page-header::before, .menu-page-header::after { width:17vw; }
+  .menu-page-header::before { left:2vw; }
+  .menu-page-header::after { right:2vw; }
+  .menu-page-logo { width:min(245px,68vw); padding:7px 12px; }
+  .menu-page-logo::before { left:-10px; }
+  .menu-page-logo::after { right:-10px; }
+  .menu-page .menu-nav { top:0; }
+  .lunch-feature { width:calc(100% - 24px);margin-top:24px; }
+  .lunch-feature a { min-height:0;padding:22px;grid-template-columns:1fr;gap:9px;text-align:center; }
+  .lunch-feature strong { font-size:1.55rem; }
+  .lunch-feature-link { justify-self:center;margin-top:7px; }
+  .menu-art-card { padding:12px 0 14px; }
+  .menu-art-card img { height:210px; }
+  .restaurant-illustration { width:calc(100% - 24px); margin:38px auto; }
+  .restaurant-illustration img { min-height:240px; object-fit:cover; }
+  .menu-page .lunch { padding-top:38px; }
+}
+
+/* Botanical menu opening — matched to the approved reference */
+.menu-hero {
+  position:relative;
+  min-height:690px;
+  padding:18px clamp(28px,5vw,78px) 42px;
+  overflow:hidden;
+  border-top:7px solid var(--menu-burgundy);
+  border-bottom:1px solid rgba(183,147,74,.72);
+  background:#f8edda url("assets/hero/menu-botanical-header.jpg") center top/cover no-repeat;
+}
+.menu-hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 -32px 46px rgba(116,29,43,.035);
+}
+.menu-hero > * { position:relative; z-index:1; }
+.menu-hero .menu-page-header {
+  min-height:245px;
+  padding:34px 20px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border:0;
+  background:none;
+  box-shadow:none;
+}
+.menu-hero .menu-page-header::before,
+.menu-hero .menu-page-header::after { display:none; }
+.menu-hero .menu-page-logo {
+  width:clamp(330px,36vw,540px);
+  padding:0;
+  filter:drop-shadow(0 6px 8px rgba(76,17,29,.14));
+}
+.menu-page-tagline {
+  margin:16px 0 0;
+  color:#9b6710;
+  font:600 clamp(.72rem,1.05vw,.96rem)/1.3 Georgia,"Times New Roman",serif;
+  letter-spacing:.28em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.menu-page-tagline span { padding:0 .35em;color:#c7932b; }
+
+.menu-hero .lunch-feature {
+  width:min(1040px,88%);
+  margin:0 auto;
+  border:2px solid #d5aa43;
+  border-radius:999px;
+  clip-path:none;
+  box-shadow:0 8px 20px rgba(76,17,29,.23),inset 0 0 0 1px rgba(255,244,200,.22);
+}
+.menu-hero .lunch-feature a {
+  min-height:76px;
+  padding:8px 17px 8px 13px;
+  grid-template-columns:58px auto 1fr auto;
+  gap:clamp(14px,2vw,30px);
+}
+.menu-hero .lunch-feature a::before {
+  content:"🍴";
+  width:50px;height:50px;
+  display:grid;place-items:center;
+  border:2px solid #e7c66f;
+  border-radius:50%;
+  color:#f1ce70;
+  font-size:1.65rem;
+}
+.menu-hero .lunch-feature-kicker {
+  padding-right:clamp(15px,2vw,28px);
+  border-right:1px solid rgba(241,206,112,.55);
+  font:600 clamp(.72rem,1vw,.9rem)/1 Georgia,serif;
+  letter-spacing:.2em;
+}
+.menu-hero .lunch-feature strong {
+  display:flex;
+  align-items:center;
+  gap:clamp(16px,2vw,30px);
+  font-size:clamp(1rem,1.6vw,1.45rem);
+  white-space:nowrap;
+}
+.menu-hero .lunch-feature-price {
+  padding-right:clamp(16px,2vw,28px);
+  border-right:1px solid rgba(241,206,112,.55);
+  font-size:2em;
+}
+.menu-hero .lunch-feature-link {
+  min-width:220px;
+  padding:15px 24px;
+  border:1px solid #d5aa43;
+  border-radius:999px;
+  color:#601722;
+  background:linear-gradient(#fff5d5,#edc86f);
+  box-shadow:inset 0 1px 0 #fff,0 3px 8px rgba(0,0,0,.14);
+  font-family:Georgia,serif;
+  font-size:.82rem;
+  text-align:center;
+}
+.menu-hero .menu-heading {
+  margin:28px auto 0;
+}
+.menu-hero .menu-heading .eyebrow {
+  margin:0 0 0;
+  font-size:clamp(2.4rem,4vw,4rem);
+  line-height:1;
+}
+.menu-hero .menu-heading h2 {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:26px;
+  margin:2px 0 22px;
+  font-size:clamp(3.4rem,6vw,6.4rem);
+}
+.menu-hero .menu-heading h2::before,
+.menu-hero .menu-heading h2::after {
+  content:"";
+  width:min(15vw,170px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,#c9962e);
+}
+.menu-hero .menu-heading h2::after { transform:rotate(180deg); }
+.menu-hero .menu-nav {
+  position:relative;
+  top:auto;
+  z-index:2;
+  justify-content:center;
+  gap:7px;
+  margin:0;
+  padding:12px 0 0;
+  overflow:visible;
+  border:0;
+  background:transparent;
+}
+.menu-hero .menu-nav a {
+  padding:.72rem .8rem;
+  border-color:#d1a047;
+  border-radius:5px;
+  background:rgba(255,248,231,.93);
+  box-shadow:0 5px 11px rgba(76,17,29,.13);
+  font-family:Georgia,serif;
+  font-size:.8rem;
+}
+.menu-hero .menu-nav .lunch-nav-link {
+  color:#f5d77e;
+  box-shadow:0 5px 13px rgba(76,17,29,.24);
+}
+.menu-page .menu-wrap { padding-top:20px; }
+
+@media (max-width:900px) {
+  .menu-hero { min-height:0;padding:12px 16px 30px;background-position:center top; }
+  .menu-hero .menu-page-header { min-height:190px;padding:26px 45px 12px; }
+  .menu-hero .menu-page-logo { width:min(390px,62vw); }
+  .menu-page-tagline { max-width:72%;font-size:.68rem;letter-spacing:.18em; }
+  .menu-hero .lunch-feature { width:min(650px,92%); }
+  .menu-hero .lunch-feature a { grid-template-columns:auto 1fr auto;padding:10px 14px; }
+  .menu-hero .lunch-feature a::before { display:none; }
+  .menu-hero .lunch-feature-kicker { display:none; }
+  .menu-hero .lunch-feature strong { font-size:1rem; }
+  .menu-hero .lunch-feature-price { font-size:1.7em; }
+  .menu-hero .lunch-feature-link { min-width:170px;padding:13px 17px; }
+  .menu-hero .menu-heading { margin-top:25px; }
+  .menu-hero .menu-nav { justify-content:flex-start;overflow-x:auto;padding:10px 2px 8px; }
+}
+@media (max-width:600px) {
+  .menu-hero { padding-inline:10px;background-size:auto 560px; }
+  .menu-hero .menu-page-header { min-height:165px;padding-inline:55px; }
+  .menu-hero .menu-page-logo { width:min(290px,70vw); }
+  .menu-page-tagline { max-width:88%;margin-top:10px;font-size:.56rem;letter-spacing:.12em; }
+  .menu-hero .lunch-feature { width:calc(100% - 10px); }
+  .menu-hero .lunch-feature a { grid-template-columns:1fr;gap:5px;padding:14px;text-align:center; }
+  .menu-hero .lunch-feature strong { justify-content:center;white-space:normal; }
+  .menu-hero .lunch-feature-price { padding-right:12px; }
+  .menu-hero .lunch-feature-link { justify-self:center;min-width:190px;margin-top:5px; }
+  .menu-hero .menu-heading .eyebrow { font-size:2.2rem; }
+  .menu-hero .menu-heading h2 { gap:12px;font-size:3.35rem;margin-bottom:12px; }
+  .menu-hero .menu-heading h2::before,
+  .menu-hero .menu-heading h2::after { width:40px; }
+}
+
+
+/* Sticky category selector */
+.menu-page-main > .menu-nav {
+  position:sticky;
+  top:0;
+  z-index:55;
+  width:100%;
+  margin:0;
+  padding:13px clamp(18px,4vw,64px);
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  border-top:1px solid rgba(183,147,74,.72);
+  border-bottom:1px solid rgba(183,147,74,.72);
+  background:rgba(255,248,231,.94);
+  box-shadow:0 7px 20px rgba(76,17,29,.12);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  scrollbar-width:thin;
+  scrollbar-color:#b7934a transparent;
+}
+.menu-page-main > .menu-nav a {
+  flex:0 0 auto;
+  padding:.68rem .78rem;
+  border:1px solid #d1a047;
+  border-radius:4px;
+  color:#4c111d;
+  background:rgba(255,252,242,.95);
+  box-shadow:0 3px 8px rgba(76,17,29,.09);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:.78rem;
+  line-height:1;
+  transition:background .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.menu-page-main > .menu-nav a:hover,
+.menu-page-main > .menu-nav a:focus-visible,
+.menu-page-main > .menu-nav a.active {
+  color:#fff8e8;
+  border-color:var(--menu-burgundy);
+  background:var(--menu-burgundy);
+  box-shadow:0 5px 12px rgba(76,17,29,.2);
+  transform:translateY(-1px);
+}
+.menu-page-main > .menu-nav .lunch-nav-link {
+  color:#f3d270;
+  border-color:#8f2637;
+  background:var(--menu-burgundy);
+}
+.menu-page .menu-section { scroll-margin-top:86px; }
+
+@media (max-width:1100px) {
+  .menu-page-main > .menu-nav { justify-content:flex-start; }
+}
+@media (max-width:700px) {
+  .menu-page-main > .menu-nav {
+    padding:10px 12px;
+    gap:6px;
+    scroll-snap-type:x proximity;
+  }
+  .menu-page-main > .menu-nav a {
+    padding:.64rem .72rem;
+    scroll-snap-align:start;
+  }
+  .menu-page .menu-section { scroll-margin-top:76px; }
+}
+
+
+/* Sticky containment fix */
+body.menu-page #main {
+  overflow:visible!important;
+}
+body.menu-page {
+  overflow-x:clip!important;
+}
+
+
+.menu-page .menu-section .section-kicker span[lang="th"] {
+  display:block;
+  font-size:1.46rem;
+  line-height:1.2;
+  letter-spacing:.08em;
+}
+
+
+/* Classy lunch-banner motion */
+.menu-hero .lunch-feature{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transition:transform .42s cubic-bezier(.22,.8,.24,1),box-shadow .42s ease,border-color .42s ease;
+}
+.menu-hero .lunch-feature::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-35% auto -35% -38%;
+  width:44%;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,224,116,.18) 22%,rgba(255,214,75,.72) 50%,rgba(255,224,116,.18) 78%,transparent 100%);
+  transform:skewX(-16deg);
+  opacity:0;
+}
+.menu-hero .lunch-feature a::before{
+  transition:transform .42s cubic-bezier(.22,.8,.24,1),box-shadow .42s ease,background-color .42s ease;
+}
+.menu-hero .lunch-feature-link,
+.menu-hero .lunch-feature-link b{
+  transition:transform .34s cubic-bezier(.22,.8,.24,1),box-shadow .34s ease,background .34s ease;
+}
+.menu-hero .lunch-feature:hover,
+.menu-hero .lunch-feature:focus-within{
+  transform:translateY(-3px);
+  border-color:#ebc96f;
+  box-shadow:0 15px 30px rgba(76,17,29,.28),inset 0 0 0 1px rgba(255,244,200,.32);
+}
+.menu-hero .lunch-feature:hover::after,
+.menu-hero .lunch-feature:focus-within::after{
+  opacity:1;
+  animation:lunch-sheen 1.05s cubic-bezier(.22,.8,.24,1) both;
+}
+.menu-hero .lunch-feature:hover a::before,
+.menu-hero .lunch-feature:focus-within a::before{
+  transform:rotate(-5deg) scale(1.06);
+  background-color:rgba(215,170,72,.12);
+  box-shadow:0 0 0 5px rgba(215,170,72,.09),inset 0 0 14px rgba(255,232,145,.12);
+}
+.menu-hero .lunch-feature:hover .lunch-feature-link,
+.menu-hero .lunch-feature:focus-within .lunch-feature-link{
+  transform:translateX(3px);
+  background:linear-gradient(#fff8dd,#f3cf76);
+  box-shadow:inset 0 1px 0 #fff,0 7px 16px rgba(0,0,0,.2);
+}
+.menu-hero .lunch-feature:hover .lunch-feature-link b,
+.menu-hero .lunch-feature:focus-within .lunch-feature-link b{
+  display:inline-block;
+  transform:translateX(4px);
+}
+@keyframes lunch-sheen{
+  0%{left:-38%}
+  100%{left:116%}
+}
+@media(prefers-reduced-motion:reduce){
+  .menu-hero .lunch-feature,
+  .menu-hero .lunch-feature::after,
+  .menu-hero .lunch-feature a::before,
+  .menu-hero .lunch-feature-link,
+  .menu-hero .lunch-feature-link b{animation:none!important;transition:none!important;transform:none!important}
+}
+
+/* Continuous, restrained lunch-banner motion */
+.menu-hero .lunch-feature::after{
+  opacity:1;
+  animation:lunch-sheen-loop 8s linear infinite;
+}
+.menu-hero .lunch-feature a::before{
+  animation:none;
+}
+.menu-hero .lunch-feature-link b{
+  display:inline-block;
+  animation:none;
+}
+@keyframes lunch-sheen-loop{
+  0%,74.9%{left:-46%;opacity:0}
+  75%{left:-46%;opacity:.82}
+  97%{left:112%;opacity:.82}
+  100%{left:112%;opacity:0}
+}
+@keyframes lunch-medallion-loop{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(215,170,72,0)}
+  50%{transform:scale(1.015);box-shadow:0 0 0 3px rgba(215,170,72,.045),inset 0 0 10px rgba(255,232,145,.07)}
+}
+@keyframes lunch-arrow-loop{
+  0%,70%,100%{transform:translateX(0)}
+  84%{transform:translateX(3px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .menu-hero .lunch-feature::after,
+  .menu-hero .lunch-feature a::before,
+  .menu-hero .lunch-feature-link b{animation:none!important}
+}
+
+/* Dash-style lunch page drawer */
+.lunch-drawer-backdrop{
+  position:fixed;z-index:89;inset:0;
+  background:linear-gradient(90deg,rgba(20,4,8,.38),rgba(20,4,8,.68));
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 420ms ease,visibility 0s linear 420ms;
+  backdrop-filter:blur(1.5px);
+}
+.lunch-drawer{
+  position:fixed;z-index:90;top:0;right:0;bottom:0;
+  width:min(1240px,82vw);
+  border-left:3px solid #d5aa43;\n  background:#1b0408;
+  box-shadow:-36px 0 90px rgba(20,4,8,.7),-6px 0 22px rgba(213,170,67,.2);
+  transform:translateX(calc(100% + 42px));
+  visibility:hidden;
+  transition:transform 680ms cubic-bezier(.16,1,.3,1),visibility 0s linear 680ms;
+}
+.lunch-drawer iframe{display:block;width:100%;height:100%;border:0;background:#1d1d1d}
+.lunch-drawer-close{
+  position:absolute;z-index:2;top:18px;left:18px;
+  width:44px;height:44px;display:grid;place-items:center;
+  border:1px solid #d5aa43;border-radius:50%;
+  color:#f3d270;background:#4c111d;
+  box-shadow:0 5px 16px rgba(0,0,0,.28);
+  font:300 1.7rem/1 Georgia,serif;cursor:pointer
+}
+.lunch-drawer-close:hover,.lunch-drawer-close:focus-visible{color:#4c111d;background:#f3d270}
+body.lunch-drawer-open{overflow:hidden!important}
+body.lunch-drawer-open .lunch-drawer-backdrop{opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;transition-delay:0s}
+@media(max-width:700px){
+  .lunch-drawer{width:94vw}
+  .lunch-drawer-close{top:10px;left:10px;width:40px;height:40px}
+}
+@media(prefers-reduced-motion:reduce){.lunch-drawer,.lunch-drawer-backdrop{transition-duration:180ms}}
+
+
+
+/* =========================================================
+   MOBILE LUNCH FEATURE — PORTRAIT AND LANDSCAPE
+   Desktop intentionally untouched.
+   ========================================================= */
+@media (max-width:600px) and (orientation:portrait) {
+  .menu-hero .lunch-feature {
+    width:min(430px,calc(100% - 18px));
+    margin:4px auto 0;
+    border-width:1px;
+    border-radius:22px;
+    box-shadow:0 10px 24px rgba(76,17,29,.22),inset 0 0 0 1px rgba(255,244,200,.16);
+  }
+  .menu-hero .lunch-feature a {
+    min-height:0;
+    padding:15px 18px 16px;
+    display:grid;
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:7px;
+    text-align:center;
+  }
+  .menu-hero .lunch-feature-kicker {
+    display:block;
+    padding:0;
+    border:0;
+    color:#edcc73;
+    font:700 .64rem/1.1 Arial,sans-serif;
+    letter-spacing:.18em;
+  }
+  .menu-hero .lunch-feature strong {
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    color:#fffaf0;
+    font-size:.98rem;
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  .menu-hero .lunch-feature-price {
+    margin:0;
+    padding:0;
+    border:0;
+    color:#f3d270;
+    font-size:1.8em;
+    line-height:1;
+  }
+  .menu-hero .lunch-feature-link {
+    min-width:0;
+    margin:2px 0 0;
+    padding:8px 18px;
+    justify-self:center;
+    border-radius:999px;
+    font-size:.7rem;
+    line-height:1;
+  }
+}
+
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature {
+    width:min(720px,86%);
+    margin:2px auto 0;
+    border-width:1px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(76,17,29,.22),inset 0 0 0 1px rgba(255,244,200,.16);
+  }
+  .menu-hero .lunch-feature a {
+    min-height:58px;
+    padding:8px 12px 8px 18px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    align-items:center;
+    justify-items:center;
+    gap:14px;
+    text-align:center;
+  }
+  .menu-hero .lunch-feature-kicker {
+    display:block;
+    padding-right:14px;
+    border-right:1px solid rgba(241,206,112,.5);
+    color:#edcc73;
+    font:700 .62rem/1.15 Arial,sans-serif;
+    letter-spacing:.14em;
+    white-space:nowrap;
+  }
+  .menu-hero .lunch-feature strong {
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:9px;
+    width:100%;
+    color:#fffaf0;
+    font-size:.9rem;
+    line-height:1.1;
+    white-space:nowrap;
+  }
+  .menu-hero .lunch-feature-price {
+    margin:0;
+    padding:0;
+    border:0;
+    color:#f3d270;
+    font-size:1.65em;
+    line-height:1;
+  }
+  .menu-hero .lunch-feature-link {
+    min-width:150px;
+    margin:0;
+    padding:10px 14px;
+    justify-self:end;
+    border-radius:999px;
+    font-size:.68rem;
+    line-height:1;
+  }
+}
+
+
+
+/* Mobile menu navigation — desktop intentionally untouched. */
+.menu-mobile-back,
+.category-scroll-cue {
+  display:none;
+}
+
+@media (max-width:900px) {
+  .menu-hero .menu-page-header {
+    position:relative;
+  }
+  .menu-mobile-back {
+    position:absolute;
+    z-index:4;
+    top:50%;
+    left:4px;
+    display:grid;
+    place-items:center;
+    width:44px;
+    height:44px;
+    color:var(--menu-burgundy);
+    font:400 2rem/1 Georgia,"Times New Roman",serif;
+    text-decoration:none;
+    transform:translateY(-50%);
+  }
+  .menu-home-float {
+    display:none!important;
+  }
+  .menu-page-main > .menu-nav {
+    box-shadow:
+      inset -24px 0 22px -22px rgba(76,17,29,.72),
+      0 7px 20px rgba(76,17,29,.12);
+  }
+  .menu-page-main > .menu-nav .category-scroll-cue {
+    flex:0 0 auto;
+    align-self:center;
+    display:block;
+    padding:0 4px 0 0;
+    color:#9b6710;
+    font:800 .58rem/1 Arial,sans-serif;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    scroll-snap-align:start;
+  }
+}
+
+
+
+/* Mobile menu refinements: two-line landscape lunch feature; no mobile footer. */
+@media (max-width:900px) {
+  .menu-page-footer {
+    display:none;
+  }
+}
+
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature a {
+    min-height:0;
+    padding:10px 18px 11px;
+    grid-template-columns:auto minmax(0,1fr);
+    grid-template-rows:auto auto;
+    gap:7px 14px;
+  }
+  .menu-hero .lunch-feature-kicker {
+    grid-column:1;
+    grid-row:1;
+    padding-right:14px;
+  }
+  .menu-hero .lunch-feature strong {
+    grid-column:2;
+    grid-row:1;
+    justify-content:center;
+  }
+  .menu-hero .lunch-feature-link {
+    grid-column:1 / -1;
+    grid-row:2;
+    justify-self:center;
+    min-width:180px;
+    padding:7px 18px;
+  }
+}
+
+
+
+/* Landscape lunch feature final centring pass. */
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature a {
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+    justify-items:center;
+    gap:7px;
+    text-align:center;
+  }
+  .menu-hero .lunch-feature-kicker {
+    display:none;
+  }
+  .menu-hero .lunch-feature strong {
+    grid-column:1;
+    grid-row:1;
+    justify-content:center;
+    justify-self:center;
+    text-align:center;
+  }
+  .menu-hero .lunch-feature-link {
+    grid-column:1;
+    grid-row:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    justify-self:center;
+    text-align:center;
+  }
+}
+
+
+
+/* Use the desktop lunch-feature sheen on mobile too. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+  }
+  .menu-hero .lunch-feature a {
+    position:relative;
+    z-index:1;
+  }
+  .menu-hero .lunch-feature::after {
+    z-index:0;
+    opacity:1;
+    animation:lunch-sheen-loop 8s linear infinite;
+  }
+}
+
+@media (max-width:900px) and (prefers-reduced-motion:reduce) {
+  .menu-hero .lunch-feature::after {
+    animation:none!important;
+    opacity:0!important;
+  }
+}
+
+
+
+/* Make the mobile sheen immediately visible and easier to perceive. */
+@media (max-width:900px) and (prefers-reduced-motion:no-preference) {
+  .menu-hero .lunch-feature::after {
+    width:52%;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,224,116,.22) 24%,
+      rgba(255,226,112,.88) 50%,
+      rgba(255,224,116,.22) 76%,
+      transparent 100%
+    );
+    animation:lunch-sheen-loop 8s linear infinite;
+    animation-delay:-6s;
+  }
+}
+
+
+
+/* =========================================================
+   MOBILE MENU HEADER ORDER
+   Lunch banner → logo → Full Menu.
+   Desktop intentionally untouched.
+   ========================================================= */
+@media (max-width:900px) {
+  .menu-hero {
+    display:flex;
+    flex-direction:column;
+  }
+  .menu-hero .lunch-feature {
+    order:1;
+    width:calc(100% + 32px);
+    max-width:none;
+    margin:-12px -16px 0;
+    border-width:0 0 1px;
+    border-radius:0;
+    box-shadow:0 8px 20px rgba(76,17,29,.2),inset 0 -1px 0 rgba(255,244,200,.15);
+  }
+  .menu-hero .menu-page-header {
+    order:2;
+  }
+  .menu-hero .menu-heading {
+    order:3;
+  }
+  .menu-hero .lunch-feature::after {
+    width:52%;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,224,116,.2) 24%,
+      rgba(255,226,112,.86) 50%,
+      rgba(255,224,116,.2) 76%,
+      transparent 100%
+    );
+    animation:mobile-lunch-sheen 4s linear infinite;
+    animation-delay:0s;
+  }
+}
+
+@media (max-width:600px) {
+  .menu-hero .lunch-feature {
+    width:calc(100% + 20px);
+    margin:-12px -10px 0;
+  }
+}
+
+@keyframes mobile-lunch-sheen {
+  0% { left:-58%; opacity:.9; }
+  44% { left:116%; opacity:.9; }
+  50%,100% { left:116%; opacity:0; }
+}
+
+@media (max-width:900px) and (prefers-reduced-motion:reduce) {
+  .menu-hero .lunch-feature::after {
+    animation:none!important;
+    opacity:0!important;
+  }
+}
+
+
+
+/* Mobile lunch banner: reliable visible animation and one-line landscape layout. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature::after {
+    left:-58%;
+    width:52%;
+    opacity:0;
+    z-index:0;
+    mix-blend-mode:screen;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,232,145,.22) 22%,
+      rgba(255,235,150,.96) 50%,
+      rgba(255,232,145,.22) 78%,
+      transparent 100%
+    );
+    animation:mobile-banner-sweep 4s ease-in-out infinite!important;
+  }
+  .menu-hero .lunch-feature {
+    animation:mobile-banner-glow 4s ease-in-out infinite!important;
+  }
+}
+
+@keyframes mobile-banner-sweep {
+  0% {
+    opacity:.95;
+    transform:translateX(0) skewX(-16deg);
+  }
+  42% {
+    opacity:.95;
+    transform:translateX(340%) skewX(-16deg);
+  }
+  48%,100% {
+    opacity:0;
+    transform:translateX(340%) skewX(-16deg);
+  }
+}
+
+@keyframes mobile-banner-glow {
+  0%,48%,100% {
+    box-shadow:0 8px 20px rgba(76,17,29,.2),inset 0 -1px 0 rgba(255,244,200,.15);
+  }
+  20% {
+    box-shadow:0 9px 24px rgba(76,17,29,.28),inset 0 -1px 0 rgba(255,226,125,.42);
+  }
+}
+
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature a {
+    min-height:58px;
+    padding:8px 18px;
+    grid-template-columns:minmax(0,auto) auto;
+    grid-template-rows:1fr;
+    justify-content:center;
+    justify-items:center;
+    gap:18px;
+  }
+  .menu-hero .lunch-feature strong {
+    grid-column:1;
+    grid-row:1;
+    justify-self:end;
+  }
+  .menu-hero .lunch-feature-link {
+    grid-column:2;
+    grid-row:1;
+    justify-self:start;
+    min-width:180px;
+    margin:0;
+  }
+}
+
+
+
+/* High-visibility mobile lunch-banner animation. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    transform-origin:center;
+    animation:mobile-banner-punch 4s ease-in-out infinite!important;
+  }
+  .menu-hero .lunch-feature::after {
+    left:-72%;
+    width:72%;
+    opacity:0;
+    z-index:2;
+    mix-blend-mode:screen;
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,220,75,.38) 18%,
+      rgba(255,250,205,1) 46%,
+      rgba(255,215,55,.92) 54%,
+      rgba(255,220,75,.38) 82%,
+      transparent 100%
+    );
+    filter:blur(.4px);
+    animation:mobile-banner-sweep-strong 4s cubic-bezier(.2,.72,.25,1) infinite!important;
+  }
+  .menu-hero .lunch-feature a {
+    position:relative;
+    z-index:3;
+  }
+}
+
+@keyframes mobile-banner-sweep-strong {
+  0% {
+    opacity:1;
+    transform:translateX(0) skewX(-14deg);
+  }
+  34% {
+    opacity:1;
+    transform:translateX(300%) skewX(-14deg);
+  }
+  40%,100% {
+    opacity:0;
+    transform:translateX(300%) skewX(-14deg);
+  }
+}
+
+@keyframes mobile-banner-punch {
+  0% {
+    filter:brightness(1.38) saturate(1.2);
+    box-shadow:0 0 0 2px rgba(255,214,78,.95),0 10px 34px rgba(229,174,45,.58),inset 0 0 24px rgba(255,220,85,.28);
+  }
+  18% {
+    filter:brightness(1.16) saturate(1.1);
+    box-shadow:0 0 0 1px rgba(255,214,78,.58),0 9px 25px rgba(76,17,29,.3),inset 0 0 16px rgba(255,220,85,.16);
+  }
+  42%,100% {
+    filter:brightness(1) saturate(1);
+    box-shadow:0 8px 20px rgba(76,17,29,.2),inset 0 -1px 0 rgba(255,244,200,.15);
+  }
+}
+
+
+
+/* Match portrait lunch banner to landscape: remove redundant kicker. */
+@media (max-width:600px) and (orientation:portrait) {
+  .menu-hero .lunch-feature-kicker {
+    display:none;
+  }
+}
+
+
+
+/* Clean mobile lunch-banner animation: white sweep only, no flash. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    animation:none!important;
+    filter:none!important;
+  }
+  .menu-hero .lunch-feature::after {
+    left:-68%;
+    width:58%;
+    opacity:0;
+    z-index:2;
+    mix-blend-mode:screen;
+    filter:blur(.6px);
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,255,255,.08) 24%,
+      rgba(255,255,255,.78) 50%,
+      rgba(255,255,255,.08) 76%,
+      transparent 100%
+    );
+    animation:mobile-white-sweep 4s ease-in-out infinite!important;
+  }
+}
+
+@keyframes mobile-white-sweep {
+  0% {
+    opacity:.9;
+    transform:translateX(0) skewX(-15deg);
+  }
+  38% {
+    opacity:.9;
+    transform:translateX(335%) skewX(-15deg);
+  }
+  44%,100% {
+    opacity:0;
+    transform:translateX(335%) skewX(-15deg);
+  }
+}
+
+
+
+/* Guaranteed-visible white sweep: animate the banner background itself. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    background-image:
+      linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255,255,255,.18) 44%,
+        rgba(255,255,255,.92) 50%,
+        rgba(255,255,255,.18) 56%,
+        transparent 62%
+      ),
+      linear-gradient(115deg,rgba(76,17,29,.98),rgba(116,29,43,.95));
+    background-size:220% 100%,100% 100%;
+    background-repeat:no-repeat;
+    animation:mobile-white-background-sweep 4s ease-in-out infinite!important;
+  }
+  .menu-hero .lunch-feature::after {
+    display:none!important;
+    content:none!important;
+    animation:none!important;
+  }
+}
+
+@keyframes mobile-white-background-sweep {
+  0% {
+    background-position:160% 0,0 0;
+  }
+  68% {
+    background-position:-60% 0,0 0;
+  }
+  69%,100% {
+    background-position:-60% 0,0 0;
+  }
+}
+
+
+
+/* Dietary requirements box — mobile and desktop. */
+.menu-note.dietary-note {
+  padding:1.25rem 1.4rem;
+}
+.menu-note.dietary-note h3 {
+  margin:0 0 .45rem;
+  color:var(--menu-burgundy);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.35rem;
+  font-weight:500;
+}
+.menu-note.dietary-note p {
+  margin:.2rem 0 .55rem;
+}
+.menu-note.dietary-note ul {
+  margin:0;
+  padding-left:1.25rem;
+}
+.menu-note.dietary-note li {
+  margin:.25rem 0;
+  padding-left:.15rem;
+}
+
+
+
+/* Mobile landscape menu tagline: location on its own line. */
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-page-tagline .tagline-separator {
+    display:none;
+  }
+  .menu-page-tagline .tagline-location {
+    display:block;
+    margin-top:4px;
+    padding:0;
+  }
+}
+
+</style>
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" id="top"><a class="brand" href="#top" aria-label="Ruk Thai home"><img src="01_Ruk_Thai_Logo_Banner.png" alt="Ruk Thai"></a><nav class="desktop-nav" aria-label="Primary"><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="https://www.facebook.com/taurangarukthai/" target="_blank" rel="noopener">Facebook</a></nav><a class="btn btn-primary header-call" href="tel:+6475796180">Call to Order</a></header>
-<main id="main">
-<section class="hero"><div class="hero-copy"><p class="eyebrow">Greerton · Tauranga</p><h1>Thai food in Greerton, Tauranga</h1><p class="hero-lead">Thai favourites, made to order in Greerton.</p><div class="hero-actions"><a class="btn btn-primary" href="tel:+6475796180">Call to Order</a><a class="btn btn-outline" href="#menu">View Menu</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=123+Chadwick+Road+Greerton+Tauranga+3112" target="_blank" rel="noopener">Directions →</a></div></div><figure class="hero-art"><img src="03_Food_Prawn_Stir_Fry.png" alt="Illustrated Ruk Thai dish with prawns and vegetables"></figure></section>
-<section class="intro-strip"><div><span>Tuesday–Sunday</span><strong>11:00am–2:00pm · 4:00pm–9:00pm</strong></div><div><span>Monday</span><strong>Closed</strong></div><div><span>Order by phone</span><strong><a href="tel:+6475796180">07 579 6180</a></strong></div></section>
-<section class="editorial-food" aria-label="Ruk Thai food illustrations"><figure class="food-large"><img src="05_Food_Mixed_Stir_Fry.png" alt="Illustrated stir-fried dish with vegetables"></figure><div class="food-copy"><p class="eyebrow">Made to order</p><h2>Familiar Thai favourites. Plenty to choose from.</h2><p>Explore curries, stir-fries, noodles, rice dishes, salads, soups, vegetarian choices and lunch specials from the full Ruk Thai menu.</p><a class="text-link" href="#menu">See the full menu →</a></div><figure class="food-small"><img src="06_Food_Crispy_Appetiser.png" alt="Illustrated crispy appetiser with dipping sauce"></figure></section>
-<section class="lunch" id="lunch-special"><div class="lunch-copy"><p class="eyebrow">Lunch special</p><h2>$17.00 Lunch Special</h2><p class="lunch-time">Available from 11am – 2pm</p><p>Choose from twelve lunch options, including curry, noodles, fried rice and satay.</p><a class="btn btn-primary" href="tel:+6475796180">Call to Order</a></div><ol class="lunch-list"><li><strong>1. Green Curry on Rice or Noodles</strong><span>Chicken, pork or Beef</span></li><li><strong>2. Red Curry on Rice or Noodles</strong><span>Chicken, pork or Beef</span></li><li><strong>3. Pad Thai</strong><span>Chicken, pork or beef</span></li><li><strong>4. Fried Rice</strong><span>Chicken, pork or Beef</span></li><li><strong>5. Chicken Satay + Rice + Veg</strong></li><li><strong>6. Noodle Soup (Pho)</strong><span>Chicken, Pork or Beef</span></li><li><strong>7. Laksa</strong><span>Chicken, Pork or Beef</span></li><li><strong>8. Spicy Noodles</strong><span>Chicken, Pork or Beef</span></li><li><strong>9. Mie Goreng</strong><span>Chicken, Pork or Beef</span></li><li><strong>10. Nasi Goreng</strong><span>Chicken, Pork or Beef</span></li><li><strong>11. Guay Tiew Kua</strong><span>Chicken, Pork or Beef</span></li><li><strong>12. Pad See Eiw</strong><span>Chicken, Pork or Beef</span></li></ol></section>
-<section class="menu-wrap" id="menu"><div class="menu-heading"><p class="eyebrow">Ruk Thai</p><h2>Full Menu</h2><p>Prices and descriptions below are presented directly from the current supplied menu.</p></div><nav class="menu-nav" aria-label="Menu categories"><a href="#appetizers">Appetizers</a><a href="#soups">Soups</a><a href="#curry">Curry</a><a href="#main-course">Main Course</a><a href="#salads">Salads</a><a href="#deep-fried-meals">Deep Fried Meals</a><a href="#noodles">Noodles</a><a href="#rice-dishes">Rice Dishes</a><a href="#vegetarian">Vegetarian</a><a href="#lunch-special">Lunch Special</a></nav><section class="menu-section" id="appetizers"><div class="section-kicker">Ruk Thai menu</div><h2>Appetizers</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>1. Chicken Satay</h3><span class="price">$12.00</span></div><p>Grilled marinated chicken on skewers served with satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>2. Spring Rolls</h3></div><p>A. Spring Rolls (Vegetarian) $11.00</p><p>B. Prawn Rolls $12.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>3. Curry Puffs (Vegetarian)</h3><span class="price">$11.00</span></div><p>Potato, kumara and sweet corn and pumpkin wrapped in puff pastry served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>4. Thai Fishcakes</h3><span class="price">$11.00</span></div><p>Fishcakes with curry paste and herbs served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>5. Wonton</h3><span class="price">$11.00</span></div><p>Crispy wonton with marinated pork mince served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>6. Prawn Dumplings</h3><span class="price">$11.00</span></div><p>Crispy Deep Fried Prawn Dumplings served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>7. Moo Tod</h3><span class="price">$12.00</span></div><p>Deep fried marinated pork belly served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>8. Mixed Entree</h3><span class="price">$13.00</span></div><p>One piece of each Appetizers 2A, 2B, 3, 4, 5, 6</p></article></div></section><section class="menu-section" id="soups"><div class="section-kicker">Ruk Thai menu</div><h2>Soups</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>9. Tom Yum Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and Mushrooms in hot and sour soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>10. Tom Yum Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and Mushrooms in hot and sour soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>11. Tom Kha Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and Mushrooms in coconut milk soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>12. Tom Kha Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and Mushrooms in coconut milk soup</p></article></div></section><section class="menu-section" id="curry"><div class="section-kicker">Ruk Thai menu</div><h2>Curry</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>13. Green Curry</h3></div><p>Green curry paste cooked in coconut milk and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>14. Red Curry</h3></div><p>Red curry paste cooked in coconut milk and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Duck or Lamb $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>15. Panang Curry</h3></div><p>Panang curry paste cooked in coconut milk, vegetables and crushed peanuts with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>16. Massaman Curry</h3></div><p>Massaman Curry paste cooked in coconut milk, peanut, onion, potato and tamarind sauce with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>17. Yellow Curry</h3></div><p>Yellow Curry paste cooked in coconut milk, peanut, onion and potato with your choice of :</p><p>Chicken, Pork or Beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>18. Choo Chee</h3></div><p>Red Curry cooked in coconut milk, kaffir lime leaves and vegetables with your choice of :</p><p>Fish or Prawns $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article></div></section><section class="menu-section" id="main-course"><div class="section-kicker">Ruk Thai menu</div><h2>Main Course</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>19. Pad Prik Pow</h3></div><p>Stir fried mild chilli paste and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns, Fish, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>20. Pad Ginger</h3></div><p>Stir fried ginger, garlic and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>21. Pad Garlic and Pepper</h3></div><p>Stir fried garlic, pepper and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p><p>Lamb or Pork Belly $25.50</p><p>Prawns or Fish $25.50</p><p>Scallops $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>22. Pad Oyster Sauce</h3></div><p>Stir fried vegetables and oyster sauce with your choice of :</p><p>Chicken, Pork or Beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>23. Pad Cashew Nuts</h3></div><p>Stir fried cashew nuts and vegetables with your choice of:</p><p>Chicken, Pork or Beef $23.50</p><p>Prawns or Fish $25.50</p><p>Duck or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>24. Sweet and Sour</h3></div><p>Stir fried sweet and sour sauce and vegetables with your choice of :</p><p>Chicken or Pork $22.50</p><p>Prawns, Fish, or Pork Belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>25. Pad Basil</h3></div><p>Stir fried chilli, basil and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>26. Pad Peanut Sauce</h3></div><p>Stir fried peanut sauce and vegetables with your choice of :</p><p>Chicken, Pork or beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>27. Pad Prik Gang</h3></div><p>Stir fried curry paste, vegetables and coconut milk with your choice of:</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Duck, Lamb, or Pork Belly $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>28. Duck Honey Sauce</h3><span class="price">$25.50</span></div><p>Roasted Duck on steam vegetables topped with honey sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>29. Fish with Thai Chilli Sauce</h3><span class="price">$25.50</span></div><p>Fish fillet on steam vegetables topped with Thai style chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>30. Pad Sarm Rod (Tri Flavoured)</h3></div><p>Stir fried Tri flavoured (Spicy-Sweet & Sour sauce) and vegetables with your choice of :</p><p>Chicken, Pork or Beef $22.50</p><p>Prawns or Fish $25.50</p><p>Scallops or Mixed Seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>31. Pad Pong Garee Talay</h3><span class="price">$27.00</span></div><p>Stir fried mixed seafood, egg, curry powder and vegetables</p></article><article class="menu-item"><div class="menu-item-head"><h3>32. Hor Mok Talay</h3><span class="price">$27.00</span></div><p>Mixed Seafood cooked in curry paste and coconut milk with herbs and egg</p></article></div></section><section class="menu-section" id="salads"><div class="section-kicker">Ruk Thai menu</div><h2>Salads</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>33. Larb</h3><span class="price">$25.50</span></div><p>Minced Meat Salad with herbs, lemon juice and chilli with your choice of: Chicken, Pork or Beef</p></article><article class="menu-item"><div class="menu-item-head"><h3>34. Nam Tok</h3><span class="price">$25.50</span></div><p>Sliced (Pork or Beef) with herbs, red onion, lemon juice and chilli</p></article><article class="menu-item"><div class="menu-item-head"><h3>35. Yum Nua (Thai Beef Salad)</h3><span class="price">$25.50</span></div><p>Sliced Beef with Thai style chilli sauce, onion, tomato and herbs</p></article><article class="menu-item"><div class="menu-item-head"><h3>36. Yum Talay (Seafood Salad)</h3><span class="price">$27.00</span></div><p>Mixed Seafood with Thai style chilli sauce, onion, tomato and herbs</p></article></div></section><section class="menu-section" id="deep-fried-meals"><div class="section-kicker">Ruk Thai menu</div><h2>Deep Fried Meals</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>37. Pork Ribs Garlic & Pepper sauce</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Garlic & Papper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>38. Pork Ribs Honey sauce</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>39. Pork Ribs Sarm Rod (Tri flavoured sauce)</h3><span class="price">$25.50</span></div><p>Deep Fried Pork Spare Ribs with Tri flavoured sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>40. Fried Chicken Garlic & Pepper sauce</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Garlic & Papper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>41. Fried Chicken Honey sauce</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>42. Fried Chicken Sarm Rod (Tri flavoured sauce)</h3><span class="price">$24.00</span></div><p>Deep Fried Chicken topped with Tri flavoured sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>Roti</h3><span class="price">$4.00</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>Extra Rice</h3><span class="price">$4.00</span></div></article></div><div class="menu-note"><p>All Curries, Main Courses, Salads and Deep fried Meals come with a side of Jasmine Rice (exclude Noodles and Rice dishes).</p><p>Please make us aware of any food allergies when ordering.</p></div></section><section class="menu-section" id="noodles"><div class="section-kicker">Ruk Thai menu</div><h2>Noodles</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>43. Pad See Eiw</h3></div><p>Stir fried thick rice-noodles, egg and vegetables with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>44. Pad Thai</h3></div><p>Stir fried rice-noodles, egg, crushed peanuts, bean sprouts and spring onion with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>45. Spicy Noodles</h3></div><p>Stir fried rice-noodles, egg, and vegetables with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>46. Guay Tiew Kua</h3></div><p>Stir fried thick rice-noodles, egg, bean sprouts and spring onion with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>47. Mi Goreng</h3></div><p>Stir fried wheat-noodles, egg, vegetables and curry paste with your choice of :</p><p>Chicken, Pork or Beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>48. Noodle Soup (Pho)</h3></div><p>Rice-noodles and bean sprouts in broth with your choice of :</p><p>Chicken, Pork or Beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>49. Laksa</h3></div><p>Wheat-noodles and bean sprouts in laksa curry soup with your choice of :</p><p>Chicken, Pork or Beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>50. Lard Na</h3></div><p>Thick rice-noodles top with vegetables and thai gravy with your choice of :</p><p>Chicken, Pork or beef $22.00</p><p>Prawns $25.50</p><p>Mixed Seafood $27.00</p></article></div></section><section class="menu-section" id="rice-dishes"><div class="section-kicker">Ruk Thai menu</div><h2>Rice Dishes</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>51. Fried Rice</h3></div><p>Fried rice with egg, spring onion and mixed vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>52. Spicy Fried Rice</h3></div><p>Fried rice with egg, chilli, spring onion and mixed vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>53. Nasi Goreng</h3></div><p>Fried rice with egg, curry paste, spring onion and mix vegetables with your choice of :</p><p>Chicken, Pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>54. Tom Yum Fried Rice</h3></div><p>Chicken, Pork or Beef $20.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>55. BBQ Duck on Rice</h3><span class="price">$24.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>56. Deep Fried Pork Belly on Rice</h3><span class="price">$22.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>57. Chicken Satay on Rice</h3><span class="price">$20.50</span></div></article></div></section><section class="menu-section" id="vegetarian"><div class="section-kicker">Ruk Thai menu</div><h2>Vegetarian</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>58. Tofu Cashew Nuts</h3><span class="price">$21.50</span></div><p>Stir fried tofu with vegetables and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>59. Tofu Peanut Sauce</h3><span class="price">$21.50</span></div><p>Vegetables and tofu stir fried in peanut satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>60. Green Curry Tofu</h3><span class="price">$21.50</span></div><p>Tofu and vegetables cooked in green curry paste and coconut milk</p></article><article class="menu-item"><div class="menu-item-head"><h3>61. Pineapple Fried Rice</h3><span class="price">$19.00</span></div><p>Fried rice with egg, pineapple, mix vegetables, curry powder and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>62. Vegetarian Pad Thai</h3><span class="price">$20.00</span></div><p>Stir fried rice-noodles with egg, tofu, crushed peanuts, bean sprouts and spring onion</p></article><article class="menu-item"><div class="menu-item-head"><h3>63. Sweet and Sour Tofu</h3><span class="price">$21.50</span></div><p>Stir fried vegetables and tofu in sweet and sour sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>64. Stir fried Vegetables</h3><span class="price">$20.50</span></div><p>Pick a flavour</p><p>• garlic & peppers</p><p>• garlic& ginger</p><p>• cashew nuts</p><p>• chilli basil</p><p>• peanut sauce</p></article></div><div class="menu-note"><p>Please let us know if you are unable to eat fish sauce.</p><p>Please specify if you would like your meal made Vegan.</p></div></section></section>
-<section class="food-break"><figure><img src="04_Food_Dark_Glazed_Dish.png" alt="Illustrated glazed Ruk Thai dish"></figure><div><p class="eyebrow">Ready to order?</p><h2>07 579 6180</h2><p>Call Ruk Thai directly to place your order.</p><a class="btn btn-primary" href="tel:+6475796180">Call Ruk Thai</a></div><figure><img src="08_Food_Soup.png" alt="Illustrated Thai soup"></figure></section>
-<section class="visit" id="visit"><div class="visit-copy"><p class="eyebrow">Visit Ruk Thai</p><h2>123 Chadwick Road<br>Greerton, Tauranga 3112</h2><dl><div><dt>Monday</dt><dd>Closed</dd></div><div><dt>Tuesday–Sunday</dt><dd>11:00am–2:00pm<br>4:00pm–9:00pm</dd></div><div><dt>Phone</dt><dd><a href="tel:+6475796180">07 579 6180</a></dd></div></dl><div class="visit-actions"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=123+Chadwick+Road+Greerton+Tauranga+3112" target="_blank" rel="noopener">Directions</a><a class="text-link" href="https://www.facebook.com/taurangarukthai/" target="_blank" rel="noopener">Facebook →</a></div></div><figure class="storefront"><img src="02_Ruk_Thai_Storefront_Illustration.png" alt="Illustrated storefront of Ruk Thai restaurant in Greerton"></figure></section>
+<body class="menu-page">
+<main class="menu-page-main" id="main">
+<section class="menu-hero">
+<header class="menu-page-header">
+  <a class="menu-page-logo" href="index.html" aria-label="Ruk Thai home">
+    <img src="assets/brand/ruk-thai-logo-banner.png" alt="Ruk Thai">
+  </a>
+
+  <p class="menu-page-tagline">Authentic Thai cuisine <span class="tagline-separator">•</span> <span class="tagline-location">Greerton, Tauranga</span></p>
+</header>
+<aside class="lunch-feature" aria-label="Ruk Thai lunch special">
+  <a href="lunch.html">
+    <span class="lunch-feature-kicker">Lunch special</span>
+    <strong><span class="lunch-feature-price">$17</span> Available 11am–2pm</strong>
+    <span class="lunch-feature-link">View lunch menu <b>→</b></span>
+  </a>
+</aside>
+<div class="menu-heading"><p class="eyebrow" lang="th">เมนูทั้งหมด</p><h2>Full Menu</h2></div>
+</section>
+<nav class="menu-nav" aria-label="Menu categories"><span class="category-scroll-cue" aria-hidden="true">Swipe&nbsp;→</span><a href="#appetizers">Appetisers</a><a href="#soups">Soups</a><a href="#curry">Curry</a><a href="#main-course">Main Course</a><a href="#salads">Salads</a><a href="#deep-fried-meals">Deep-fried Dishes</a><a href="#noodles">Noodles</a><a href="#rice-dishes">Rice Dishes</a><a href="#vegetarian">Vegetarian</a><a class="lunch-nav-link" href="lunch.html">Lunch Special</a></nav>
+<section class="menu-wrap" id="menu"><section class="menu-section" id="appetizers"><div class="section-kicker"><span lang="th">อาหารเรียกน้ำย่อย</span></div><h2>Appetisers</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>1. Chicken Satay</h3><span class="price">$12.00</span></div><p>Grilled marinated chicken on skewers served with satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>2. Spring Rolls</h3></div><p>A. Spring Rolls (Vegetarian) $11.00</p><p>B. Prawn Rolls $12.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>3. Curry Puffs (Vegetarian)</h3><span class="price">$11.00</span></div><p>Potato, kūmara, sweetcorn and pumpkin wrapped in puff pastry, served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>4. Thai Fish Cakes</h3><span class="price">$11.00</span></div><p>Fish cakes with curry paste and herbs served with sweet chilli sauce</p></article><figure class="menu-art-card"><img src="assets/food/1.png" alt="Illustrated crispy Ruk Thai appetiser" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>5. Wonton</h3><span class="price">$11.00</span></div><p>Crispy wontons filled with marinated pork mince, served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>6. Prawn Dumplings</h3><span class="price">$11.00</span></div><p>Crispy deep-fried prawn dumplings served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>7. Moo Tod</h3><span class="price">$12.00</span></div><p>Deep-fried marinated pork belly served with sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>8. Mixed Entrée</h3><span class="price">$13.00</span></div><p>One piece of each Appetisers 2A, 2B, 3, 4, 5, 6</p></article></div></section><section class="menu-section" id="soups"><div class="section-kicker"><span lang="th">ซุป</span></div><h2>Soups</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>9. Tom Yum Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and mushrooms in a hot-and-sour soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>10. Tom Yum Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and mushrooms in a hot-and-sour soup</p></article><figure class="menu-art-card"><img src="assets/food/2.png" alt="Illustrated Thai soup" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>11. Tom Kha Goong</h3><span class="price">(S) $13.00 · (L) $25.50</span></div><p>Prawns and mushrooms in a coconut milk soup</p></article><article class="menu-item"><div class="menu-item-head"><h3>12. Tom Kha Gai</h3><span class="price">(S) $12.00 · (L) $22.00</span></div><p>Chicken and mushrooms in a coconut milk soup</p></article></div></section><section class="menu-section" id="curry"><div class="section-kicker"><span lang="th">แกง</span></div><h2>Curry</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>13. Green Curry</h3></div><p>Green curry paste cooked in coconut milk and vegetables with your choice of:</p><p>Chicken, pork or beef $22.00</p><p>Prawns or fish $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>14. Red Curry</h3></div><p>Red curry paste cooked in coconut milk and vegetables with your choice of:</p><p>Chicken, pork or beef $22.00</p><p>Duck or lamb $25.50</p><p>Prawns or fish $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>15. Panang Curry</h3></div><p>Panang curry paste cooked in coconut milk, vegetables and crushed peanuts with your choice of:</p><p>Chicken, pork or beef $22.00</p><p>Lamb $25.50</p><p>Prawns or fish $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>16. Massaman Curry</h3></div><p>Massaman curry paste cooked in coconut milk, peanuts, onion, potato and tamarind sauce with your choice of:</p><p>Chicken, pork or beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>17. Yellow Curry</h3></div><p>Yellow curry paste cooked in coconut milk, peanuts, onion and potato with your choice of:</p><p>Chicken, pork or beef $22.00</p><p>Lamb $25.50</p><p>Prawns $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>18. Choo Chee</h3></div><p>Red curry cooked in coconut milk, kaffir lime leaves and vegetables with your choice of:</p><p>Fish or prawns $25.50</p><p>Scallops or mixed seafood $27.00</p></article></div></section><section class="menu-section" id="main-course"><div class="section-kicker"><span lang="th">อาหารจานหลัก</span></div><h2>Main Course</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>19. Pad Prik Pow</h3></div><p>Mild chilli paste stir-fried with vegetables with your choice of:</p><p>Chicken, pork or beef $22.50</p><p>Prawns, fish or pork belly $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>20. Pad Ginger</h3></div><p>Stir-fried ginger, garlic and vegetables with your choice of:</p><p>Chicken, pork or beef $22.50</p><p>Prawns or fish $25.50</p><p>Duck, lamb or pork belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>21. Pad Garlic and Pepper</h3></div><p>Stir-fried garlic, pepper and vegetables with your choice of:</p><p>Chicken, pork or beef $22.50</p><p>Lamb or pork belly $25.50</p><p>Prawns or fish $25.50</p><p>Scallops $27.00</p></article><figure class="menu-art-card"><img src="assets/food/3.png" alt="Illustrated prawn stir-fry" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>22. Pad Oyster Sauce</h3></div><p>Vegetables stir-fried in oyster sauce with your choice of:</p><p>Chicken, pork or beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>23. Pad Cashew Nuts</h3></div><p>Stir-fried cashew nuts and vegetables with your choice of:</p><p>Chicken, pork or beef $23.50</p><p>Prawns or fish $25.50</p><p>Duck or pork belly $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>24. Sweet and Sour</h3></div><p>Vegetables stir-fried in sweet-and-sour sauce with your choice of:</p><p>Chicken or pork $22.50</p><p>Prawns, fish or pork belly $25.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>25. Pad Basil</h3></div><p>Stir-fried chilli, basil and vegetables with your choice of:</p><p>Chicken, pork or beef $22.50</p><p>Prawns or fish $25.50</p><p>Duck, lamb or pork belly $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>26. Pad Peanut Sauce</h3></div><p>Vegetables stir-fried in peanut sauce with your choice of:</p><p>Chicken, pork or beef $22.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>27. Pad Prik Gang</h3></div><p>Curry paste stir-fried with vegetables and coconut milk with your choice of:</p><p>Chicken, pork or beef $22.50</p><p>Prawns or fish $25.50</p><p>Duck, lamb or pork belly $25.50</p><p>Scallops or mixed seafood $27.00</p></article><figure class="menu-art-card"><img src="assets/food/4.png" alt="Illustrated dark glazed Ruk Thai dish" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>28. Duck with Honey Sauce</h3><span class="price">$25.50</span></div><p>Roasted duck served on steamed vegetables and topped with honey sweet chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>29. Fish with Thai Chilli Sauce</h3><span class="price">$25.50</span></div><p>Fish fillet served on steamed vegetables and topped with Thai-style chilli sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>30. Pad Sarm Rod (Three-flavour Sauce)</h3></div><p>Vegetables stir-fried in a three-flavour (spicy, sweet and sour) sauce with your choice of:</p><p>Chicken, pork or beef $22.50</p><p>Prawns or fish $25.50</p><p>Scallops or mixed seafood $27.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>31. Pad Pong Garee Talay</h3><span class="price">$27.00</span></div><p>Stir-fried mixed seafood, egg, curry powder and vegetables</p></article><article class="menu-item"><div class="menu-item-head"><h3>32. Hor Mok Talay</h3><span class="price">$27.00</span></div><p>Mixed seafood cooked in curry paste and coconut milk with herbs and egg</p></article></div></section><section class="menu-section" id="salads"><div class="section-kicker"><span lang="th">ยำและสลัด</span></div><h2>Salads</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>33. Larb</h3><span class="price">$25.50</span></div><p>Minced meat salad with herbs, lemon juice and chilli, with your choice of: Chicken, pork or beef</p></article><article class="menu-item"><div class="menu-item-head"><h3>34. Nam Tok</h3><span class="price">$25.50</span></div><p>Sliced pork or beef with herbs, red onion, lemon juice and chilli</p></article><article class="menu-item"><div class="menu-item-head"><h3>35. Yum Nua (Thai Beef Salad)</h3><span class="price">$25.50</span></div><p>Sliced beef with Thai-style chilli sauce, onion, tomato and herbs</p></article><article class="menu-item"><div class="menu-item-head"><h3>36. Yum Talay (Seafood Salad)</h3><span class="price">$27.00</span></div><p>Mixed seafood with Thai-style chilli sauce, onion, tomato and herbs</p></article></div></section><section class="menu-section" id="deep-fried-meals"><div class="section-kicker"><span lang="th">อาหารทอด</span></div><h2>Deep-fried Dishes</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>37. Pork Ribs with Garlic and Pepper Sauce</h3><span class="price">$25.50</span></div><p>Deep-fried pork spare ribs with garlic and pepper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>38. Pork Ribs with Honey Sauce</h3><span class="price">$25.50</span></div><p>Deep-fried pork spare ribs with honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>39. Pork Ribs Sarm Rod (Three-flavour Sauce)</h3><span class="price">$25.50</span></div><p>Deep-fried pork spare ribs with three-flavour sauce</p></article><figure class="menu-art-card"><img src="assets/food/6.png" alt="Illustrated sliced pork with vegetables" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>40. Fried Chicken with Garlic and Pepper Sauce</h3><span class="price">$24.00</span></div><p>Deep-fried chicken topped with garlic and pepper sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>41. Fried Chicken with Honey Sauce</h3><span class="price">$24.00</span></div><p>Deep-fried chicken topped with honey sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>42. Fried Chicken Sarm Rod (Three-flavour Sauce)</h3><span class="price">$24.00</span></div><p>Deep-fried chicken topped with three-flavour sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>Roti</h3><span class="price">$4.00</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>Extra Rice</h3><span class="price">$4.00</span></div></article></div><div class="menu-note"><p>All curries, main courses, salads and deep-fried meals include a side of jasmine rice (excluding noodle and rice dishes).</p><p>Please let us know about any food allergies when ordering.</p></div></section><section class="menu-section" id="noodles"><div class="section-kicker"><span lang="th">ก๋วยเตี๋ยว</span></div><h2>Noodles</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>43. Pad See Eiw</h3></div><p>Stir-fried thick rice noodles, egg and vegetables with your choice of:</p><p>Chicken, pork or beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>44. Pad Thai</h3></div><p>Stir-fried rice noodles, egg, crushed peanuts, bean sprouts and spring onion with your choice of:</p><p>Chicken, pork or beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>45. Spicy Noodles</h3></div><p>Stir-fried rice noodles, egg, and vegetables with your choice of:</p><p>Chicken, pork or beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>46. Guay Tiew Kua</h3></div><p>Stir-fried thick rice noodles, egg, bean sprouts and spring onion with your choice of:</p><p>Chicken, pork or beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>47. Mi Goreng</h3></div><p>Stir-fried wheat noodles, egg, vegetables and curry paste with your choice of:</p><p>Chicken, pork or beef $20.00</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>48. Noodle Soup (Pho)</h3></div><p>Rice-noodles and bean sprouts in broth with your choice of:</p><p>Chicken, pork or beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>49. Laksa</h3></div><p>Wheat-noodles and bean sprouts in laksa curry soup with your choice of:</p><p>Chicken, pork or beef $20.50</p><p>Prawns $22.00</p></article><article class="menu-item"><div class="menu-item-head"><h3>50. Lard Na</h3></div><p>Thick rice noodles topped with vegetables and Thai gravy with your choice of:</p><p>Chicken, pork or beef $22.00</p><p>Prawns $25.50</p><p>Mixed seafood $27.00</p></article></div></section><section class="menu-section" id="rice-dishes"><div class="section-kicker"><span lang="th">เมนูข้าว</span></div><h2>Rice Dishes</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>51. Fried Rice</h3></div><p>Fried rice with egg, spring onion and mixed vegetables with your choice of:</p><p>Chicken, pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>52. Spicy Fried Rice</h3></div><p>Fried rice with egg, chilli, spring onion and mixed vegetables with your choice of:</p><p>Chicken, pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>53. Nasi Goreng</h3></div><p>Fried rice with egg, curry paste, spring onion and mixed vegetables with your choice of:</p><p>Chicken, pork or beef $19.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>54. Tom Yum Fried Rice</h3></div><p>Chicken, pork or beef $20.00</p><p>Prawns $21.50</p></article><article class="menu-item"><div class="menu-item-head"><h3>55. BBQ Duck on Rice</h3><span class="price">$24.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>56. Deep-fried Pork Belly on Rice</h3><span class="price">$22.50</span></div></article><article class="menu-item"><div class="menu-item-head"><h3>57. Chicken Satay on Rice</h3><span class="price">$20.50</span></div></article></div></section><section class="menu-section" id="vegetarian"><div class="section-kicker"><span lang="th">อาหารมังสวิรัติ</span></div><h2>Vegetarian</h2><div class="menu-grid"><article class="menu-item"><div class="menu-item-head"><h3>58. Tofu Cashew Nuts</h3><span class="price">$21.50</span></div><p>Stir-fried tofu with vegetables and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>59. Tofu Peanut Sauce</h3><span class="price">$21.50</span></div><p>Vegetables and tofu stir fried in peanut satay sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>60. Green Curry Tofu</h3><span class="price">$21.50</span></div><p>Tofu and vegetables cooked in green curry paste and coconut milk</p></article><figure class="menu-art-card"><img src="assets/food/5.png" alt="Illustrated mixed vegetable stir-fry" loading="lazy"></figure><article class="menu-item"><div class="menu-item-head"><h3>61. Pineapple Fried Rice</h3><span class="price">$19.00</span></div><p>Fried rice with egg, pineapple, mixed vegetables, curry powder and cashew nuts</p></article><article class="menu-item"><div class="menu-item-head"><h3>62. Vegetarian Pad Thai</h3><span class="price">$20.00</span></div><p>Stir-fried rice noodles with egg, tofu, crushed peanuts, bean sprouts and spring onion</p></article><article class="menu-item"><div class="menu-item-head"><h3>63. Sweet and Sour Tofu</h3><span class="price">$21.50</span></div><p>Stir-fried vegetables and tofu in sweet and sour sauce</p></article><article class="menu-item"><div class="menu-item-head"><h3>64. Stir-fried Vegetables</h3><span class="price">$20.50</span></div><p>Pick a flavour</p><p>• garlic & peppers</p><p>• garlic& ginger</p><p>• cashew nuts</p><p>• chilli basil</p><p>• peanut sauce</p></article></div><div class="menu-note dietary-note"><h3>Dietary requirements</h3><p>Please let us know when ordering if:</p><ul><li>You don’t eat fish sauce.</li><li>You would like your meal prepared vegan.</li></ul></div></section></section>
+
 </main>
-<footer><img src="01_Ruk_Thai_Logo_Banner.png" alt="Ruk Thai"><p>123 Chadwick Road, Greerton, Tauranga 3112</p><p><a href="tel:+6475796180">07 579 6180</a> · <a href="https://www.facebook.com/taurangarukthai/" target="_blank" rel="noopener">Facebook</a></p><a class="back-top" href="#top">Back to top ↑</a></footer>
-<nav class="mobile-bar" aria-label="Quick actions"><a href="tel:+6475796180">Call</a><a href="#menu">Menu</a><a href="https://www.google.com/maps/search/?api=1&query=123+Chadwick+Road+Greerton+Tauranga+3112" target="_blank" rel="noopener">Directions</a></nav>
-<script src="script.js"></script>
-</body></html>
+<div class="lunch-drawer-backdrop" aria-hidden="true"></div>
+<aside class="lunch-drawer" aria-label="Lunch menu" aria-hidden="true">
+  <button class="lunch-drawer-close" type="button" aria-label="Close lunch menu">×</button>
+  <iframe title="Ruk Thai lunch menu" data-src="lunch.html"></iframe>
+</aside>
+<script>
+const lunchDrawer=document.querySelector('.lunch-drawer');
+const lunchBackdrop=document.querySelector('.lunch-drawer-backdrop');
+const lunchFrame=lunchDrawer.querySelector('iframe');
+const lunchClose=lunchDrawer.querySelector('.lunch-drawer-close');
+let lunchTrigger=null;
+function openLunchDrawer(trigger){
+  lunchTrigger=trigger;
+  if(!lunchFrame.src) lunchFrame.src=lunchFrame.dataset.src;
+  document.body.classList.add('lunch-drawer-open');
+  lunchDrawer.setAttribute('aria-hidden','false');
+  lunchBackdrop.setAttribute('aria-hidden','false');
+}
+function closeLunchDrawer(){
+  document.body.classList.remove('lunch-drawer-open');
+  lunchDrawer.setAttribute('aria-hidden','true');
+  lunchBackdrop.setAttribute('aria-hidden','true');
+  if(lunchTrigger) lunchTrigger.focus();
+}
+document.querySelectorAll('a[href="lunch.html"]').forEach(link=>link.addEventListener('click',event=>{
+  event.preventDefault();
+  openLunchDrawer(link);
+}));
+lunchClose.addEventListener('click',closeLunchDrawer);
+lunchBackdrop.addEventListener('click',closeLunchDrawer);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('lunch-drawer-open'))closeLunchDrawer()});
+</script>
+</body>
+</html>

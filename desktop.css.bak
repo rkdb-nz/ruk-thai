@@ -1,0 +1,358 @@
+
+/* =========================================================
+   RUK THAI — DESKTOP FINAL REFINEMENT
+   Desktop only. Portrait and landscape remain untouched.
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  /* ---------- SHARED CENTRE AXIS ---------- */
+
+  .mobile-hero-logo,
+  .hero h1,
+  .hero-actions {
+    left: 72% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* ---------- LOGO ---------- */
+
+  .mobile-hero-logo {
+    width: 40% !important;
+    max-width: none !important;
+  }
+
+  .mobile-hero-logo img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  /* ---------- HEADLINE ---------- */
+
+  .hero h1 {
+    width: 42% !important;
+    text-align: center !important;
+  }
+
+  /* ---------- CTA GROUP ---------- */
+
+  .hero-actions {
+    width: 31% !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: .85rem !important;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .text-link {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+  }
+
+  /* ---------- PRIMARY CALL BUTTON ---------- */
+
+  .hero-actions .btn-primary {
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    min-height: 5.25rem !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: relative !important;
+
+    padding: .8rem 4rem !important;
+
+    border: 1px solid rgba(213, 161, 61, .95) !important;
+    border-radius: .7rem !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        #821d2d 0%,
+        #711724 52%,
+        #64131e 100%
+      ) !important;
+
+    color: #f5dda1 !important;
+
+    box-shadow:
+      0 .55rem 1.25rem rgba(84, 36, 24, .12),
+      0 .12rem .2rem rgba(84, 36, 24, .1),
+      inset 0 1px 0 rgba(255,255,255,.10),
+      inset 0 -1px 0 rgba(61, 8, 18, .30) !important;
+  }
+
+  /* Icon remains decorative at left;
+     it no longer shifts the text off-centre. */
+  .hero-actions .btn-primary .cta-icon {
+    position: absolute !important;
+    left: 1.45rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 1.55rem !important;
+    height: 1.55rem !important;
+
+    color: #e2b953 !important;
+  }
+
+  .hero-actions .btn-primary .cta-title,
+  .hero-actions .btn-primary .cta-phone {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+    text-align: center !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    top: 1.18rem !important;
+
+    font-size: .92rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: .1em !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    bottom: 1.05rem !important;
+
+    margin: 0 !important;
+
+    color: #fff0d2 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: .88rem !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: .045em !important;
+  }
+
+  /* ---------- SECONDARY BUTTONS ---------- */
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    width: 100% !important;
+    min-height: 4.55rem !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: .62rem !important;
+
+    padding: .75rem 1rem !important;
+
+    border: 1px solid rgba(188, 132, 40, .62) !important;
+    border-radius: .6rem !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,250,238,.46) 0%,
+        rgba(247,225,185,.22) 100%
+      ) !important;
+
+    color: #6a1721 !important;
+
+    box-shadow:
+      0 .32rem .75rem rgba(93, 52, 20, .055),
+      inset 0 1px 0 rgba(255,255,255,.75) !important;
+
+    font-size: .78rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: .085em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    flex: 0 0 auto !important;
+
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+
+    color: #c8902e !important;
+  }
+
+  .hero-actions svg {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* ---------- SUBTLE INTERACTION ---------- */
+
+  .hero-actions a {
+    transition:
+      transform .18s ease,
+      box-shadow .18s ease,
+      border-color .18s ease !important;
+  }
+
+  .hero-actions a:hover {
+    transform: translateY(-1px) !important;
+  }
+
+  .hero-actions .btn-primary:hover {
+    background:
+      linear-gradient(
+        180deg,
+        #8b2031 0%,
+        #781925 52%,
+        #68141f 100%
+      ) !important;
+
+    box-shadow:
+      0 .7rem 1.45rem rgba(84, 36, 24, .16),
+      inset 0 1px 0 rgba(255,255,255,.12) !important;
+  }
+
+  .hero-actions .btn-outline:hover,
+  .hero-actions .text-link:hover {
+    border-color: rgba(188, 132, 40, .9) !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,250,238,.62) 0%,
+        rgba(247,225,185,.34) 100%
+      ) !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP — SCALE UP + SHIFT LEFT
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  /* Move the whole live composition left */
+  .mobile-hero-logo,
+  .hero h1,
+  .hero-actions {
+    left: 68.5% !important;
+  }
+
+  /* Larger logo */
+  .mobile-hero-logo {
+    width: 43% !important;
+  }
+
+  /* Slightly larger headline footprint */
+  .hero h1 {
+    width: 44% !important;
+  }
+
+  /* Much larger CTA cluster */
+  .hero-actions {
+    width: 36% !important;
+    gap: 1rem !important;
+  }
+
+  .hero-actions .btn-primary {
+    min-height: 6.25rem !important;
+    border-radius: .8rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-title {
+    top: 1.45rem !important;
+    font-size: 1.08rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    bottom: 1.3rem !important;
+    font-size: 1rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-icon {
+    left: 1.7rem !important;
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    min-height: 5.4rem !important;
+    font-size: .9rem !important;
+    border-radius: .7rem !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.45rem !important;
+    height: 1.45rem !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP — BUTTON TYPE SCALE
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  .hero-actions .btn-primary .cta-title {
+    font-size: 1.35rem !important;
+  }
+
+  .hero-actions .btn-primary .cta-phone {
+    font-size: 1.15rem !important;
+  }
+
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .07em !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.7rem !important;
+    height: 1.7rem !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP — LEFT SHIFT + CLEANER BUTTON TYPE
+   ========================================================= */
+
+@media (min-width: 901px) and (min-height: 601px) {
+
+  /* Shift the complete live composition left */
+  .mobile-hero-logo,
+  .hero h1,
+  .hero-actions {
+    left: 66.5% !important;
+  }
+
+  /* Primary button — larger, simpler label */
+  .hero-actions .btn-primary .cta-title {
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 1.55rem !important;
+    letter-spacing: .085em !important;
+  }
+
+  /* Secondary labels larger */
+  .hero-actions .btn-outline,
+  .hero-actions .text-link {
+    font-size: 1.28rem !important;
+    letter-spacing: .075em !important;
+  }
+
+  .hero-actions .cta-secondary-icon {
+    width: 1.9rem !important;
+    height: 1.9rem !important;
+  }
+}
+

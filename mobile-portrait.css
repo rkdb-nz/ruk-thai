@@ -231,39 +231,17 @@
   }
 }
 
-/* Mobile-only CTA refinements — desktop intentionally unchanged. */
-.mobile-info-label {
-  display: none;
-}
-
-@media (max-width: 900px) {
+/* Mobile call button: centred text, no icon. */
+@media (max-width: 600px) and (orientation: portrait) {
   .hero-actions .btn-primary {
-    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .24rem;
     text-align: center;
   }
 
-  .hero-actions .btn-primary .cta-icon {
-    display: none;
-  }
-
-  .hero-actions .btn-primary .cta-title,
-  .hero-actions .btn-primary .cta-phone {
+  .hero-actions .btn-primary .cta-title {
     align-self: center;
-    margin-left: 0;
-    margin-right: 0;
     text-align: center;
-  }
-
-  .hero-actions .desktop-direction-label {
-    display: none;
-  }
-
-  .hero-actions .mobile-info-label {
-    display: inline;
   }
 }
