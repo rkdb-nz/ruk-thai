@@ -581,6 +581,124 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
 }
 @media(prefers-reduced-motion:reduce){.lunch-drawer,.lunch-drawer-backdrop{transition-duration:180ms}}
 
+
+
+/* =========================================================
+   MOBILE LUNCH FEATURE — PORTRAIT AND LANDSCAPE
+   Desktop intentionally untouched.
+   ========================================================= */
+@media (max-width:600px) and (orientation:portrait) {
+  .menu-hero .lunch-feature {
+    width:min(430px,calc(100% - 18px));
+    margin:4px auto 0;
+    border-width:1px;
+    border-radius:22px;
+    box-shadow:0 10px 24px rgba(76,17,29,.22),inset 0 0 0 1px rgba(255,244,200,.16);
+  }
+  .menu-hero .lunch-feature a {
+    min-height:0;
+    padding:15px 18px 16px;
+    display:grid;
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:7px;
+    text-align:center;
+  }
+  .menu-hero .lunch-feature-kicker {
+    display:block;
+    padding:0;
+    border:0;
+    color:#edcc73;
+    font:700 .64rem/1.1 Arial,sans-serif;
+    letter-spacing:.18em;
+  }
+  .menu-hero .lunch-feature strong {
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    color:#fffaf0;
+    font-size:.98rem;
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  .menu-hero .lunch-feature-price {
+    margin:0;
+    padding:0;
+    border:0;
+    color:#f3d270;
+    font-size:1.8em;
+    line-height:1;
+  }
+  .menu-hero .lunch-feature-link {
+    min-width:0;
+    margin:2px 0 0;
+    padding:8px 18px;
+    justify-self:center;
+    border-radius:999px;
+    font-size:.7rem;
+    line-height:1;
+  }
+}
+
+@media (orientation:landscape) and (max-width:900px) and (max-height:600px) {
+  .menu-hero .lunch-feature {
+    width:min(720px,86%);
+    margin:2px auto 0;
+    border-width:1px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(76,17,29,.22),inset 0 0 0 1px rgba(255,244,200,.16);
+  }
+  .menu-hero .lunch-feature a {
+    min-height:58px;
+    padding:8px 12px 8px 18px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    align-items:center;
+    justify-items:center;
+    gap:14px;
+    text-align:center;
+  }
+  .menu-hero .lunch-feature-kicker {
+    display:block;
+    padding-right:14px;
+    border-right:1px solid rgba(241,206,112,.5);
+    color:#edcc73;
+    font:700 .62rem/1.15 Arial,sans-serif;
+    letter-spacing:.14em;
+    white-space:nowrap;
+  }
+  .menu-hero .lunch-feature strong {
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:9px;
+    width:100%;
+    color:#fffaf0;
+    font-size:.9rem;
+    line-height:1.1;
+    white-space:nowrap;
+  }
+  .menu-hero .lunch-feature-price {
+    margin:0;
+    padding:0;
+    border:0;
+    color:#f3d270;
+    font-size:1.65em;
+    line-height:1;
+  }
+  .menu-hero .lunch-feature-link {
+    min-width:150px;
+    margin:0;
+    padding:10px 14px;
+    justify-self:end;
+    border-radius:999px;
+    font-size:.68rem;
+    line-height:1;
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
