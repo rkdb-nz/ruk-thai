@@ -232,6 +232,10 @@
 }
 
 /* Mobile-only CTA refinements — desktop intentionally unchanged. */
+.mobile-info-label {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .hero-actions .btn-primary {
     position: relative;
@@ -244,10 +248,7 @@
   }
 
   .hero-actions .btn-primary .cta-icon {
-    position: absolute;
-    left: .72rem;
-    top: 50%;
-    transform: translateY(-50%);
+    display: none;
   }
 
   .hero-actions .btn-primary .cta-title,
@@ -258,12 +259,11 @@
     text-align: center;
   }
 
-  .hero-actions .text-link > span:last-child {
-    font-size: 0;
+  .hero-actions .desktop-direction-label {
+    display: none;
   }
 
-  .hero-actions .text-link > span:last-child::after {
-    content: "INFO";
-    font-size: clamp(.66rem, 2.8vw, .78rem);
+  .hero-actions .mobile-info-label {
+    display: inline;
   }
 }
