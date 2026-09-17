@@ -1067,6 +1067,48 @@ body.lunch-drawer-open .lunch-drawer{transform:translateX(0);visibility:visible;
   }
 }
 
+
+
+/* Clean mobile lunch-banner animation: white sweep only, no flash. */
+@media (max-width:900px) {
+  .menu-hero .lunch-feature {
+    animation:none!important;
+    filter:none!important;
+  }
+  .menu-hero .lunch-feature::after {
+    left:-68%;
+    width:58%;
+    opacity:0;
+    z-index:2;
+    mix-blend-mode:screen;
+    filter:blur(.6px);
+    background:linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,255,255,.08) 24%,
+      rgba(255,255,255,.78) 50%,
+      rgba(255,255,255,.08) 76%,
+      transparent 100%
+    );
+    animation:mobile-white-sweep 4s ease-in-out infinite!important;
+  }
+}
+
+@keyframes mobile-white-sweep {
+  0% {
+    opacity:.9;
+    transform:translateX(0) skewX(-15deg);
+  }
+  38% {
+    opacity:.9;
+    transform:translateX(335%) skewX(-15deg);
+  }
+  44%,100% {
+    opacity:0;
+    transform:translateX(335%) skewX(-15deg);
+  }
+}
+
 </style>
 </head>
 <body class="menu-page">
