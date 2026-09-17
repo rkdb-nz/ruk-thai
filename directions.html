@@ -240,8 +240,16 @@ address {
     grid-template-columns: 1fr 1fr;
   }
   .actions .button:first-child { grid-column: 1 / -1; }
-  .map { min-height: 43dvh; }
-  .map iframe { min-height: 43dvh; }
+  .map {
+    min-height: 36dvh;
+    margin: 14px;
+    overflow: hidden;
+    border: 6px solid #fffaf0;
+    outline: 1px solid rgba(183,147,74,.9);
+    box-shadow: 0 10px 28px rgba(76,17,29,.18);
+    background: #fffaf0;
+  }
+  .map iframe { min-height: 36dvh; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .directions-page { width: min(1100px, calc(100% - 24px)); padding: 12px 0; gap: 10px; }
@@ -315,7 +323,16 @@ address {
   .actions { margin-top: 10px; grid-template-columns: 1fr 1fr; gap: 8px; }
   .actions .button:first-child { grid-column: 1 / -1; }
   .button { min-height: 38px; padding: 8px 10px; font-size: .66rem; }
-  .map, .map iframe { min-height: 360px; }
+  .map {
+    min-height: 328px;
+    margin: 16px;
+    overflow: hidden;
+    border: 6px solid #fffaf0;
+    outline: 1px solid rgba(183,147,74,.9);
+    box-shadow: 0 10px 28px rgba(76,17,29,.18);
+    background: #fffaf0;
+  }
+  .map iframe { min-height: 328px; }
 }
 </style>
 </head>
