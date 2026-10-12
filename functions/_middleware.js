@@ -24,14 +24,15 @@ async function validCookie(request,secret) {
   const expected=await sign(expiry,secret);
   return fixedEqual(signature,expected);
 }
-async function gatePage(env,url,status=200) {
+async function gatePage(env,url,status=200,incorrect=false) {
   const [original,shield] = await Promise.all([
     env.ASSETS.fetch(new Request(new URL("/index.html",url).toString())),
     env.ASSETS.fetch(new Request(new URL("/holding.html",url).toString()))
   ]);
   if(!original.ok || !shield.ok)return new Response("Private preview unavailable",{status:503,headers:header});
   const html=(await original.text()).replace('<main id="main">','<main id="main" inert aria-hidden="true">');
-  const fragment=await shield.text();
+  let fragment=await shield.text();
+  if(incorrect || url.searchParams.has("incorrect")) fragment=fragment.replace('id="ruk-private-error" role="alert" style="display:none"','id="ruk-private-error" role="alert" style="display:block"');
   if(!html.includes("</body>"))return new Response("Private preview unavailable",{status:503,headers:header});
   return new Response(html.replace("</body>",fragment+"</body>"),{status,headers:{...header,"Content-Type":"text/html; charset=utf-8","Content-Security-Policy":"frame-ancestors 'none'"}});
 }
@@ -49,7 +50,7 @@ export async function onRequest(context) {
     const supplied=String(form.get("password")||"");
     const actual=env.GATE_PASSWORD;
     const match=fixedEqual(await sign(supplied,env.GATE_SESSION_KEY),await sign(actual,env.GATE_SESSION_KEY));
-    if(!match) return Response.redirect(new URL("/?incorrect=1",url),303);
+    if(!match) return gatePage(env,new URL("/",url),401,true);
     const expiry=String(Date.now()+ttlSeconds*1000);
     const signature=await sign(expiry,env.GATE_SESSION_KEY);
     return new Response(null,{status:303,headers:{...header,Location:"/","Set-Cookie":`${cookieName}=${expiry}.${signature}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${ttlSeconds}`}});
