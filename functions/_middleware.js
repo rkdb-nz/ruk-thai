@@ -54,7 +54,17 @@ export async function onRequest(context) {
     const signature=await sign(expiry,env.GATE_SESSION_KEY);
     return new Response(null,{status:303,headers:{...header,Location:"/","Set-Cookie":`${cookieName}=${expiry}.${signature}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${ttlSeconds}`}});
   }
-  if(!await validCookie(request,env.GATE_SESSION_KEY))return gatePage(env,url);
+  // Public landing needs its styles, images and fonts before authentication.
+  // HTML documents and scripts remain gated.
+  if(!await validCookie(request,env.GATE_SESSION_KEY)) {
+    if(request.method==="GET" && /\\.(?:css|png|jpe?g|webp|gif|svg|ico|avif|woff2?|ttf)$/i.test(url.pathname)) {
+      const assetResponse=await next();
+      const h=new Headers(assetResponse.headers);
+      h.set("X-Robots-Tag","noindex, nofollow");
+      return new Response(assetResponse.body,{status:assetResponse.status,statusText:assetResponse.statusText,headers:h});
+    }
+    return gatePage(env,url);
+  }
   if(url.pathname==="/holding.html")return Response.redirect(new URL("/",url),302);
   const response=await next();
   const headers=new Headers(response.headers);
