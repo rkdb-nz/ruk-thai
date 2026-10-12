@@ -57,7 +57,7 @@ export async function onRequest(context) {
   // Public landing needs its styles, images and fonts before authentication.
   // HTML documents and scripts remain gated.
   if(!await validCookie(request,env.GATE_SESSION_KEY)) {
-    if(request.method==="GET" && /\\.(?:css|png|jpe?g|webp|gif|svg|ico|avif|woff2?|ttf)$/i.test(url.pathname)) {
+    if(request.method==="GET" && /\.(?:css|png|jpe?g|webp|gif|svg|ico|avif|woff2?|ttf)$/i.test(url.pathname)) {
       const assetResponse=await next();
       const h=new Headers(assetResponse.headers);
       h.set("X-Robots-Tag","noindex, nofollow");
