@@ -1,34 +1,24 @@
-<!doctype html>
-<html lang="en-NZ">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow,noarchive">
-<meta name="theme-color" content="#541a24">
-<title>Private Preview | Ruk Thai</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}
-body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at top,#793342 0,#37141d 67%,#210e14 100%);color:#fff4e7;font:18px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-main{width:min(100%,420px);text-align:center;padding:clamp(28px,7vw,44px);background:#28121bea;border:1px solid #a98165;border-radius:20px;box-shadow:0 20px 70px #150409aa}
-small{letter-spacing:.22em;text-transform:uppercase;color:#e8c493;font-weight:700}
-h1{font-family:Georgia,serif;font-size:clamp(34px,7vw,48px);line-height:1.1;margin:15px 0 20px}
-p{margin:0 0 24px;color:#f7dec7}
-label{display:block;text-align:left;font-weight:650;margin-bottom:8px}
-input{width:100%;border:2px solid #e3be9e;border-radius:9px;padding:13px 14px;background:#fff;color:#22131a;font:inherit}
-input:focus-visible,button:focus-visible{outline:3px solid #f7d36d;outline-offset:3px}
-button{width:100%;border:0;border-radius:9px;background:#efc98e;color:#25121a;font:700 19px system-ui;padding:14px;margin-top:15px;cursor:pointer}
-#error{color:#ffbbb5;min-height:1.5em;margin-top:18px;font-weight:650}
+#ruk-private-shield{position:fixed;inset:0;z-index:2147483646;background:rgba(23,10,13,.13);display:flex;justify-content:center;align-items:flex-start;padding:clamp(18px,4vh,40px) 12px 20px;overflow:auto;font-family:system-ui,-apple-system,Segoe UI,sans-serif;box-sizing:border-box}
+#ruk-private-shield *{box-sizing:border-box}
+#ruk-private-pills{display:grid;gap:12px;width:min(100%,470px);filter:drop-shadow(0 5px 20px rgba(30,4,11,.55))}
+#ruk-private-message,#ruk-private-form{background:#fff;color:#41202b;border-radius:999px;border:1px solid rgba(126,79,83,.22);box-shadow:0 7px 24px rgba(0,0,0,.23);min-height:50px}
+#ruk-private-message{text-align:center;padding:15px 20px;font-size:clamp(14px,3.3vw,17px);line-height:1.4}
+#ruk-private-message a{font-weight:750;color:#862c45;text-decoration:underline;text-underline-offset:3px}
+#ruk-private-form{display:flex;align-items:center;gap:9px;padding:7px 8px 7px 20px}
+#ruk-private-form label{font-size:15px;white-space:nowrap;font-weight:700}
+#ruk-private-form input{min-width:0;width:100%;flex:1;border:0;border-bottom:1px solid #ba9b9f;border-radius:0;background:#fff;color:#26141a;font-size:16px;padding:8px 3px;outline-offset:2px}
+#ruk-private-form button{border:0;background:#74303f;color:#fff;border-radius:999px;min-height:36px;min-width:44px;padding:8px 13px;font-size:21px;cursor:pointer}
+#ruk-private-form button:focus-visible,#ruk-private-message a:focus-visible,#ruk-private-form input:focus-visible{outline:3px solid #df9a36;outline-offset:3px}
+#ruk-private-error{background:#fff;color:#9d192d;text-align:center;border-radius:16px;padding:9px;font-size:15px;font-weight:650;margin:0}
+@media(max-width:340px){#ruk-private-form{padding-left:12px;gap:5px}#ruk-private-form label{font-size:13px}#ruk-private-form button{min-width:37px;padding:7px}}
 </style>
-</head>
-<body><main>
-<small>Private preview</small><h1>Ruk Thai</h1>
-<p>This website is currently unavailable to the public.</p>
-<form method="post" action="/_ruk_unlock">
-<label for="pass">Preview password</label>
-<input id="pass" type="password" name="password" required autocomplete="current-password" autofocus>
-<button type="submit">Enter website</button>
-</form>
-<p id="error" role="alert"></p>
-</main>
-<script>if(new URLSearchParams(location.search).has("incorrect"))document.getElementById("error").textContent="Incorrect password. Please try again.";</script>
-</body></html>
+<div id="ruk-private-shield"><section id="ruk-private-pills" aria-label="Private site access">
+<div id="ruk-private-message">This website is currently private. <a href="mailto:robert@rkdb.nz?subject=Ruk%20Thai%20Website%20Access%20Request">Request access</a></div>
+<form id="ruk-private-form" action="/_ruk_unlock" method="post">
+<label for="ruk-access-code">Access code:</label>
+<input id="ruk-access-code" name="password" type="password" required autocomplete="current-password" aria-label="Access code">
+<button type="submit" aria-label="Unlock website">➜</button></form>
+<p id="ruk-private-error" role="alert" hidden>Incorrect access code. Please try again.</p>
+</section></div>
+<script>if(new URLSearchParams(location.search).has("incorrect"))document.getElementById("ruk-private-error").hidden=false;</script>
