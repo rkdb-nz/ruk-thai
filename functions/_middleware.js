@@ -25,10 +25,15 @@ async function validCookie(request,secret) {
   return fixedEqual(signature,expected);
 }
 async function gatePage(env,url,status=200) {
-  const target=new URL("/holding.html",url);
-  const asset=await env.ASSETS.fetch(new Request(target.toString()));
-  if(!asset.ok)return new Response("Holding page not found", {status:503,headers:header});
-  return new Response(asset.body,{status,headers:{...header,"Content-Type":"text/html; charset=utf-8"}});
+  const [original,shield] = await Promise.all([
+    env.ASSETS.fetch(new Request(new URL("/index.html",url).toString())),
+    env.ASSETS.fetch(new Request(new URL("/holding.html",url).toString()))
+  ]);
+  if(!original.ok || !shield.ok)return new Response("Private preview unavailable",{status:503,headers:header});
+  const html=(await original.text()).replace('<main id="main">','<main id="main" inert aria-hidden="true">');
+  const fragment=await shield.text();
+  if(!html.includes("</body>"))return new Response("Private preview unavailable",{status:503,headers:header});
+  return new Response(html.replace("</body>",fragment+"</body>"),{status,headers:{...header,"Content-Type":"text/html; charset=utf-8","Content-Security-Policy":"frame-ancestors 'none'"}});
 }
 export async function onRequest(context) {
   const {request,env,next}=context;
